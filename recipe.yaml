@@ -1,0 +1,460 @@
+$engine: 3
+$onesync: on
+name: StreetLife RP | [ESX Legacy] -Recipe TestBuild
+author: DonStylz74
+description: FiveM RP framework, ESX Legacy, Contains Jobs, Housing, Garages & more!
+
+tasks:
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[cfx-default]
+
+
+  
+  ## Download and prepare server.cfg / loadingscreen / database
+  - action: download_github
+    src: https://github.com/DonStylz74/esx-recipes
+    ref: legacy
+    dest: ./recipe
+
+  - action: move_path
+    src: ./recipe/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./recipe/ox.cfg
+    dest: ./ox.cfg
+
+  - action: move_path
+    src: ./recipe/esxLogo.png
+    dest: ./esxLogo.png
+
+
+
+  ## Download basic resources and ESX dependencies
+  
+  - action: connect_database
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx-core
+    ref: main
+    dest: ./tmp/core
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_addonaccount
+    ref: main
+    dest: ./tmp/addons/esx_addonaccount
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_datastore
+    ref: main
+    dest: ./tmp/addons/esx_datastore
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_service
+    ref: main
+    dest: ./tmp/addons/esx_service
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_basicneeds
+    ref: main
+    dest: ./tmp/addons/esx_basicneeds
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_optionalneeds
+    ref: main
+    dest: ./tmp/addons/esx_optionalneeds
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_society
+    ref: main
+    dest: ./tmp/addons/esx_society
+
+  - action: download_github
+    src: https://github.com/Hexora-Studios/esx_billing-redesign
+    ref: main
+    dest: ./tmp/addons/esx_billing
+
+  # - action: download_github
+  #  src: https://github.com/esx-framework/esx_billing
+  #  ref: main
+  #  dest: ./tmp/addons/esx_billing
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_status
+    ref: main
+    dest: ./tmp/addons/esx_status
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_license
+    ref: main
+    dest: ./tmp/addons/esx_license
+
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+
+  - action: download_file
+    path: ./tmp/files/esx_hud.zip
+    url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
+  - action: unzip
+    dest: ./tmp/addons
+    src: ./tmp/files/esx_hud.zip
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_dmvschool
+    ref: main
+    dest: ./tmp/addons/esx_dmvschool
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_lscustom
+    ref: main
+    dest: ./tmp/addons/esx_lscustom
+
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_policejob
+    ref: main
+    dest: ./tmp/addons/esx_policejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_ambulancejob
+    ref: main
+    dest: ./tmp/addons/esx_ambulancejob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_mechanicjob
+    ref: main
+    dest: ./tmp/addons/esx_mechanicjob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_taxijob
+    ref: main
+    dest: ./tmp/addons/esx_taxijob
+
+  - action: download_github
+    src: https://github.com/esx-framework/esx_jobs
+    ref: main
+    dest: ./tmp/addons/esx_jobs
+
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: move_path
+    src: ./tmp/core/[core]
+    dest: ./resources/[core]
+
+  - action: move_path
+    src: ./tmp/addons/
+    dest: ./resources/[esx_addons]
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+    
+  ###########################################
+  ## CUSTOM SCRIPT INJECTION & INSTALATION ##
+  ###########################################
+
+  ## - UnComment bellow action, to install donz loading screen
+  - action: download_github
+    src: https://github.com/DonStylz74/bob74_ipl
+    ref: main
+    dest: ./resources/[mapping]/bob74_ipl
+
+  - action: download_github
+    src: https://github.com/DonStylz74/loading_screen
+    ref: main
+    dest: ./resources/[core]/loading_screen
+
+  - action: download_github
+    src: https://github.com/Byte-Labs-Studio/bl_bridge
+    ref: main
+    dest: ./resources/[dependants]/bl_bridge
+  
+  - action: download_github
+    src: https://github.com/mkafrin/PolyZone
+    ref: master
+    dest: ./resources/[dependants]/PolyZone
+  
+  - action: download_github
+    src: https://github.com/DonStylz74/screenshot-basic
+    ref: master
+    dest: ./resources/[dependants]/screenshot-basic
+
+## - Advanced Vehicle Damage TRUE - JG Advanced Garage
+  - action: download_github
+    src: https://github.com/DonStylz74/VehicleDeformation
+    ref: main
+    dest: ./resources/[dependants]/VehicleDeformation
+
+  - action: download_github
+    src: https://github.com/stevoscriptsteam/stevo_lib
+    ref: main
+    dest: ./resources/[dependants]/stevo_lib
+
+  - action: download_github
+    src: https://github.com/wasabirobby/fivem-appearance
+    ref: main
+    dest: ./resources/[esx_addons]/fivem-appearance
+
+  - action: download_github
+    src: https://github.com/DonStylz74/LGF_PauseMenu
+    ref: main
+    dest: ./resources/[esx_addons]/LGF_PauseMenu
+
+  - action: download_github
+    src: https://github.com/DonStylz74/randol_paycheck
+    ref: main
+    dest: ./resources/[esx_addons]/randol_paycheck
+
+  - action: download_github
+    src: https://github.com/DonStylz74/lunar_jobcentre
+    ref: main
+    dest: ./resources/[esx_addons]/lunar_jobcentre
+
+  - action: download_github
+    src: https://github.com/DonStylz74/CayoTwoIslands
+    ref: main
+    dest: ./resources/[esx_addons]/CayoTwoIslands
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/esx-sna-fuel
+  #  ref: main
+  #  dest: ./resources/[esx_extras]/esx-sna-fuel
+
+  - action: download_github
+    src: https://github.com/DonStylz74/lation_pawnshop
+    ref: main
+    dest: ./resources/[esx_extras]/lation_pawnshop
+
+  - action: download_github
+    src: https://github.com/DonStylz74/wasabi_backpack
+    ref: main
+    dest: ./resources/[esx_addons]/wasabi_backpack
+
+  - action: download_github
+    src: https://github.com/DonStylz74/tcd-starterpack
+    ref: main
+    dest: ./resources/[esx_addons]/tcd-starterpack
+
+  - action: download_github
+    src: https://github.com/DonStylz74/stevo_chopshop
+    ref: main
+    dest: ./resources/[esx_addons]/stevo_chopshop
+
+  - action: download_file
+    path: ./tmp/bl_idcard.zip
+    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.0.3/bl_idcard.zip
+  - action: unzip
+    dest: ./resources/[esx_extras]
+    src: ./tmp/bl_idcard.zip
+
+  - action: download_github
+    src: https://github.com/DonStylz74/vehiclehandler
+    ref: main
+    dest: ./resources/[standalone]/vehiclehandler
+
+  - action: download_github
+    src: https://github.com/DonStylz74/nv_sit_on_every_chair
+    ref: v1.1
+    dest: ./resources/[standalone]/nv_sit_on_every_chair
+
+  - action: download_github
+    src: https://github.com/DonStylz74/5m-Elevator
+    ref: main
+    dest: ./resources/[standalone]/5m-Elevator
+
+  #- action: download_github
+  #  src: https://github.com/DonStylz74/customplates
+  #  ref: main
+  #  dest: ./resources/[standalone]/customplates
+
+  - action: download_github
+    src: https://github.com/DonStylz74/OT_pushvehicle
+    ref: main
+    dest: ./resources/[standalone]/OT_pushvehicle
+
+  - action: download_file
+    path: ./tmp/Renewed-Banking.zip
+    url:  https://github.com/Renewed-Scripts/Renewed-Banking/releases/download/v2.1.3/Renewed-Banking.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/Renewed-Banking.zip
+
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    dest: ./resources/[standalone]/pma-voice
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/it-drugs
+  #  ref: main
+  #  dest: ./resources/[esx_addons]/[drug-system]/it-drugs
+
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+
+  ## SERVER BASE SQL INSTALATION
+  - action: query_database
+    file: ./tmp/core/[SQL]/legacy.sql
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+  - action: query_database
+    file: ./recipe/extra.sql
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
+
+  ## OX INSTALATION
+  - action: download_file
+    path: ./tmp/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_lib.zip
+
+  - action: download_github
+    dest: ./resources/[ox]/ox_target
+    ref: main
+    src: https://github.com/overextended/ox_target
+
+  - action: download_file
+    path: ./tmp/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/oxmysql.zip
+
+  - action: download_file
+    path: ./tmp/ox_doorlock.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_doorlock.zip
+
+  - action: download_file
+    path: ./tmp/ox_inventory.zip
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/ox_inventory.zip
+
+  - action: download_github
+    dest: ./resources/[ox]/ox_fuel
+    ref: main
+    src: https://github.com/overextended/ox_fuel
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
+
+
+
+  ## Server MAPPING
+  #- action: download_github
+  #  src: https://github.com/DonStylz74/electric-chargers
+  #  ref: main
+  #  dest: ./resources/[mapping]/[enviro]/electric-chargers
+
+  #- action: download_github
+  #  src: https://github.com/DonStylz74/ku_ltd_retexture/tree/main/ku_ltd_retexture
+  #  ref: main
+  #  dest: ./resources/[mapping]/[shops]/ku_ltd_retexture
+
+  ##- action: download_github
+  #  dest: ./resources/[mapping]/[enviro]/housing_shells
+  #  ref: main
+  #  src: https://github.com/yarnkickdev/k4mb1_shells
+
+  
+  - action: waste_time # prevent github throttling
+    seconds: 7
+
+
+  ## Server Build Cleanup Actions
+  - action: remove_path
+    path: ./tmp
+  
+  - action: remove_path
+    path: ./resources/[core]/esx_skin
+
+  - action: remove_path
+    path: ./resources/[core]/skinchanger
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_accessories
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_cardealer
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_banker
+
+  ## - Comment out bellow action, to install default esx loading screen
+  - action: remove_path
+    path: ./resources/[core]/esx_loadingscreen
+
+  - action: waste_time # prevent SQL throttling
+    seconds: 3   
+
+
+
+  ## Database Final Query Actions
+  #- action: query_database
+  #  file: ./recipe/Extras/sql-cleanup.sql
+
+  #- action: waste_time # prevent github throttling
+  #  seconds: 3
+  
+  #- action: query_database
+  #  file: ./recipe/Extras/sql-inject.sql
+
+  #- action: waste_time # prevent github throttling
+  #  seconds: 3
+  
+  - action: query_database
+    file: ./recipe/vehicles-472-total.sql
+
+  - action: waste_time # prevent SQL throttling
+    seconds: 5
+
+
+
+    
+ ## Replace Script variables
+ #- action: replace_string
+ #  file: ./resources/[standalone]/Renewed-Banking/config.lua
+ # search: 'framework = "qb"'
+ # replace: 'framework = "esx"'
+
+  #- action: move_path
+  #  src: ./resources/[mapping]/Legion Square/
+  #  dest: ./resources/[mapping]
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/esx_cityhall
+  #  ref: main
+  #  dest: ./resources/[esx_addons]/esx_cityhall
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/mVehicle
+  #  ref: main
+  #  dest: ./resources/[mono]/mVehicle
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/mGarage
+  #  ref: main
+  #  dest: ./resources/[mono]/mGarage
