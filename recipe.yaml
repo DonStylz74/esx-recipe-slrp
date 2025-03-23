@@ -196,10 +196,25 @@ tasks:
     ref: main
     dest: ./resources/[dependants]/VehicleDeformation
 
-  - action: download_github
-    src: https://github.com/stevoscriptsteam/stevo_lib
-    ref: main
-    dest: ./resources/[dependants]/stevo_lib
+  - action: download_file
+    path: ./tmp/stevo_lib.zip
+    url:  https://github.com/stevoscriptsteam/stevo_lib/archive/refs/tags/1.7.6.zip
+  - action: unzip
+    dest: ./resources/[dependants]
+    src: ./tmp/stevo_lib.zip
+
+  - action: delete_file
+    target: ./tmp
+
+  - action: move_file
+    source: ./resources/[dependants]/1.7.6.zip
+    destination: ./resources/[dependants]/stevo_lib
+
+
+  #- action: download_github
+  #  src: https://github.com/stevoscriptsteam/stevo_lib
+  #  ref: main
+  #  dest: ./resources/[dependants]/stevo_lib
 
   - action: download_github
     src: https://github.com/wasabirobby/fivem-appearance
