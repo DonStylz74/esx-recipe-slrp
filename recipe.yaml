@@ -167,7 +167,7 @@ tasks:
   ## - UnComment bellow action, to install donz loading screen
   - action: download_github
     src: https://github.com/DonStylz74/bob74_ipl
-    ref: main
+    ref: master
     dest: ./resources/[mapping]/bob74_ipl
 
   - action: download_github
