@@ -197,17 +197,17 @@ tasks:
     dest: ./resources/[dependants]/VehicleDeformation
 
   - action: download_file
-    path: ./tmp/stevo_lib.zip
+    path: ./tmp/stevo_lib-1.7.6.zip
     url:  https://github.com/stevoscriptsteam/stevo_lib/archive/refs/tags/1.7.6.zip
   - action: unzip
     dest: ./resources/[dependants]
-    src: ./tmp/stevo_lib.zip
+    src: ./tmp/stevo_lib-1.7.6.zip
 
   - action: delete_file
     target: ./tmp
 
   - action: move_file
-    source: ./resources/[dependants]/1.7.6.zip
+    source: ./resources/[dependants]/stevo_lib-1.7.6
     destination: ./resources/[dependants]/stevo_lib
 
 
