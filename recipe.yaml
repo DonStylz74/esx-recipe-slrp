@@ -249,7 +249,7 @@ tasks:
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
-    dest: ./resources/[esx_addons]/stevo_chopshop
+    dest: ./resources/[esx_extras]/stevo_chopshop
 
   - action: download_file
     path: ./tmp/bl_idcard.zip
