@@ -203,6 +203,8 @@ tasks:
     dest: ./resources/[dependants]
     src: ./tmp/stevo_lib.zip
 
+## -- need to add rename stevolib folder command here
+
   #- action: download_github
   #  src: https://github.com/stevoscriptsteam/stevo_lib
   #  ref: main
