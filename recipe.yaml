@@ -203,14 +203,6 @@ tasks:
     dest: ./resources/[dependants]
     src: ./tmp/stevo_lib.zip
 
-  #- action: remove_path
-  #  path: ./tmp
-
-  #- action: move_path
-  #  source: ./resources/[dependants]/stevo_lib-1.7.6
-  #  destination: ./resources/[dependants]/stevo_lib
-
-
   #- action: download_github
   #  src: https://github.com/stevoscriptsteam/stevo_lib
   #  ref: main
