@@ -16,8 +16,8 @@ tasks:
   
   ## Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/DonStylz74/esx-recipes
-    ref: legacy
+    src: https://github.com/DonStylz74/esx-recipes-slrp
+    ref: main
     dest: ./recipe
 
   - action: move_path
