@@ -410,11 +410,6 @@ tasks:
   - action: remove_path
     path: ./resources/[esx_addons]/esx_banker
 
-  - action: move_path
-    source: ./resources/[dependants]/stevo_lib-1.7.6
-    destination: ./resources/[dependants]/stevo_lib
-    overwrite: true
-
   ## - Comment out bellow action, to install default esx loading screen
   - action: remove_path
     path: ./resources/[core]/esx_loadingscreen
