@@ -203,8 +203,6 @@ tasks:
     dest: ./resources/[dependants]
     src: ./tmp/stevo_lib.zip
 
-## -- need to add rename stevolib folder command here
-
   #- action: download_github
   #  src: https://github.com/stevoscriptsteam/stevo_lib
   #  ref: main
@@ -411,6 +409,10 @@ tasks:
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_banker
+
+  - action: move_file
+    source: ./resources/[dependants]/stevo_lib-1.7.6
+    destination: ./resources/[dependants]/stevo_lib
 
   ## - Comment out bellow action, to install default esx loading screen
   - action: remove_path
