@@ -115,11 +115,6 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_lscustom
 
-
-  - action: waste_time # prevent github throttling
-    seconds: 5
-
-
   - action: download_github
     src: https://github.com/esx-framework/esx_policejob
     ref: main
@@ -129,6 +124,9 @@ tasks:
     src: https://github.com/esx-framework/esx_ambulancejob
     ref: main
     dest: ./tmp/addons/esx_ambulancejob
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
 
   - action: download_github
     src: https://github.com/esx-framework/esx_mechanicjob
@@ -145,9 +143,8 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_jobs
 
-
   - action: waste_time # prevent github throttling
-    seconds: 5
+    seconds: 3
 
   - action: move_path
     src: ./tmp/core/[core]
@@ -190,6 +187,9 @@ tasks:
     ref: master
     dest: ./resources/[dependants]/screenshot-basic
 
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
 ## - Advanced Vehicle Damage TRUE - JG Advanced Garage
   - action: download_github
     src: https://github.com/DonStylz74/VehicleDeformation
@@ -223,6 +223,9 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/randol_paycheck
 
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
   - action: download_github
     src: https://github.com/DonStylz74/lunar_jobcentre
     ref: main
@@ -253,6 +256,9 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/tcd-starterpack
 
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
@@ -279,6 +285,9 @@ tasks:
     src: https://github.com/DonStylz74/5m-Elevator
     ref: main
     dest: ./resources/[standalone]/5m-Elevator
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
 
   #- action: download_github
   #  src: https://github.com/DonStylz74/customplates
@@ -309,7 +318,7 @@ tasks:
 
 
   - action: waste_time # prevent github throttling
-    seconds: 5
+    seconds: 3
 
 
   ## SERVER BASE SQL INSTALATION
@@ -388,7 +397,7 @@ tasks:
 
   
   - action: waste_time # prevent github throttling
-    seconds: 7
+    seconds: 1
 
 
   ## Server Build Cleanup Actions
