@@ -335,13 +335,6 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 5
 
-  - action: query_database
-    file: ./recipe/extra.sql
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-
   ## OX INSTALATION
   - action: download_file
     path: ./tmp/ox_lib.zip
@@ -447,6 +440,12 @@ tasks:
 
   #- action: waste_time # prevent github throttling
   #  seconds: 3
+
+  - action: query_database
+    file: ./recipe/extra.sql
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
   
   - action: query_database
     file: ./recipe/vehicles-472-total.sql
