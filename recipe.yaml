@@ -455,8 +455,8 @@ tasks:
 
 - action: replace_string
   file: ./resources/[esx_addons]/esx_ambulancejob/fxmanifest.lua
-  search: ' 'esx_vehicleshop' '
-  replace: ' --'esx_vehicleshop' '
+  search: ''esx_vehicleshop''
+  replace: '--'esx_vehicleshop''
 
     
  ## Replace Script variables
