@@ -453,11 +453,6 @@ tasks:
   - action: waste_time # prevent SQL throttling
     seconds: 5
 
-- action: replace_string
-  file: ./resources/[esx_addons]/esx_ambulancejob/fxmanifest.lua
-  search: ''esx_vehicleshop''
-  replace: '--'esx_vehicleshop''
-
     
  ## Replace Script variables
  #- action: replace_string
