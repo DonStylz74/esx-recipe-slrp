@@ -455,16 +455,8 @@ tasks:
 
 - action: replace_string
   file: ./resources/[esx_addons]/esx_ambulancejob/fxmanifest.lua
-  search: 'dependencies {
-	'es_extended',
-	'esx_skin',
-	'esx_vehicleshop'
-}'
-  replace: 'dependencies {
-	'es_extended',
-	'esx_skin',
-	--'esx_vehicleshop'
-}'
+  search: ' 'esx_vehicleshop' '
+  replace: ' --'esx_vehicleshop' '
 
     
  ## Replace Script variables
