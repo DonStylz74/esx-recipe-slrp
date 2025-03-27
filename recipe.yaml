@@ -281,10 +281,17 @@ tasks:
     ref: v1.1
     dest: ./resources/[standalone]/nv_sit_on_every_chair
 
-  - action: download_github
-    src: https://github.com/DonStylz74/5m-Elevator
-    ref: main
-    dest: ./resources/[standalone]/5m-Elevator
+  - action: download_file
+    path: ./tmp/5m-Elevator.zip
+    url:  https://github.com/Maximus7474/5m-Elevator/releases/download/v1.2.4/5m-Elevator.zip
+  - action: unzip
+    dest: ./resources/[standalone]
+    src: ./tmp/5m-Elevator.zip
+
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/5m-Elevator
+  #  ref: main
+  #  dest: ./resources/[standalone]/5m-Elevator
 
   - action: waste_time # prevent github throttling
     seconds: 3
