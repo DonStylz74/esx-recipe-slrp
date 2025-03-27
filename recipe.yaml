@@ -285,7 +285,7 @@ tasks:
     path: ./tmp/5m-Elevator.zip
     url:  https://github.com/Maximus7474/5m-Elevator/releases/download/v1.2.4/5m-Elevator.zip
   - action: unzip
-    dest: ./resources/[standalone]
+    dest: ./resources/[standalone]/5m-Elevator
     src: ./tmp/5m-Elevator.zip
 
   ##- action: download_github
