@@ -17,11 +17,13 @@ DELETE FROM datastore WHERE name = 'user_glasses';
 DELETE FROM datastore WHERE name = 'user_helmet';
 DELETE FROM datastore WHERE name = 'user_mask';
 
--- Dropping esx_banker Data from Datastore tables --  Removing esx_banker data entrys
+-- Dropping esx_banker & esx_reporter from Database --  Removing esx_banker & esx_reporter data entrys
 DELETE FROM addon_account WHERE name = 'society_banker';
 DELETE FROM jobs WHERE name = 'banker';
 DELETE FROM jobs WHERE name = 'reporter';
-
+-- Dropping Data from Datastore table --  Removing esx_accessories data entrys
+DELETE FROM job_grades WHERE name = 'banker';
+DELETE FROM job_grades WHERE name = 'reporter';
 
 -- Adding - Renewed Banking
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
