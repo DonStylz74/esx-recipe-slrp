@@ -22,8 +22,8 @@ DELETE FROM addon_account WHERE name = 'society_banker';
 DELETE FROM jobs WHERE name = 'banker';
 DELETE FROM jobs WHERE name = 'reporter';
 -- Dropping Data from Datastore table --  Removing esx_accessories data entrys
-DELETE FROM job_grades WHERE name = 'banker';
-DELETE FROM job_grades WHERE name = 'reporter';
+DELETE FROM job_grades WHERE job_name = 'banker';
+DELETE FROM job_grades WHERE job_name = 'reporter';
 
 -- Adding - Renewed Banking
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
