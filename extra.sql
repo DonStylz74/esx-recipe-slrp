@@ -21,9 +21,10 @@ DELETE FROM datastore WHERE name = 'user_mask';
 DELETE FROM addon_account WHERE name = 'society_banker';
 DELETE FROM jobs WHERE name = 'banker';
 DELETE FROM jobs WHERE name = 'reporter';
--- Dropping Data from Datastore table --  Removing esx_accessories data entrys
 DELETE FROM job_grades WHERE job_name = 'banker';
 DELETE FROM job_grades WHERE job_name = 'reporter';
+
+
 
 -- Adding - Renewed Banking
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
@@ -48,6 +49,14 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
    `isFrozen` int(11) DEFAULT 0,
    `transactions` longtext DEFAULT '[]',
   PRIMARY KEY (`id`)
+);
+
+-- Adding TCD Starterpacks
+CREATE TABLE IF NOT EXISTS `tcd_starterpack` (
+  `id` int AUTO_INCREMENT PRIMARY KEY,
+  `identifier` varchar(255) DEFAULT NULL,
+  `date_received` varchar(10) DEFAULT NULL,
+  `received` tinyint(1) DEFAULT NULL
 );
 
 -- Adding - OX Doorlocks
@@ -99,11 +108,5 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('weapon', 'Firearms License'),
 	('weed_processing', 'Weed Processing License');
 
--- Adding TCD Starterpacks
-CREATE TABLE IF NOT EXISTS `tcd_starterpack` (
-  `id` int AUTO_INCREMENT PRIMARY KEY,
-  `identifier` varchar(255) DEFAULT NULL,
-  `date_received` varchar(10) DEFAULT NULL,
-  `received` tinyint(1) DEFAULT NULL
-);
+
 

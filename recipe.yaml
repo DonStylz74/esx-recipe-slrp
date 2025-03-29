@@ -209,9 +209,14 @@ tasks:
     dest: ./resources/[dependants]/stevo_lib
 
   - action: download_github
+    src: https://github.com/DonStylz74/ultra-voltlab
+    ref: main
+    dest: ./resources/[dependants]/ultra-voltlab
+
+  - action: download_github
     src: https://github.com/wasabirobby/fivem-appearance
     ref: main
-    dest: ./resources/[esx_addons]/fivem-appearance
+    dest: ./resources/[core]/fivem-appearance
 
   - action: download_github
     src: https://github.com/DonStylz74/LGF_PauseMenu
@@ -260,9 +265,19 @@ tasks:
     seconds: 3
 
   - action: download_github
+    src: https://github.com/DonStylz74/wn_atmrobbery
+    ref: main
+    dest: ./resources/[standalone]/wn_atmrobbery
+
+  - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
     dest: ./resources/[esx_extras]/stevo_chopshop
+
+  - action: download_github
+    src: https://github.com/DonStylz74/stevo_portablemoneywash
+    ref: main
+    dest: ./resources/[esx_extras]/stevo_portablemoneywash
 
   - action: download_file
     path: ./tmp/bl_idcard.zip
@@ -452,6 +467,14 @@ tasks:
 
   - action: waste_time # prevent SQL throttling
     seconds: 5
+
+  - action: move_path
+    src: ./recipe/replace/paycheck.lua
+    dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
+
+  - action: move_path
+    src: ./recipe/replace/bl-idcard_config.lua
+    dest: ./resources/[esx_addons]/bl_idcard/config.lua
 
     
  ## Replace Script variables
