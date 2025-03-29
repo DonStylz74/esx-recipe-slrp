@@ -238,11 +238,6 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/CayoTwoIslands
 
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/esx-sna-fuel
-  #  ref: main
-  #  dest: ./resources/[esx_extras]/esx-sna-fuel
-
   - action: download_github
     src: https://github.com/DonStylz74/lation_pawnshop
     ref: main
@@ -264,17 +259,17 @@ tasks:
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
     ref: main
-    dest: ./resources/[standalone]/wn_atmrobbery
+    dest: ./resources/[esx_extras]/[illegal]/wn_atmrobbery
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
-    dest: ./resources/[esx_extras]/stevo_chopshop
+    dest: ./resources/[esx_extras]/[illegal]/stevo_chopshop
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_portablemoneywash
     ref: main
-    dest: ./resources/[esx_extras]/stevo_portablemoneywash
+    dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
 
   - action: download_file
     path: ./tmp/bl_idcard.zip
