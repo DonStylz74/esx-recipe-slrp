@@ -468,11 +468,11 @@ tasks:
   - action: waste_time # prevent SQL throttling
     seconds: 5
 
-  - action: move_path
+  - action: copy_path
     src: ./recipe/replace/paycheck.lua
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
 
-  - action: move_path
+  - action: copy_path
     src: ./recipe/replace/bl-idcard_config.lua
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
 
