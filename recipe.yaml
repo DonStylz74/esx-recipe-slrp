@@ -93,10 +93,8 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_license
 
-
   - action: waste_time # prevent github throttling
-    seconds: 5
-
+    seconds: 3
 
   - action: download_file
     path: ./tmp/files/esx_hud.zip
@@ -124,9 +122,6 @@ tasks:
     src: https://github.com/esx-framework/esx_ambulancejob
     ref: main
     dest: ./tmp/addons/esx_ambulancejob
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
 
   - action: download_github
     src: https://github.com/esx-framework/esx_mechanicjob
@@ -187,14 +182,16 @@ tasks:
     ref: master
     dest: ./resources/[dependants]/screenshot-basic
 
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
 ## - Advanced Vehicle Damage TRUE - JG Advanced Garage
   - action: download_github
     src: https://github.com/DonStylz74/VehicleDeformation
     ref: main
     dest: ./resources/[dependants]/VehicleDeformation
+
+  - action: download_github
+    src: https://github.com/stevoscriptsteam/stevo_lib
+    ref: main
+    dest: ./resources/[dependants]/stevo_lib
 
   ##- action: download_file
   #  path: ./tmp/stevo_lib.zip
@@ -204,14 +201,14 @@ tasks:
   #  src: ./tmp/stevo_lib.zip
 
   - action: download_github
-    src: https://github.com/stevoscriptsteam/stevo_lib
-    ref: main
-    dest: ./resources/[dependants]/stevo_lib
-
-  - action: download_github
     src: https://github.com/DonStylz74/ultra-voltlab
     ref: main
     dest: ./resources/[dependants]/ultra-voltlab
+
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
 
   - action: download_github
     src: https://github.com/wasabirobby/fivem-appearance
