@@ -275,7 +275,7 @@ tasks:
     path: ./tmp/bl_idcard.zip
     url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.0.3/bl_idcard.zip
   - action: unzip
-    dest: ./resources/[esx_extras]
+    dest: ./resources/[esx_addons]
     src: ./tmp/bl_idcard.zip
 
   - action: download_github
