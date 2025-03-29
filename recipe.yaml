@@ -14,7 +14,7 @@ tasks:
 
 
   
-  ## Download and prepare server.cfg / loadingscreen / database
+  ## Download and prepare server.cfg / database
   - action: download_github
     src: https://github.com/DonStylz74/esx-recipe-slrp
     ref: legacy
@@ -32,12 +32,11 @@ tasks:
     src: ./recipe/esxLogo.png
     dest: ./esxLogo.png
 
-
+  - action: connect_database
+  
 
   ## Download basic resources and ESX dependencies
   
-  - action: connect_database
-
   - action: download_github
     src: https://github.com/esx-framework/esx-core
     ref: main
