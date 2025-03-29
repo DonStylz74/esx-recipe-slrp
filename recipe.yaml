@@ -232,6 +232,13 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/lunar_jobcentre
 
+  - action: download_file
+    path: ./tmp/bl_idcard.zip
+    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.0.3/bl_idcard.zip
+  - action: unzip
+    dest: ./resources/[esx_addons]
+    src: ./tmp/bl_idcard.zip
+
   - action: download_github
     src: https://github.com/DonStylz74/CayoTwoIslands
     ref: main
@@ -241,11 +248,6 @@ tasks:
     src: https://github.com/DonStylz74/lation_pawnshop
     ref: main
     dest: ./resources/[esx_extras]/lation_pawnshop
-
-  - action: download_github
-    src: https://github.com/DonStylz74/wasabi_backpack
-    ref: main
-    dest: ./resources/[esx_addons]/wasabi_backpack
 
   - action: download_github
     src: https://github.com/DonStylz74/tcd-starterpack
@@ -270,13 +272,6 @@ tasks:
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
 
-  - action: download_file
-    path: ./tmp/bl_idcard.zip
-    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.0.3/bl_idcard.zip
-  - action: unzip
-    dest: ./resources/[esx_addons]
-    src: ./tmp/bl_idcard.zip
-
   - action: download_github
     src: https://github.com/DonStylz74/vehiclehandler
     ref: main
@@ -286,6 +281,11 @@ tasks:
     src: https://github.com/DonStylz74/nv_sit_on_every_chair
     ref: v1.1
     dest: ./resources/[standalone]/nv_sit_on_every_chair
+
+  - action: download_github
+    src: https://github.com/DonStylz74/wasabi_backpack
+    ref: main
+    dest: ./resources/[standalone]/wasabi_backpack
 
   - action: download_file
     path: ./tmp/5m-Elevator.zip
