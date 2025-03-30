@@ -90,6 +90,27 @@
 		description = "Permit to show you can own Firearms",
 	},
 
+	-- ED_SCUBA & Asset SCRIPT
+	---------------------
+		['scuba_set'] = {
+			label = 'Scuba Set',
+			weight = 2000,
+			description = 'Diving equipment, longer underwater',
+			stack = false,
+			client = {
+				export = 'ed_scuba.wear'
+			}
+		},
+		['scuba_fins'] = {
+			label = 'Scuba Fins',
+			weight = 200,
+			description = 'Diving equipment, swimming assitance',
+			stack = false,
+			client = {
+				export = 'ed_scuba.wear'
+			}
+		},
+
 	----  VEHICLE HANDLING SCRIPT
 	-----------------------------
 	["cleaningkit"] = {
