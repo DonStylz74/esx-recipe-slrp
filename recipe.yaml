@@ -472,6 +472,10 @@ tasks:
     src: ./recipe/replace/bl-idcard_config.lua
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
 
+  - action: copy_path
+    src: ./recipe/Extras/item-images
+    dest: ./resources/resources/[ox]/ox_inventory/web/images
+
     
  ## Replace Script variables
  #- action: replace_string
