@@ -474,6 +474,10 @@ tasks:
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
     overwrite: true
 
+  - action: copy_path
+    src: ./recipe/Extras/images/
+    dest: ./resources/resources/[ox]/ox_inventory/web/images
+    overwrite: true
 
     
  ## Replace Script variables
