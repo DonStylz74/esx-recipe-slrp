@@ -475,6 +475,11 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/5m-Elevator.lua
+    dest: ./resources/[standalone]/5m-Elevator/shared/elevators.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/Extras/images/
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
