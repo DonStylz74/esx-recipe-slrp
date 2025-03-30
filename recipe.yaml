@@ -467,12 +467,14 @@ tasks:
   - action: copy_path
     src: ./recipe/replace/paycheck.lua
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
+    overwrite: true
 
   - action: copy_path
     src: ./recipe/replace/bl-idcard_config.lua
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
+    overwrite: true
 
-  - action: move_path
+  - action: copy_path
     src: ./recipe/Extras/item-images
     dest: ./resources/resources/[ox]/ox_inventory/web/images
     overwrite: true
