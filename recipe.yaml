@@ -258,6 +258,11 @@ tasks:
     seconds: 3
 
   - action: download_github
+    src: https://github.com/DonStylz74/ed_scuba
+    ref: main
+    dest: ./resources/[esx_extras]/[scuba-diving]/ed_scuba
+
+  - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/wn_atmrobbery
