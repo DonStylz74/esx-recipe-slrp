@@ -66,7 +66,7 @@
 		description = "Permit to show you can operate Commercial Trucks",
 	},
 
-    ["boat_license"] = {
+    ["drive_boat"] = {
 		label = "Watercraft License",
 		weight = 0,
 		stack = false,
