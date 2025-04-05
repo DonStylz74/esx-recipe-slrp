@@ -25,9 +25,9 @@ return {
             idType = 'drive_truck'
         },
 
-        ['boat_license'] = {
+        ['drive_boat'] = {
             prop = `prop_franklin_dl`,
-            idType = 'boat_license'
+            idType = 'drive_boat'
         },
 
         ['plane_license'] = {
@@ -108,8 +108,8 @@ return {
             textColour = '#808080',
         },
 
-        boat_license = {
-            type = 'boat_license',
+        drive_boat = {
+            type = 'drive_boat',
             title = 'SAN ANDREAS',
             titleColour = '#bdbdbd',
 
