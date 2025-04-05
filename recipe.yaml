@@ -1,6 +1,6 @@
 $engine: 3
 $onesync: on
-name: StreetLife RP | [ESX Legacy] -Recipe BaseBuild
+name: StreetLife RP | [ESX Legacy] -Recipe TestBuild
 author: DonStylz74
 description: FiveM RP framework, ESX Legacy, Contains Jobs, Housing, Garages & more!
 
@@ -14,7 +14,7 @@ tasks:
 
 
   
-  ## Download and prepare server.cfg / database
+  ## Download and prepare server.cfg / loadingscreen / database
   - action: download_github
     src: https://github.com/DonStylz74/esx-recipe-slrp
     ref: legacy
@@ -32,11 +32,12 @@ tasks:
     src: ./recipe/esxLogo.png
     dest: ./esxLogo.png
 
-  - action: connect_database
-  
+
 
   ## Download basic resources and ESX dependencies
   
+  - action: connect_database
+
   - action: download_github
     src: https://github.com/esx-framework/esx-core
     ref: main
@@ -102,10 +103,10 @@ tasks:
     dest: ./tmp/addons
     src: ./tmp/files/esx_hud.zip
 
-  - action: download_github
-    src: https://github.com/esx-framework/esx_dmvschool
-    ref: main
-    dest: ./tmp/addons/esx_dmvschool
+  #- action: download_github
+  #  src: https://github.com/esx-framework/esx_dmvschool
+  # ref: main
+  # dest: ./tmp/addons/esx_dmvschool
 
   - action: download_github
     src: https://github.com/esx-framework/esx_lscustom
@@ -232,22 +233,25 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/lunar_jobcentre
 
-  - action: download_file
-    path: ./tmp/bl_idcard.zip
-    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.0.3/bl_idcard.zip
-  - action: unzip
-    dest: ./resources/[esx_addons]
-    src: ./tmp/bl_idcard.zip
-
   - action: download_github
     src: https://github.com/DonStylz74/CayoTwoIslands
     ref: main
     dest: ./resources/[esx_addons]/CayoTwoIslands
 
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/esx-sna-fuel
+  #  ref: main
+  #  dest: ./resources/[esx_extras]/esx-sna-fuel
+
   - action: download_github
     src: https://github.com/DonStylz74/lation_pawnshop
     ref: main
     dest: ./resources/[esx_extras]/lation_pawnshop
+
+  - action: download_github
+    src: https://github.com/DonStylz74/wasabi_backpack
+    ref: main
+    dest: ./resources/[esx_addons]/wasabi_backpack
 
   - action: download_github
     src: https://github.com/DonStylz74/tcd-starterpack
@@ -265,17 +269,24 @@ tasks:
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
     ref: main
-    dest: ./resources/[esx_extras]/[illegal]/wn_atmrobbery
+    dest: ./resources/[standalone]/wn_atmrobbery
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
-    dest: ./resources/[esx_extras]/[illegal]/stevo_chopshop
+    dest: ./resources/[esx_extras]/stevo_chopshop
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_portablemoneywash
     ref: main
-    dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
+    dest: ./resources/[esx_extras]/stevo_portablemoneywash
+
+  - action: download_file
+    path: ./tmp/bl_idcard.zip
+    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.5.1/bl_idcard.zip
+  - action: unzip
+    dest: ./resources/[esx_extras]
+    src: ./tmp/bl_idcard.zip
 
   - action: download_github
     src: https://github.com/DonStylz74/vehiclehandler
@@ -287,11 +298,6 @@ tasks:
     ref: v1.1
     dest: ./resources/[standalone]/nv_sit_on_every_chair
 
-  - action: download_github
-    src: https://github.com/DonStylz74/wasabi_backpack
-    ref: main
-    dest: ./resources/[standalone]/wasabi_backpack
-
   - action: download_file
     path: ./tmp/5m-Elevator.zip
     url:  https://github.com/Maximus7474/5m-Elevator/releases/download/v1.2.4/5m-Elevator.zip
@@ -299,18 +305,8 @@ tasks:
     dest: ./resources/[standalone]/5m-Elevator
     src: ./tmp/5m-Elevator.zip
 
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/5m-Elevator
-  #  ref: main
-  #  dest: ./resources/[standalone]/5m-Elevator
-
   - action: waste_time # prevent github throttling
     seconds: 3
-
-  #- action: download_github
-  #  src: https://github.com/DonStylz74/customplates
-  #  ref: main
-  #  dest: ./resources/[standalone]/customplates
 
   - action: download_github
     src: https://github.com/DonStylz74/OT_pushvehicle
@@ -389,12 +385,19 @@ tasks:
     seconds: 5
 
 
-
   ## Server MAPPING
+  
+  - action: download_file
+    path: ./tmp/gc-dmv-1.2.zip
+    url:  https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
+  - action: unzip
+    dest: ./resources/[mapping]/[services]/driving-school
+    src: ./tmp/gc-dmv-1.2.zip
+
   #- action: download_github
-  #  src: https://github.com/DonStylz74/electric-chargers
+  #  src: https://github.com/GreenBerg21/mlo-dmv
   #  ref: main
-  #  dest: ./resources/[mapping]/[enviro]/electric-chargers
+  #  dest: ./resources/[mapping]/[services]/driving-school
 
   #- action: download_github
   #  src: https://github.com/DonStylz74/ku_ltd_retexture/tree/main/ku_ltd_retexture
@@ -437,6 +440,10 @@ tasks:
   - action: waste_time # prevent SQL throttling
     seconds: 3   
 
+  - action: move_path
+    src: ./recipe/Extras/akre_drivingschool
+    dest: ./resources/[esx_addons]/akre_drivingschool
+
 
 
   ## Database Final Query Actions
@@ -470,19 +477,15 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/bl-idcard_config.lua
+    src: ./recipe/replace/bl-idcard_config.lua # -- bl idcard v1.5.1
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/5m-Elevator.lua
-    dest: ./resources/[standalone]/5m-Elevator/shared/elevators.lua
+    src: ./recipe/Extras/images/
+    dest: ./resources/resources/[ox]/ox_inventory/web/images
     overwrite: true
 
-  - action: copy_path
-    src: ./recipe/Extras/images/
-    dest: ./resources/[ox]/ox_inventory/web/images
-    overwrite: true
 
     
  ## Replace Script variables
@@ -509,3 +512,9 @@ tasks:
   #  src: https://github.com/DonStylz74/mGarage
   #  ref: main
   #  dest: ./resources/[mono]/mGarage
+  
+    #- action: query_database
+  #  file: ./recipe/Extras/sql-cleanup.sql
+
+  #- action: waste_time # prevent github throttling
+  #  seconds: 3

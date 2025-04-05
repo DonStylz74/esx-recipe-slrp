@@ -59,6 +59,14 @@ CREATE TABLE IF NOT EXISTS `tcd_starterpack` (
   `received` tinyint(1) DEFAULT NULL
 );
 
+-- Adding - OX Doorlocks
+CREATE TABLE IF NOT EXISTS `ox_doorlock` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `data` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
 -- Adding Vehicle categorys - CUSTOMS
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
   `name` varchar(60) NOT NULL,
@@ -100,5 +108,9 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('weapon', 'Firearms License'),
 	('weed_processing', 'Weed Processing License');
 
-
+CREATE TABLE IF NOT EXISTS `driving_school_progress` (
+  `identifier` varchar(60) NOT NULL,
+  `theory_passed` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`identifier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
