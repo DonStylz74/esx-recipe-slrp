@@ -42,7 +42,7 @@
 		description = "A card containing all your information to identify yourself",
 	},
 
-    ["driver_license"] = {
+    ["drive"] = {
 		label = "Drivers License",
 		weight = 0,
 		stack = false,
@@ -50,7 +50,7 @@
 		description = "Permit to show you can operate Motor Vehicles",
 	},
 
-    ["bike_license"] = {
+    ["drive_bike"] = {
 		label = "Motorcycle License",
 		weight = 0,
 		stack = false,
@@ -58,7 +58,7 @@
 		description = "Permit to show you can operate Motorcycles",
 	},
 
-    ["truck_license"] = {
+    ["drive_truck"] = {
 		label = "Truck License",
 		weight = 0,
 		stack = false,
