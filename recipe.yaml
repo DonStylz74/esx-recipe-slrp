@@ -391,8 +391,12 @@ tasks:
     path: ./tmp/gc-dmv-1.2.zip
     url:  https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
   - action: unzip
-    dest: ./resources/[mapping]/[services]/driving-school
+    dest: ./resources/[mapping]/[services]
     src: ./tmp/gc-dmv-1.2.zip
+
+  - action: copy_path
+    src: ./resources/[mapping]/[services]/mlo-dmv-main
+    dest: ./resources/[mapping]/[services]/driving-school
 
   #- action: download_github
   #  src: https://github.com/GreenBerg21/mlo-dmv
@@ -432,6 +436,9 @@ tasks:
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_banker
+
+  - action: remove_path
+    path: ./resources/[mapping]/[services]/mlo-dmv-main
 
   ## - Comment out bellow action, to install default esx loading screen
   - action: remove_path
