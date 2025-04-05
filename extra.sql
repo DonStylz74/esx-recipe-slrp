@@ -98,10 +98,9 @@ CREATE TABLE IF NOT EXISTS `licenses` (
 
 INSERT INTO `licenses` (`type`, `label`) VALUES
 	('aircraft', 'Aircraft License'),
-	('boat', 'Boating Licence'),
-	('dmv', 'Driving Permit'),
 	('drive', 'Drivers License'),
 	('drive_bike', 'Motorcycle License'),
+	('drive_boat', 'Boating Licence'),
 	('drive_truck', 'Commercial Drivers License'),
 	('flightdmv', 'Flying Permit'),
 	('waterdmv', 'Boating Permit'),

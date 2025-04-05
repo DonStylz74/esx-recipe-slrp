@@ -441,8 +441,8 @@ tasks:
     seconds: 3   
 
   - action: move_path
-    src: ./recipe/Extras/akre_drivingschool
-    dest: ./resources/[esx_addons]/akre_drivingschool
+    src: ./recipe/Extras/[license-schools]
+    dest: ./resources/[esx_addons]/[license-schools]
 
 
 
