@@ -10,19 +10,19 @@ return {
             }
         },
         
-        ['driver_license'] = {
+        ['drive'] = {
             prop = `prop_franklin_dl`,
-            idType = 'driver_license'
+            idType = 'drive'
         },
 
-        ['bike_license'] = {
+        ['drive_bike'] = {
             prop = `prop_franklin_dl`,
-            idType = 'bike_license'
+            idType = 'drive_bike'
         },
 
-        ['truck_license'] = {
+        ['drive_truck'] = {
             prop = `prop_franklin_dl`,
-            idType = 'truck_license'
+            idType = 'drive_truck'
         },
 
         ['boat_license'] = {
@@ -54,8 +54,8 @@ return {
     },
 
     idTypes = {
-        driver_license = {
-            type = 'driver_license',
+        drive = {
+            type = 'drive',
             title = 'SAN ANDREAS',
             titleColour = '#bdbdbd',
 
@@ -72,8 +72,8 @@ return {
             textColour = '#FFF',
         },
 
-        bike_license = {
-            type = 'bike_license',
+        drive_bike = {
+            type = 'drive_bike',
             title = 'SAN ANDREAS',
             titleColour = '#bdbdbd',
 
@@ -90,8 +90,8 @@ return {
             textColour = '#808080',
         },
 
-        truck_license = {
-            type = 'truck_license',
+        drive_truck = {
+            type = 'drive_truck',
             title = 'SAN ANDREAS',
             titleColour = '#bdbdbd',
 
