@@ -52,12 +52,21 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
 );
 
 -- Adding TCD Starterpacks
-CREATE TABLE IF NOT EXISTS `tcd_starterpack` (
-  `id` int AUTO_INCREMENT PRIMARY KEY,
-  `identifier` varchar(255) DEFAULT NULL,
-  `date_received` varchar(10) DEFAULT NULL,
-  `received` tinyint(1) DEFAULT NULL
-);
+CREATE TABLE `tcd_starterpack` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `identifier` varchar(50) NOT NULL,
+  `received` tinyint(1) NOT NULL,
+  `date_received` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ALTER TABLE `tcd_starterpack`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `tcd_starterpack`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
 
 -- Adding - OX Doorlocks
 CREATE TABLE IF NOT EXISTS `ox_doorlock` (
