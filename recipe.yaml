@@ -285,8 +285,24 @@ tasks:
     path: ./tmp/bl_idcard.zip
     url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.5.1/bl_idcard.zip
   - action: unzip
-    dest: ./resources/[esx_extras]
+    dest: ./resources/
     src: ./tmp/bl_idcard.zip
+
+  - action: waste_time # prevent SQL throttling
+    seconds: 5   
+
+  - action: copy_path
+    src: ./resources/bl_idcard/bl_idcard
+    dest: ./resources/[esx_addons]
+
+  - action: waste_time # prevent SQL throttling
+    seconds: 3   
+
+  - action: remove_path
+    path: ./resources/bl_idcard
+
+  - action: waste_time # prevent SQL throttling
+    seconds: 3   
 
   - action: download_github
     src: https://github.com/DonStylz74/vehiclehandler
@@ -490,7 +506,7 @@ tasks:
 
   - action: copy_path
     src: ./recipe/Extras/images/
-    dest: ./resources/resources/[ox]/ox_inventory/web/images
+    dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
 
