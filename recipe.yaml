@@ -426,16 +426,12 @@ tasks:
     path: ./tmp/patoche_free_cardealer.zip
     url:  https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
   - action: unzip
-    dest: ./tmp
+    dest: ./resources/[mapping]
     src: ./tmp/patoche_free_cardealer.zip
 
   - action: waste_time # prevent github throttling
     seconds: 3
 
-
-  - action: move_path
-    src: ./recipe/Extras/[license-schools]
-    dest: ./resources/[esx_addons]/[license-schools]
 
   - action: move_path
     src: ./tmp/paleto_gas_station/patoche_gas_station
@@ -532,6 +528,9 @@ tasks:
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
+  - action: move_path
+    src: ./recipe/Extras/[license-schools]
+    dest: ./resources/[esx_addons]/[license-schools]
 
     
  ## Replace Script variables
