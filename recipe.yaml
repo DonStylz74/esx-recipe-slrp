@@ -426,7 +426,7 @@ tasks:
     path: ./tmp/patoche_free_cardealer.zip
     url:  https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
   - action: unzip
-    dest: ./tmp/cardealer
+    dest: ./resources/cardealer
     src: ./tmp/patoche_free_cardealer.zip
 
   - action: waste_time # prevent github throttling
@@ -437,9 +437,17 @@ tasks:
     dest: ./resources/[mapping]/[shops]/paleto_gas_station
 
   - action move_path
-    src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
+    src: ./resources/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
     dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
 
+  - action: waste_time # prevent github throttling
+    seconds: 2
+
+  - action: remove_path
+    path: ./resources/cardealer
+    
+  - action: waste_time # prevent github throttling
+    seconds: 1
 
   #- action: download_github
   #  src: https://github.com/GreenBerg21/mlo-dmv
