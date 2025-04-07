@@ -422,6 +422,13 @@ tasks:
     dest: ./tmp/cardealer
     src: ./tmp/fa9ab2-patoche_free_cardealer.zip
 
+  - action: download_file
+    path: ./tmp/LSJC-Verpi.rar
+    url: https://forum.cfx.re/uploads/short-url/i282WNogmio3Rbl102D7YhKgGvH.rar
+  - action: unzip
+    dest: ./tmp/LJCS-verpi
+    src: ./tmp/LSJC-Verpi.rar
+
   - action: waste_time # prevent github throttling
     seconds: 3
 
@@ -436,6 +443,10 @@ tasks:
   - action: move_path
     src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
     dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
+
+  - action: move_path
+    src: ./tmp/LJCS-verpi/VerpiMoDz Job Centre V1.2/verpi_jobcentre
+    dest: ./resources/[mapping]/[services]/verpi_jobcentre
 
   - action: waste_time # prevent github throttling
     seconds: 1
