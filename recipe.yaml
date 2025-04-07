@@ -405,7 +405,7 @@ tasks:
   
   - action: download_file
     path: ./tmp/gc-dmv-1.2.zip
-    url:  https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
+    url: https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
   - action: unzip
     dest: ./resources/[mapping]/[services]
     src: ./tmp/gc-dmv-1.2.zip
@@ -417,7 +417,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/fa9ab2-patoche_free_cardealer.zip
-    url:  https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
+    url: https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
   - action: unzip
     dest: ./tmp/cardealer
     src: ./tmp/fa9ab2-patoche_free_cardealer.zip
