@@ -454,8 +454,8 @@ tasks:
 
 
   ## Server Build Cleanup Actions
-  - action: remove_path
-    path: ./tmp
+  #- action: remove_path
+  #  path: ./tmp
   
   - action: remove_path
     path: ./resources/[core]/esx_skin
