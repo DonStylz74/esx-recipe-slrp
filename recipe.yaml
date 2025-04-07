@@ -426,7 +426,7 @@ tasks:
     path: ./tmp/patoche_free_cardealer.zip
     url:  https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
   - action: unzip
-    dest: ./tmp/patoche_free_cardealer
+    dest: ./tmp
     src: ./tmp/patoche_free_cardealer.zip
 
   - action: waste_time # prevent github throttling
