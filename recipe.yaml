@@ -407,7 +407,7 @@ tasks:
     path: ./tmp/gc-dmv-1.2.zip
     url: https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
   - action: unzip
-    dest: ./resources/[mapping]/[services]
+    dest: ./tmp/dmv
     src: ./tmp/gc-dmv-1.2.zip
 
   - action: download_github
@@ -425,23 +425,17 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 3
 
-  - action: copy_path
-    src: ./resources/[mapping]/[services]/mlo-dmv-main
+  - action: move_path
+    src: ./tmp/dmv/mlo-dmv-main
     dest: ./resources/[mapping]/[services]/driving-school
 
   - action: move_path
     src: ./tmp/paleto_gas_station/patoche_gas_station
     dest: ./resources/[mapping]/[shops]/paleto_gas_station
 
-  - action: copy_path
+  - action: move_path
     src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
     dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-  - action: remove_path
-    path: ./resources/[mapping]/[services]/mlo-dmv-main
 
   - action: waste_time # prevent github throttling
     seconds: 1
