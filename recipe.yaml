@@ -433,7 +433,7 @@ tasks:
     src: ./tmp/paleto_gas_station/patoche_gas_station
     dest: ./resources/[mapping]/[shops]/paleto_gas_station
 
-  - action: move_path
+  - action: copy_path
     src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
     dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
 
