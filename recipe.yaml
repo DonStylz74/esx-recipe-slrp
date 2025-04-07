@@ -423,11 +423,11 @@ tasks:
     src: ./tmp/fa9ab2-patoche_free_cardealer.zip
 
   - action: download_file
-    path: ./tmp/LSJC-Verpi.zip
-    url: https://forum.cfx.re/uploads/short-url/i282WNogmio3Rbl102D7YhKgGvH.rar
+    path: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
   - action: unzip
-    dest: ./tmp/LJCS-verpi
-    src: ./tmp/LSJC-Verpi.zip
+    dest: ./tmp/weapondealer
+    src: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
 
   - action: waste_time # prevent github throttling
     seconds: 3
@@ -445,12 +445,15 @@ tasks:
     dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
 
   - action: move_path
-    src: ./tmp/LJCS-verpi/VerpiMoDz Job Centre V1.2/verpi_jobcentre
-    dest: ./resources/[mapping]/[services]/verpi_jobcentre
+    src: ./tmp/weapondealer/[FIVEM]/[MAP]/patoche_dealer_weapon
+    dest: ./resources/[mapping]/[illegal]/weapon-dealer
 
   - action: waste_time # prevent github throttling
     seconds: 1
 
+
+
+https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
   ##- action: download_github
   #  dest: ./resources/[mapping]/[enviro]/housing_shells
   #  ref: main
