@@ -424,10 +424,10 @@ tasks:
 
   - action: download_file
     path: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
-https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+   url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
   - action: unzip
-    dest: ./tmp/weapondealer
-    src: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+   dest: ./tmp/weapondealer
+   src: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
 
   - action: waste_time # prevent github throttling
     seconds: 3
@@ -453,7 +453,6 @@ https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready
 
 
 
-https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
   ##- action: download_github
   #  dest: ./resources/[mapping]/[enviro]/housing_shells
   #  ref: main
@@ -534,10 +533,10 @@ https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready
     dest: ./resources/[esx_addons]/[license-schools]
     overwrite: true
 
-  - action: move_path
-    src: ./recipe/Extras/[mapping]
-    dest: ./resources/[mapping]
-    overwrite: true
+  #- action: move_path
+  #  src: ./recipe/Extras/[mapping]
+  #  dest: ./resources/[mapping]
+  # overwrite: true
 
  ## Replace Script variables
  #- action: replace_string
