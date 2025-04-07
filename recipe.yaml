@@ -532,8 +532,13 @@ https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready
   - action: move_path
     src: ./recipe/Extras/[license-schools]
     dest: ./resources/[esx_addons]/[license-schools]
+    overwrite: true
 
-    
+  - action: move_path
+    src: ./recipe/Extras/[mapping]
+    dest: ./resources/[mapping]
+    overwrite: true
+
  ## Replace Script variables
  #- action: replace_string
  #  file: ./resources/[standalone]/Renewed-Banking/config.lua
