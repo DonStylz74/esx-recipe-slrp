@@ -424,10 +424,10 @@ tasks:
 
   - action: download_file
     path: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
-   url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+    url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
   - action: unzip
-   dest: ./tmp/weapondealer
-   src: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+    dest: ./tmp/weapondealer
+    src: ./tmp/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
 
   - action: waste_time # prevent github throttling
     seconds: 3
