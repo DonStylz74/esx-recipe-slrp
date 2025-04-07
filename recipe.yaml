@@ -410,9 +410,30 @@ tasks:
     dest: ./resources/[mapping]/[services]
     src: ./tmp/gc-dmv-1.2.zip
 
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
   - action: copy_path
     src: ./resources/[mapping]/[services]/mlo-dmv-main
     dest: ./resources/[mapping]/[services]/driving-school
+    
+  - action: waste_time # prevent github throttling
+    seconds: 3
+
+  - action: download_github
+    src: https://github.com/PatocheMapping/paleto_gas_station/tree/main/patoche_gas_station
+    ref: main
+    dest: ./resources/[mapping]/[services]/paleto_gas_station
+
+  - action: download_file
+    path: ./tmp/fa9ab2-patoche_free_cardealer.zip
+    url:  https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
+  - action: unzip
+    dest: ./resources/temp/[mapping]
+    src: ./tmp/gc-dmv-1.2.zip
+
+  - action: waste_time # prevent github throttling
+    seconds: 3
 
   #- action: download_github
   #  src: https://github.com/GreenBerg21/mlo-dmv
