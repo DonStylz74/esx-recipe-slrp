@@ -423,11 +423,11 @@ tasks:
     src: ./tmp/fa9ab2-patoche_free_cardealer.zip
 
   - action: download_file
-    path: ./tmp/LSJC-Verpi.rar
+    path: ./tmp/LSJC-Verpi.zip
     url: https://forum.cfx.re/uploads/short-url/i282WNogmio3Rbl102D7YhKgGvH.rar
   - action: unzip
     dest: ./tmp/LJCS-verpi
-    src: ./tmp/LSJC-Verpi.rar
+    src: ./tmp/LSJC-Verpi.zip
 
   - action: waste_time # prevent github throttling
     seconds: 3
