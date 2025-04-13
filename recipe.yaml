@@ -96,12 +96,12 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 3
 
-  - action: download_file
-    path: ./tmp/files/esx_hud.zip
-    url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
-  - action: unzip
-    dest: ./tmp/addons
-    src: ./tmp/files/esx_hud.zip
+  ##- action: download_file
+  #  path: ./tmp/files/esx_hud.zip
+  #  url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
+  # - action: unzip
+  #  dest: ./tmp/addons
+  #  src: ./tmp/files/esx_hud.zip
 
   - action: download_github
     src: https://github.com/esx-framework/esx_lscustom
@@ -436,8 +436,6 @@ tasks:
 
 
   ## Server Build Cleanup Actions
-  #- action: remove_path
-  #  path: ./tmp
   
   - action: remove_path
     path: ./resources/[core]/esx_skin
@@ -454,15 +452,37 @@ tasks:
   - action: remove_path
     path: ./resources/[esx_addons]/esx_banker
 
-
   ## - Comment out bellow action, to install default esx loading screen
   - action: remove_path
     path: ./resources/[core]/esx_loadingscreen
 
-  - action: waste_time # prevent SQL throttling
-    seconds: 2   
 
+  #- Adding extra Scripts - Tebex etc. 
+  - action: move_path
+    src: ./recipe/Extras/[license-schools]
+    dest: ./resources/[esx_addons]/[license-schools]
+    overwrite: true
 
+  - action: move_path
+    src: ./recipe/Extras/it_bridge
+    dest: ./resources/[dependants]/it_bridge
+    overwrite: true
+
+  - action: waste_time # prevent github throttling
+    seconds: 2
+
+  - action: move_path
+    src: ./recipe/Extras/0r-hud-v3
+    dest: ./resources/[esx_extras]/0r-hud-v3
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/kq_lootareas
+    dest: ./resources/[esx_extras]/[illegal]/kq_lootareas
+    overwrite: true
+
+  - action: waste_time # prevent github throttling
+    seconds: 5
   ## --- Database Final Query Actions
 
   #- action: waste_time # prevent github throttling
@@ -484,7 +504,7 @@ tasks:
     file: ./recipe/vehicles-472-total.sql
 
   - action: waste_time # prevent SQL throttling
-    seconds: 5
+    seconds: 3
 
   - action: copy_path
     src: ./recipe/replace/paycheck.lua  # -- Randol Paycheck changes
@@ -530,18 +550,11 @@ tasks:
     seconds: 5
 
 
-  - action: move_path
-    src: ./recipe/Extras/[license-schools]
-    dest: ./resources/[esx_addons]/[license-schools]
-    overwrite: true
-
-  - action: move_path
-    src: ./recipe/Extras/it_bridge
-    dest: ./resources/[dependants]/it_bridge
-    overwrite: true
-
-  - action: waste_time # prevent github throttling
-    seconds: 5
+  ## - UnComment bellow to remove installer TEMP folder
+  #- action: remove_path
+  #  path: ./tmp
+    
+    
 
   #- action: move_path
   #  src: ./recipe/Extras/[mapping]
