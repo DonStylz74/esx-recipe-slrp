@@ -257,12 +257,12 @@ tasks:
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
     ref: main
-    dest: ./resources/[esx_extras]/stevo_chopshop
+    dest: ./resources/[esx_extras]/[illegal]/stevo_chopshop
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_portablemoneywash
     ref: main
-    dest: ./resources/[esx_extras]/stevo_portablemoneywash
+    dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
 
   - action: download_file
     path: ./tmp/bl_idcard.zip
@@ -487,7 +487,7 @@ tasks:
     seconds: 5
 
   - action: copy_path
-    src: ./recipe/replace/paycheck.lua
+    src: ./recipe/replace/paycheck.lua  # -- Randol Paycheck changes
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
     overwrite: true
 
@@ -497,7 +497,32 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/Extras/images/
+    src: ./recipe/replace/itdrugs/fxmanifest.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/fxmanifest.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/itdrugs/sv_usableitems.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/server/sv_usableitems.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/itdrugs/itbridge-config.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[dependants]/it_bridge/config.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/Extras/images/  # -- OX Inventory Item Images
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
