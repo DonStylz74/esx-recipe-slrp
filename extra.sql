@@ -26,7 +26,7 @@ DELETE FROM job_grades WHERE job_name = 'reporter';
 
 
 
--- Adding - Renewed Banking
+-- Install - Renewed Banking table
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
   `id` varchar(50) NOT NULL,
   `amount` int(11) DEFAULT 0,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
   PRIMARY KEY (`id`)
 );
 
--- Adding TCD Starterpacks
+-- Install TCD Starterpacks table
 CREATE TABLE `tcd_starterpack` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -68,7 +68,7 @@ ALTER TABLE `tcd_starterpack`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
--- Adding - OX Doorlocks
+-- Install - OX Doorlocks table
 CREATE TABLE IF NOT EXISTS `ox_doorlock` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `ox_doorlock` (
   PRIMARY KEY (`id`)
 );
 
--- Adding Vehicle categorys - CUSTOMS
+-- Install Vehicle categorys table -- includes customs
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
   `name` varchar(60) NOT NULL,
   `label` varchar(60) NOT NULL,
@@ -98,7 +98,7 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('suvs', 'SUVs'),
 	('vans', 'Vans');
 
--- Adding Player Licenses
+-- Install Player Licenses table
 CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `label` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -116,9 +116,34 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('weapon', 'Firearms License'),
 	('weed_processing', 'Weed Processing License');
 
+-- Install Driving test progress table
 CREATE TABLE IF NOT EXISTS `driving_school_progress` (
   `identifier` varchar(60) NOT NULL,
   `theory_passed` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+
+-- Install the drug_plants table
+CREATE TABLE IF NOT EXISTS drug_plants (
+    id VARCHAR(11) NOT NULL, PRIMARY KEY(id),
+    owner LONGTEXT DEFAULT NULL,
+    coords LONGTEXT NOT NULL,
+    dimension INT(11) NOT NULL,
+    time INT(255) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    health DOUBLE NOT NULL DEFAULT 100,
+    fertilizer DOUBLE NOT NULL DEFAULT 0,
+    water DOUBLE NOT NULL DEFAULT 0,
+    growtime INT(11) NOT NULL
+);
+
+-- Install the drug_processing table
+CREATE TABLE IF NOT EXISTS drug_processing (
+    id VARCHAR(11) NOT NULL, PRIMARY KEY(id),
+    coords LONGTEXT NOT NULL,
+    rotation DOUBLE NOT NULL,
+    dimension INT(11) NOT NULL,
+    owner LONGTEXT NOT NULL,
+    type VARCHAR(100) NOT NULL
+);

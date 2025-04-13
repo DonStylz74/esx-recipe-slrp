@@ -304,6 +304,13 @@ tasks:
     dest: ./resources/[standalone]
     src: ./tmp/Renewed-Banking.zip
 
+  - action: download_file
+    path: ./tmp/it-drugs.zip
+    url:  https://github.com/it-scripts/it-drugs/releases/download/v1.4.3/it-drugs.zip
+  - action: unzip
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs
+    src: ./tmp/it-drugs.zip
+
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
@@ -504,9 +511,9 @@ tasks:
     overwrite: true
 
   - action: move_path
-    src: ./recipe/Extras/[mapping]
-    dest: ./resources/[mapping]
-    overwrite: false
+    src: ./recipe/Extras/it_bridge
+    dest: ./resources/[dependants]/it_bridge
+    overwrite: true
 
   - action: waste_time # prevent github throttling
     seconds: 5
