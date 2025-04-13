@@ -169,8 +169,8 @@
 		}
 	},
 
-	-----  WN ATM Robberys
-	------------------------------------
+-----  WN ATM Robberys
+----------------------
 	["hacking_device_atm"] = {
 		label = "ATM Hacking Device",
 		weight = 200,
@@ -182,8 +182,8 @@
 		}
 	},
 
-	-----  Stevos Portable Money Washers
-	------------------------------------
+-----  Stevos Portable Money Washers
+------------------------------------
 	["oldmoneywash"] = {
 		label = "Money Washer",
 		weight = 8500,
@@ -204,8 +204,8 @@
 		}
 	},
 
-	-----  Stevo ChopShop
-	---------------------
+-----  Stevo ChopShop
+---------------------
 	["car-door"] = {
 		label = "Car Door",
 		weight = 125,
@@ -412,4 +412,362 @@
 			image = "scraprubber.png"
 		}
 	},
+
+
+	-----  IT Drugs System
+	----------------------
+	["plant_pot"] = {
+		label = "Plant Pot",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "Used to Plant Seeds",
+		client = {
+			image = "plant_pot.png",
+		}
+	},
+
+	["potting_mix"] = {
+		label = "Potting Mix",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "Use with Plant Pot to Plant Seeds",
+		client = {
+			image = "potting_mix.png",
+		}
+	},
+
+	["water_refill"] = {
+		label = "Plant Water Refill",
+		weight = 350,
+		stack = true,
+		close = false,
+		description = "Specialize plant water refill",
+		client = {
+			image = "water_refill.png",
+		}
+	},
+
+	["wateringcan_empty"] = {
+		label = "Empty Watering Can",
+		weight = 150,
+		stack = true,
+		close = false,
+		description = "Empty watering can",
+		client = {
+			image = "wateringcan_empty.png",
+		}
+	},
+
+	["watering_can"] = {
+		label = "Watering can",
+		weight = 500,
+		stack = true,
+		close = false,
+		description = "Simple watering can",
+		client = {
+			image = "watering_can.png",
+		}
+	},
+
+	["fertilizer"] = {
+		label = "Fertilizer",
+		weight = 500,
+		stack = true,
+		close = false,
+		description = "Fertilizer",
+		client = {
+			image = "fertilizer.png",
+		}
+	},
+
+	["advanced_fertilizer"] = {
+		label = "Advanced fertilizer",
+		weight = 500,
+		stack = true,
+		close = false,
+		description = "Fertilizer with the litte extra",
+		client = {
+			image = "advanced_fertilizer.png",
+		}
+	},
+
+	["liquid_fertilizer"] = {
+		label = "Liquid Fertilizer",
+		weight = 200,
+		stack = true,
+		close = false,
+		description = "Basicly Water with nutrations",
+		client = {
+			image = "liquid_fertilizer.png",
+		}
+	},
+
+	["garden_shovel"] = {
+		label = "Gardening Shovel",
+		weight = 100,
+		stack = false,
+		close = true,
+		description = "Used to dig hole in the dirt",
+		client = {
+		image = "garden_shovel.png",
+		}
+	},
+
+
+	  ["weed_lemonhaze_seed"] = {
+		label = "Weed Lemonhaze Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Weed Lemonhaze Seed",
+		client = {
+			image = "weed_lemonhaze_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["weed_lemonhaze"] = {
+		label = "Weed Lemonhaze",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "Weed Lemonhaze",
+		client = {
+			image = "weed_lemonhaze.png",
+		},
+	  },
+
+	  ["weed_og_seed"] = {
+		label = "Weed Og Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Weed Og Seed",
+		client = {
+			image = "weed_og_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["weed_og"] = {
+		label = "weed Og",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "weed Og",
+		client = {
+			image = "weed_og.png",
+		},
+	  },
+
+	  ["weed_purple_haze_seed"] = {
+		label = "Weed Purple Haze Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Weed Purple Haze Seed",
+		client = {
+			image = "weed_purple_haze_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["weed_purple_haze"] = {
+		label = "weed Purple Haze",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "weed Purple Haze",
+		client = {
+			image = "weed_purple_haze.png",
+		},
+	  },
+
+	  ["weed_white_widow_seed"] = {
+		label = "Weed White Widow Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Weed White Widow Seed",
+		client = {
+			image = "weed_white_widow_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["weed_white_widow"] = {
+		label = "weed White Widow",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "weed White Widow",
+		client = {
+			image = "weed_white_widow.png",
+		}
+	  },
+
+	  ["weed_blueberry_seed"] = {
+		label = "Weed Blueberry Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Weed Blueberry Seed",
+		client = {
+			image = "weed_blueberry_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["weed_blueberry"] = {
+		label = "weed Blueberry",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "weed Blueberry",
+		client = {
+			image = "weed_blueberry.png",
+		}
+	  },
+
+	  ["coca_seed"] = {
+		label = "Coca Seed",
+		weight = 20,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Coca Seed",
+		client = {
+			image = "coca_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	  },
+
+	  ["coca"] = {
+		label = "Coca",
+		weight = 20,
+		stack = true,
+		close = false,
+		description = "Coca",
+		client = {
+			image = "coca.png",
+		}
+	  },
+
+	  ["paper"] = {
+		label = "Paper",
+		weight = 50,
+		stack = true,
+		close = false,
+		description = "Paper",
+		client = {
+			image = "paper.png",
+		}
+	  },
+
+	  ["nitrous"] = {
+		label = "Nitrous",
+		weight = 500,
+		stack = false,
+		close = false,
+		description = "Nitrous",
+		client = {
+			image = "nitrous.png",
+		}
+	  },
+
+	  ["weed_processing_table"] = {
+		label = "Weed Processing Table",
+		weight = 1000,
+		stack = false,
+		close = true,
+	  consume = 0,
+		description = "Process some weed",
+		client = {
+			image = "weed_processing_table.png",
+		},
+		server = {
+			export = "it-drugs.placeProcessingTable"
+		}
+	  },
+
+	  ["cocaine_processing_table"] = {
+		label = "Cocaine Processing Table",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "Process some cocaine",
+	  consume = 0,
+		client = {
+			image = "cocaine_processing_table.png",
+		},
+		server = {
+			export = "it-drugs.placeProcessingTable"
+		}
+	  },
+
+	  ["cocaine"] = {
+		label = "Cocaine",
+		weight = 20,
+		stack = true,
+		close = true,
+		description = "A little bag of cocaine",
+		consume = 0,
+		server = {
+			export = "it-drugs.takeDrug"
+		},
+		client = {
+			image = "cocaine.png",
+		},
+	  },
+
+	  ["joint"] = {
+		label = "Joint",
+		weight = 10,
+		stack = true,
+		close = true,
+		description = "Joint",
+		consume = 0,
+		server = {
+			export = "it-drugs.takeDrug"
+		},
+		client = {
+			image = "joint.png",
+		}
+	  },
+
+-- KUZ LOOTAREAS SCRIPT
+-----------------------
+		["plant_cutters"] = {
+			label = "Plant Cutters",
+			weight = 100,
+			stack = false,
+			close = true,
+			description = "Used to cut Plants",
+			client = {
+			image = "plant_cutters.png",
+			}
+		},
+
+
+
+
 
