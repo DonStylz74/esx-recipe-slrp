@@ -522,6 +522,11 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/itdrugs/cl_usableitems.lua # -- IT Drugs v1.4.3
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/server/cl_usableitems.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/replace/itdrugs/sv_usableitems.lua # -- IT Drugs v1.4.3
     dest: ./resources/[esx_extras]/[illegal]/it-drugs/server/sv_usableitems.lua
     overwrite: true
@@ -553,8 +558,8 @@ tasks:
   ## - UnComment bellow to remove installer TEMP folder
   #- action: remove_path
   #  path: ./tmp
-    
-    
+
+
 
   #- action: move_path
   #  src: ./recipe/Extras/[mapping]
@@ -567,25 +572,11 @@ tasks:
  # search: 'framework = "qb"'
  # replace: 'framework = "esx"'
 
-  #- action: move_path
-  #  src: ./resources/[mapping]/Legion Square/
-  #  dest: ./resources/[mapping]
-
   ##- action: download_github
   #  src: https://github.com/DonStylz74/esx_cityhall
   #  ref: main
   #  dest: ./resources/[esx_addons]/esx_cityhall
 
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/mVehicle
-  #  ref: main
-  #  dest: ./resources/[mono]/mVehicle
-
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/mGarage
-  #  ref: main
-  #  dest: ./resources/[mono]/mGarage
-  
     #- action: query_database
   #  file: ./recipe/Extras/sql-cleanup.sql
 
