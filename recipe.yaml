@@ -166,12 +166,17 @@ tasks:
     src: https://github.com/Byte-Labs-Studio/bl_bridge
     ref: main
     dest: ./resources/[dependants]/bl_bridge
-  
+
   - action: download_github
-    src: https://github.com/mkafrin/PolyZone
+    src: https://github.com/Xogy/xsound
     ref: master
-    dest: ./resources/[dependants]/PolyZone
-  
+    dest: ./resources/[dependants]/xsound
+
+  - action: download_github
+    src: https://github.com/zRxnx/zrx_utility
+    ref: main
+    dest: ./resources/[dependants]/zrx_utility
+
   - action: download_github
     src: https://github.com/DonStylz74/screenshot-basic
     ref: master
@@ -216,6 +221,11 @@ tasks:
     src: https://github.com/DonStylz74/LGF_PauseMenu
     ref: main
     dest: ./resources/[esx_addons]/LGF_PauseMenu
+
+  - action: download_github
+    src: https://github.com/zRxnx/zrx_personalmenu
+    ref: main
+    dest: ./resources/[esx_addons]/zrx_personalmenu
 
   - action: download_github
     src: https://github.com/DonStylz74/randol_paycheck
@@ -541,7 +551,7 @@ tasks:
 
   - action: copy_path
     src: ./recipe/replace/itdrugs/cl_usableitems.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/server/cl_usableitems.lua
+    dest: ./resources/[esx_extras]/[illegal]/it-drugs/client/cl_usableitems.lua
     overwrite: true
 
   - action: copy_path
