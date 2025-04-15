@@ -613,7 +613,7 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/images/  # -- OX Inventory Item Images
+    src: ./recipe/Extras/images/  # -- OX Inventory Item Images
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
