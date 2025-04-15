@@ -38,6 +38,10 @@ tasks:
   
   - action: connect_database
 
+
+  - action: waste_time # prevent github throttling
+    seconds: 10
+
   - action: download_github
     src: https://github.com/esx-framework/esx-core
     ref: main
