@@ -582,7 +582,7 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/itdrugs/itbridge-config.lua # -- IT Drugs v1.4.3
+    src: ./recipe/replace/itdrugs/itbridge-config.lua # -- IT Drugs v1.4.3 - IT Bridge
     dest: ./resources/[dependants]/it_bridge/config.lua
     overwrite: true
 
