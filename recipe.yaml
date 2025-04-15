@@ -193,6 +193,15 @@ tasks:
     ref: main
     dest: ./resources/[dependants]/ultra-voltlab
 
+  - action: download_github
+    src: https://github.com/aliko77/edit_mini_map
+    ref: main
+    dest: ./resources/[dependants]/edit_mini_map
+
+  - action: download_github
+    src: https://github.com/DonStylz74/SN-Hacking
+    ref: main
+    dest: ./resources/[dependants]/SN-Hacking
 
   - action: waste_time # prevent github throttling
     seconds: 2
@@ -247,7 +256,7 @@ tasks:
   - action: download_github
     src: https://github.com/Oulsen/oulsen_satmap/tree/main/oulsen_satmap
     ref: main
-    dest: ./resources/[esx_addons]/[minimaps]/oulsen_satmap
+    dest: ./tmp/oulsen_satmap
 
   - action: download_github
     src: https://github.com/DonStylz74/ed_scuba
@@ -257,7 +266,12 @@ tasks:
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
     ref: main
-    dest: ./resources/[standalone]/wn_atmrobbery
+    dest: ./resources/[esx_extras]/[illegal]/wn_atmrobbery
+
+  - action: download_github
+    src: https://github.com/skeletonnetworks/SN-StoreRobbery
+    ref: main
+    dest: ./resources/[esx_extras]/[illegal]/SN-StoreRobbery
 
   - action: download_github
     src: https://github.com/DonStylz74/stevo_chopshop
@@ -482,8 +496,23 @@ tasks:
     seconds: 2
 
   - action: move_path
+    src: ./recipe/Extras/jg-scoreboard
+    dest: ./resources/[esx_addons]/jg-scoreboard
+    overwrite: true
+
+  - action: move_path
+    src: ./tmp/oulsen_satmap/oulsen_satmap
+    dest: ./resources/[esx_addons]/[minimaps]/oulsen_satmap
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/cayo-satmap
+    dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
+    overwrite: true
+
+  - action: move_path
     src: ./recipe/Extras/0r-hud-v3
-    dest: ./resources/[esx_extras]/0r-hud-v3
+    dest: ./resources/[esx_addons]/0r-hud-v3
     overwrite: true
 
   - action: move_path
@@ -492,8 +521,8 @@ tasks:
     overwrite: true
 
   - action: move_path
-    src: ./recipe/Extras/cayo-satmap
-    dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
+    src: ./recipe/Extras/rm_chopshop
+    dest: ./resources/[esx_extras]/[illegal]/rm_chopshop
     overwrite: true
 
   - action: waste_time # prevent github throttling
@@ -559,6 +588,11 @@ tasks:
   - action: copy_path
     src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
     dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/snstorerob-config.lua # -- SN Store Robberys v1.0
+    dest: ./resources/[esx_extras]/[illegal]/SN-StoreRobbery/config.lua
     overwrite: true
 
   - action: copy_path
