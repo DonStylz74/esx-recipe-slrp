@@ -129,7 +129,7 @@ else
     end
 end
 
-ESX.RegisterUsableItem('water_refill', function(source)
+exports.it_bridge:CreateUsableItem('water_refill', function(source)
     local source = source
     local xPlayer = ESX.GetPlayerFromId(source)
     if xPlayer.getInventoryItem('wateringcan_empty').count > 0 then
