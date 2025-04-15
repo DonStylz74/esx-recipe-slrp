@@ -180,6 +180,10 @@ return {
 		label = 'Garbage',
 	},
 
+	['lockpick'] = {
+		label = 'Lockpick',
+		weight = 10,
+	},
 
 	----  Wasabi Backpack
 	---------------------
