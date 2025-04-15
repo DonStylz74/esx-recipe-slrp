@@ -177,7 +177,7 @@ tasks:
     url:  https://github.com/zRxnx/zrx_utility/archive/refs/tags/2.5.0.zip
   - action: unzip
     dest: ./.tmp/
-    src: ./tmp/2.5.0.zip.zip
+    src: ./tmp/2.5.0.zip
 
   - action: download_github
     src: https://github.com/DonStylz74/screenshot-basic
