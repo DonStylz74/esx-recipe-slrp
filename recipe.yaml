@@ -245,6 +245,11 @@ tasks:
     seconds: 3
 
   - action: download_github
+    src: https://github.com/Oulsen/oulsen_satmap/tree/main/oulsen_satmap
+    ref: main
+    dest: ./resources/[esx_addons]/[minimaps]/oulsen_satmap
+
+  - action: download_github
     src: https://github.com/DonStylz74/ed_scuba
     ref: main
     dest: ./resources/[esx_extras]/[scuba-diving]/ed_scuba
@@ -263,6 +268,11 @@ tasks:
     src: https://github.com/DonStylz74/stevo_portablemoneywash
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
+
+  - action: download_github
+    src: https://github.com/DonStylz74/zrx_blackmarket
+    ref: main
+    dest: ./resources/[esx_extras]/[illegal]/zrx_blackmarket
 
   - action: download_file
     path: ./tmp/bl_idcard.zip
@@ -479,6 +489,11 @@ tasks:
   - action: move_path
     src: ./recipe/Extras/kq_lootareas
     dest: ./resources/[esx_extras]/[illegal]/kq_lootareas
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/cayo-satmap
+    dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
     overwrite: true
 
   - action: waste_time # prevent github throttling
