@@ -591,8 +591,24 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/SN-StoreRobbery/config.lua
     overwrite: true
 
+
   - action: copy_path
-    src: ./recipe/Extras/images/  # -- OX Inventory Item Images
+    src: ./recipe/replace/emsjob-fxmanifest.lua # -- esx ambulancejob
+    dest: ./resources/[esx_addons]/esx_ambulancejob/fxmanifest.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/poljob-fxmanifest.lua # -- esx policejob
+    dest: ./resources/[esx_addons]/esx_policejob/fxmanifest.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/zxrbmkt-fxmanifest.lua # -- ZRX Blackmarket
+    dest: ./resources/[esx_extras]/[illegal]/zrx_blackmarket/fxmanifest.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/images/  # -- OX Inventory Item Images
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
