@@ -5,7 +5,7 @@ author: DonStylz74
 description: FiveM RP framework, ESX Legacy, Contains Jobs, Housing, Garages & more!
 
 tasks:
-  # Download default CFX resources
+  ## Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     ref: master
@@ -222,9 +222,6 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/randol_paycheck
 
-  - action: waste_time # prevent github throttling
-    seconds: 2
-
   - action: download_github
     src: https://github.com/DonStylz74/lunar_jobcentre
     ref: main
@@ -251,7 +248,7 @@ tasks:
     dest: ./resources/[esx_addons]/tcd-starterpack
 
   - action: waste_time # prevent github throttling
-    seconds: 3
+    seconds: 5
 
   - action: download_github
     src: https://github.com/Oulsen/oulsen_satmap/tree/main/oulsen_satmap
@@ -296,7 +293,7 @@ tasks:
     src: ./tmp/bl_idcard.zip
 
   - action: waste_time # prevent github throttling
-    seconds: 2
+    seconds: 3
 
 
   - action: download_github
@@ -339,12 +336,6 @@ tasks:
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
     dest: ./resources/[standalone]/pma-voice
-
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/it-drugs
-  #  ref: main
-  #  dest: ./resources/[esx_addons]/[drug-system]/it-drugs
-
 
   - action: waste_time # prevent github throttling
     seconds: 3
@@ -400,7 +391,7 @@ tasks:
     seconds: 3
 
 
-  ## ---  Server MAPPING
+  ## SERVER MAPPING INSTALATION
   
   - action: download_file
     path: ./tmp/gc-dmv-1.2.zip
@@ -451,15 +442,7 @@ tasks:
     seconds: 3
 
 
-
-  ##- action: download_github
-  #  dest: ./resources/[mapping]/[enviro]/housing_shells
-  #  ref: main
-  #  src: https://github.com/yarnkickdev/k4mb1_shells
-
-
-
-  ## Server Build Cleanup Actions
+  ## SERVER BASE CLEANUP PROCESS
   
   - action: remove_path
     path: ./resources/[core]/esx_skin
@@ -481,7 +464,7 @@ tasks:
     path: ./resources/[core]/esx_loadingscreen
 
 
-  #- Adding extra Scripts - Tebex etc. 
+  #- EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc. 
   - action: move_path
     src: ./recipe/Extras/[license-schools]
     dest: ./resources/[esx_addons]/[license-schools]
@@ -491,9 +474,6 @@ tasks:
     src: ./recipe/Extras/it_bridge
     dest: ./resources/[dependants]/it_bridge
     overwrite: true
-
-  - action: waste_time # prevent github throttling
-    seconds: 2
 
   - action: move_path
     src: ./recipe/Extras/jg-scoreboard
@@ -527,22 +507,14 @@ tasks:
 
   - action: waste_time # prevent github throttling
     seconds: 5
-  ## --- Database Final Query Actions
 
-  #- action: waste_time # prevent github throttling
-  #  seconds: 3
-  
-  #- action: query_database
-  #  file: ./recipe/Extras/sql-inject.sql
 
-  #- action: waste_time # prevent github throttling
-  #  seconds: 3
-
+  ## --- DATABASE  EXTRAS SQL INSTALATION
   - action: query_database
     file: ./recipe/extra.sql
 
   - action: waste_time # prevent github throttling
-    seconds: 3
+    seconds: 2
   
   - action: query_database
     file: ./recipe/vehicles-472-total.sql
@@ -550,6 +522,8 @@ tasks:
   - action: waste_time # prevent SQL throttling
     seconds: 3
 
+
+  ## UPDATING SCRIPT FILES PROCESS
   - action: copy_path
     src: ./recipe/replace/paycheck.lua  # -- Randol Paycheck changes
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
@@ -603,31 +577,42 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 5
 
-
+  ## FINAL BUILD CLEANUP
   ## - UnComment bellow to remove installer TEMP folder
   #- action: remove_path
   #  path: ./tmp
 
 
+  ## BELOW ARE RECIPE ACTIONS AND REFRENCES
 
   #- action: move_path
   #  src: ./recipe/Extras/[mapping]
   #  dest: ./resources/[mapping]
   # overwrite: true
 
- ## Replace Script variables
- #- action: replace_string
- #  file: ./resources/[standalone]/Renewed-Banking/config.lua
- # search: 'framework = "qb"'
- # replace: 'framework = "esx"'
+  #- action: copy_path
+  #  src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
+  #  dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
+  # overwrite: true
+
+  #- action: remove_path
+  #  path: ./tmp
 
   ##- action: download_github
   #  src: https://github.com/DonStylz74/esx_cityhall
   #  ref: main
   #  dest: ./resources/[esx_addons]/esx_cityhall
 
+  #- action: download_file
+  #  path: ./tmp/Patoche_weapon_dealer.zip
+  #  url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+  #- action: unzip
+  #  dest: ./tmp/weapondealer
+  #  src: ./tmp/Patoche_weapon_dealer.zip
+
     #- action: query_database
   #  file: ./recipe/Extras/sql-cleanup.sql
 
   #- action: waste_time # prevent github throttling
   #  seconds: 3
+  
