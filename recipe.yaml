@@ -180,7 +180,7 @@ tasks:
     path: ./tmp/2.5.0.zip
     url:  https://github.com/zRxnx/zrx_utility/archive/refs/tags/2.5.0.zip
   - action: unzip
-    dest: ./.tmp/
+    dest: ./tmp/
     src: ./tmp/2.5.0.zip
 
   - action: download_github
@@ -481,6 +481,12 @@ tasks:
 
 
   #- EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc. 
+
+  - action: move_path
+    src: ./tmp/zrx_utility-2.5.0
+    dest: ./resources/[dependants]/zrx_utility
+    overwrite: true
+
   - action: move_path
     src: ./recipe/Extras/[license-schools]
     dest: ./resources/[esx_addons]/[license-schools]
