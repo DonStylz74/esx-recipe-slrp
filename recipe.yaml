@@ -172,10 +172,12 @@ tasks:
     ref: master
     dest: ./resources/[dependants]/xsound
 
-  - action: download_github
-    src: https://github.com/zRxnx/zrx_utility
-    ref: main
-    dest: ./resources/[dependants]/zrx_utility
+  - action: download_file
+    path: ./tmp/2.5.0.zip
+    url:  https://github.com/zRxnx/zrx_utility/archive/refs/tags/2.5.0.zip
+  - action: unzip
+    dest: ./.tmp/
+    src: ./tmp/2.5.0.zip.zip
 
   - action: download_github
     src: https://github.com/DonStylz74/screenshot-basic
