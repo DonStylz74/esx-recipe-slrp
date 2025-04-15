@@ -45,7 +45,7 @@ Config.InventoryImgPath = {
     [Inventories.QS]   = "qs-inventory/html/images/",
     [Inventories.OX]   = "ox_inventory/web/images/",
     [Inventories.CODEM] = "codem-inventory/html/images/",
-    [Inventories.ORIGEN] = "origen-inventory/html/images/",
+    [Inventories.ORIGEN] = "origen_inventory/html/images/",
 }
 
 --[[
@@ -57,14 +57,6 @@ Config.InventoryImgPath = {
 ]]
 Config.Interactions = Interactions.OX
 
-
---[[
-    Supported phone resources:
-        * AUTO_DETECT: auto-detect phone resource
-        * Phones.LB: lb_phone,
-]]
-Config.Phones = AUTO_DETECT
-
 --[[
     Supported Notify resources:
         * AUTO_DETECT: auto-detect Notify resource
@@ -72,6 +64,7 @@ Config.Phones = AUTO_DETECT
         * Notifications.OX: ox_lib,
         * Notifications.ESX_NOTIFY: esx_notify,
         * Notifications.QBCORE: qb-core,
+        * Notifications.QBOX: qbx_core,
         * Notifications.ESX: es_extended,
         * Notifications.MYTHIC: mythic_notify,
         * Notifications.OKOK: okokNotify,
@@ -119,6 +112,6 @@ Config.Menus = Menus.OX
 
 Config.Dispatches = Dispatches.NONE
 
-
+Config.MinimizeStartup = false
 Config.Debug = false
 Config.VersionCheck = true
