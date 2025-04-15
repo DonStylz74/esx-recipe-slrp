@@ -552,6 +552,11 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/oxinv-items.lua # -- ZRX Blackmarket
+    dest: ./resources/[ox]/ox_inventory/data/items.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/replace/bl-idcard_config.lua # -- bl idcard v1.5.1
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
     overwrite: true
