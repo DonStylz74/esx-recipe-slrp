@@ -205,11 +205,6 @@ tasks:
     dest: ./resources/[dependants]/ultra-voltlab
 
   - action: download_github
-    src: https://github.com/aliko77/edit_mini_map
-    ref: main
-    dest: ./resources/[dependants]/edit_mini_map
-
-  - action: download_github
     src: https://github.com/DonStylz74/SN-Hacking
     ref: main
     dest: ./resources/[dependants]/SN-Hacking
@@ -272,11 +267,6 @@ tasks:
     dest: ./tmp/oulsen_satmap
 
   - action: download_github
-    src: https://github.com/DonStylz74/ed_scuba
-    ref: main
-    dest: ./resources/[esx_extras]/[scuba-diving]/ed_scuba
-
-  - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/wn_atmrobbery
@@ -311,6 +301,11 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 3
 
+
+  - action: download_github
+    src: https://github.com/DonStylz74/ed_scuba
+    ref: main
+    dest: ./resources/[standalone]/ed_scuba
 
   - action: download_github
     src: https://github.com/DonStylz74/vehiclehandler
@@ -515,6 +510,16 @@ tasks:
   - action: move_path
     src: ./recipe/Extras/0r-hud-v3
     dest: ./resources/[esx_addons]/0r-hud-v3
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/0r-towtruck
+    dest: ./resources/[esx_extras]/0r-towtruck
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/flatbed3
+    dest: ./resources/[vehicles]/flatbed3
     overwrite: true
 
   - action: move_path

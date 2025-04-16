@@ -147,10 +147,3 @@ CREATE TABLE IF NOT EXISTS drug_processing (
     owner LONGTEXT NOT NULL,
     type VARCHAR(100) NOT NULL
 );
-
-CREATE Table IF NOT EXISTS `zrx_personalmenu` (
-	`id` int(100) NOT NULL AUTO_INCREMENT,
-	`identifier` varchar(255) DEFAULT NULL,
-	`data` longtext DEFAULT NULL,
-	PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
