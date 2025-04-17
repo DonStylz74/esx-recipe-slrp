@@ -204,8 +204,8 @@
 		}
 	},
 
------  Stevo ChopShop
----------------------
+-----  Stevo ChopShop and RM Chopshop Items
+-------------------------------------------
 	["car-door"] = {
 		label = "Car Door",
 		weight = 125,
@@ -213,9 +213,6 @@
 		close = false,
 		consume = 0,
 		description = "Single Car Door",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-door.png"
 		}
@@ -228,9 +225,6 @@
 		close = false,
 		consume = 0,
 		description = "A vehicle Hood",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-hood.png"
 		}
@@ -243,9 +237,6 @@
 		close = false,
 		consume = 0,
 		description = "Single Car Trunk",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-trunk.png"
 		}
@@ -258,9 +249,6 @@
 		close = false,
 		consume = 0,
 		description = "Single Car Rim",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-rim.png"
 		}
@@ -273,9 +261,6 @@
 		close = false,
 		consume = 0,
 		description = "Single Car Tire",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-tire.png"
 		}
@@ -288,9 +273,6 @@
 		close = false,
 		consume = 0,
 		description = "Lithium Car Battery",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-battery.png"
 		}
@@ -303,9 +285,6 @@
 		close = false,
 		consume = 0,
 		description = "Standard Car Radio",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-radio.png"
 		}
@@ -318,9 +297,6 @@
 		close = false,
 		consume = 0,
 		description = "Standard Car Speakers",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-speakers.png"
 		}
@@ -333,9 +309,6 @@
 		close = false,
 		consume = 0,
 		description = "Single Car Seat",
-		server = {
-			export = ""
-		},
 		client = {
 			image = "car-seat.png"
 		}
@@ -414,8 +387,47 @@
 	},
 
 
-	-----  IT Drugs System
-	----------------------
+-----  SN Store Robberies
+-------------------------
+	["lockpick_reg"] = {
+		label = "Register Lockpick",
+		weight = 3,
+		stack = true,
+		close = true,
+		consume = 0,
+		description = "Used to Lockpick Cash Registers",
+		client = {
+			image = "lockpickreg.png"
+		}
+	},
+
+	["lockpick_safe"] = {
+		label = "DigiSafe Lockpick",
+		weight = 50,
+		stack = true,
+		close = true,
+		consume = 0,
+		description = "Used to lockpick Digital Safes",
+		client = {
+			image = "lockpicksafe.png"
+		}
+	},
+
+-- KUZ LOOTAREAS SCRIPT
+-----------------------
+		["plant_cutters"] = {
+			label = "Plant Cutters",
+			weight = 100,
+			stack = false,
+			close = true,
+			description = "Used to cut Plants",
+			client = {
+			image = "plant_cutters.png",
+			}
+		},
+
+-- IT-DRUGS SCRIPT
+------------------
 	["plant_pot"] = {
 		label = "Plant Pot",
 		weight = 100,
@@ -515,259 +527,391 @@
 		}
 	},
 
-
-	  ["weed_lemonhaze_seed"] = {
-		label = "Weed Lemonhaze Seed",
-		weight = 20,
+	["weed_ak47_seed"] = {
+		label = "Weed AK47 Seed",
+		weight = 4,
 		stack = true,
 		close = true,
-	  consume = 0,
-		description = "Weed Lemonhaze Seed",
-		client = {
-			image = "weed_lemonhaze_seed.png",
-		},
+		description = "Weed AK47 Seed",
 		server = {
 			export = "it-drugs.useSeed"
+		},
+		client = {
+			image = "weed_ak47_seed.png",
 		}
-	  },
+	},
 
-	  ["weed_lemonhaze"] = {
-		label = "Weed Lemonhaze",
-		weight = 20,
+	["weed_ak47"] = {
+		label = "Weed AK47",
+		weight = 1,
 		stack = true,
 		close = false,
-		description = "Weed Lemonhaze",
+		description = "Weed AK47",
 		client = {
-			image = "weed_lemonhaze.png",
-		},
-	  },
+			image = "weed_ak47.png",
+		}
+	},
 
-	  ["weed_og_seed"] = {
-		label = "Weed Og Seed",
-		weight = 20,
+	['weed_ogkush_seed'] = {
+		label = 'OG Kush Seed',
+		weight = 6,
+		stack = true,
+    	close = true,
+    	description = "Weed OG Kush Seed",
+		server = {
+			export = "it-drugs.useSeed"
+		},
+    	client = {
+       	image = "weed_ogkush_seed.png",
+    	}
+	},
+
+	['weed_ogkush'] = {
+		label = 'OG Kush Bud',
+		weight = 1,
+		stack = true,
+    	close = false,
+    	description = "Weed OG Kush",
+    	client = {
+       	image = "weed_ogkush.png",
+    	}
+	},
+
+	['weed_purplehaze_seed'] = {
+		label = 'Purple Haze Seed',
+		stack = true,
+		weight = 6,
+    	close = true,
+    	description = "Weed Purple Haze Seed",
+		server = {
+			export = "it-drugs.useSeed"
+		},
+    	client = {
+       	image = "weed_purplehaze_seed.png",
+    	}
+	},
+
+	['weed_purplehaze'] = {
+		label = 'Purple Haze Bud',
+		stack = true,
+		weight = 1,
+    	close = false,
+    	description = "Weed Purple Haze",
+    	client = {
+       	image = "weed_purplehaze.png",
+    	}
+	},
+
+	['weed_skunk_seed'] = {
+		label = 'Skunk Seed',
+		stack = true,
+		weight = 6,
+    	close = true,
+    	description = "Weed Skunk Seed",
+		server = {
+			export = "it-drugs.useSeed"
+		},
+    	client = {
+       	image = "weed_skunk_seed.png",
+    	}
+	},
+
+	['weed_skunk'] = {
+		label = 'Skunk Bud',
+		stack = true,
+		weight = 1,
+    	close = false,
+    	description = "Weed Skunk",
+    	client = {
+       	image = "weed_skunk.png",
+    	}
+	},
+
+	['paper'] = {
+		label = 'Rolling Papers',
+		stack = true,
+		weight = 2,
+    	close = false,
+    	description = "Papers to roll Joints",
+    	client = {
+       	image = "paper.png",
+    	}
+	},
+
+	["joint_ak"] = {
+		label = "Joint AK47",
+		weight = 3,
 		stack = true,
 		close = true,
-	  consume = 0,
-		description = "Weed Og Seed",
-		client = {
-			image = "weed_og_seed.png",
-		},
+		description = "Joint AK47",
 		server = {
-			export = "it-drugs.useSeed"
-		}
-	  },
-
-	  ["weed_og"] = {
-		label = "weed Og",
-		weight = 20,
-		stack = true,
-		close = false,
-		description = "weed Og",
-		client = {
-			image = "weed_og.png",
+          export = "it-drugs.takeDrug"
 		},
-	  },
+		client = {
+        image = "joint_ak.png",
+		}
+	},
 
-	  ["weed_purple_haze_seed"] = {
-		label = "Weed Purple Haze Seed",
-		weight = 20,
+	["joint_ogk"] = {
+		label = "Joint OGKush",
+		weight = 3,
 		stack = true,
 		close = true,
-	  consume = 0,
-		description = "Weed Purple Haze Seed",
-		client = {
-			image = "weed_purple_haze_seed.png",
-		},
+		description = "Joint OGKush",
 		server = {
-			export = "it-drugs.useSeed"
-		}
-	  },
-
-	  ["weed_purple_haze"] = {
-		label = "weed Purple Haze",
-		weight = 20,
-		stack = true,
-		close = false,
-		description = "weed Purple Haze",
-		client = {
-			image = "weed_purple_haze.png",
+          export = "it-drugs.takeDrug"
 		},
-	  },
+		client = {
+        image = "joint_ogk.png",
+		}
+	},
 
-	  ["weed_white_widow_seed"] = {
-		label = "Weed White Widow Seed",
-		weight = 20,
+	["joint_ph"] = {
+		label = "Joint Purple haze",
+		weight = 3,
 		stack = true,
 		close = true,
-	  consume = 0,
-		description = "Weed White Widow Seed",
-		client = {
-			image = "weed_white_widow_seed.png",
-		},
+		description = "Joint Purple haze",
 		server = {
-			export = "it-drugs.useSeed"
-		}
-	  },
-
-	  ["weed_white_widow"] = {
-		label = "weed White Widow",
-		weight = 20,
-		stack = true,
-		close = false,
-		description = "weed White Widow",
+          export = "it-drugs.takeDrug"
+		},
 		client = {
-			image = "weed_white_widow.png",
+        image = "joint_ph.png",
 		}
-	  },
+	},
 
-	  ["weed_blueberry_seed"] = {
-		label = "Weed Blueberry Seed",
-		weight = 20,
+	["joint_sk"] = {
+		label = "Joint Skunk",
+		weight = 3,
 		stack = true,
 		close = true,
-	  consume = 0,
-		description = "Weed Blueberry Seed",
-		client = {
-			image = "weed_blueberry_seed.png",
-		},
+		description = "Joint Skunk",
 		server = {
-			export = "it-drugs.useSeed"
+          export = "it-drugs.takeDrug"
+		},
+		client = {
+        image = "joint_sk.png",
 		}
-	  },
+	},
 
-	  ["weed_blueberry"] = {
-		label = "weed Blueberry",
-		weight = 20,
+	["baggie"] = {
+		label = "Empty Baggie",
+		weight = 1,
 		stack = true,
 		close = false,
-		description = "weed Blueberry",
+		description = "Empty Drug Baggie",
 		client = {
-			image = "weed_blueberry.png",
+			image = "baggie.png",
 		}
-	  },
+	},
 
-	  ["coca_seed"] = {
+	["baggie_ak"] = {
+		label = "Baggie AK74",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie AK74",
+		client = {
+			image = "baggie_ak.png",
+		}
+	},
+
+	["baggie_ogk"] = {
+		label = "Baggie OGKush",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie OGKush",
+		client = {
+			image = "baggie_ogk.png",
+		}
+	},
+
+	["baggie_ph"] = {
+		label = "Baggie Purple Haze",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie Purple Haze",
+		client = {
+			image = "baggie_ph.png",
+		}
+	},
+
+	["baggie_sk"] = {
+		label = "Baggie Skunk",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie Skunk",
+		client = {
+			image = "baggie_sk.png",
+		}
+	},
+
+
+	["empty_jar"] = {
+		label = "Empty Oz Jar",
+		weight = 3,
+		stack = true,
+		close = false,
+		description = "Empty Weed Oz Jar",
+		client = {
+			image = "empty_jar.png",
+		}
+	},
+
+	["ozjar_ak"] = {
+		label = "Oz Jar of AK47",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of AK74 Weed",
+		client = {
+			image = "ozjar_ak.png",
+		}
+	},
+
+	["ozjar_ogk"] = {
+		label = "Oz Jar of OGKush",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of OGKush Weed",
+		client = {
+			image = "ozjar_ogk.png",
+		}
+	},
+
+	["ozjar_ph"] = {
+		label = "Oz Jar of PurpleHaze",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of PurpleHaze Weed",
+		client = {
+			image = "ozjar_ph.png",
+		}
+	},
+
+	["ozjar_sk"] = {
+		label = "Oz Jar of Skunk",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of Skunk Weed",
+		client = {
+			image = "ozjar_sk.png",
+		}
+	},
+
+	["coca_seed"] = {
 		label = "Coca Seed",
-		weight = 20,
+		weight = 8,
 		stack = true,
 		close = true,
-	  consume = 0,
 		description = "Coca Seed",
-		client = {
-			image = "coca_seed.png",
-		},
 		server = {
 			export = "it-drugs.useSeed"
+		},
+		client = {
+    	image = "coca_seed.png",
 		}
-	  },
+	},
 
-	  ["coca"] = {
+	["coca"] = {
 		label = "Coca",
-		weight = 20,
 		stack = true,
 		close = false,
 		description = "Coca",
 		client = {
-			image = "coca.png",
+    	image = "coca.png",
 		}
-	  },
+	},
 
-	  ["paper"] = {
-		label = "Paper",
-		weight = 50,
-		stack = true,
-		close = false,
-		description = "Paper",
-		client = {
-			image = "paper.png",
-		}
-	  },
-
-	  ["nitrous"] = {
+	["nitrous"] = {
 		label = "Nitrous",
-		weight = 500,
-		stack = false,
+		weight = 25,
+		stack = true,
 		close = false,
 		description = "Nitrous",
 		client = {
-			image = "nitrous.png",
+    	image = "nitrous.png",
 		}
-	  },
+	},
 
-	  ["weed_processing_table"] = {
+	["cocaine"] = {
+		label = "Cocaine",
+		weight = 1,
+		stack = true,
+		close = true,
+		description = "Cocaine",
+		server = {
+			export = "it-drugs.takeDrug"
+		},
+		client = {
+		image = "cocaine.png",
+		}
+	},
+
+	["baggie_coke"] = {
+		label = "Baggie Cocaine",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Small bag of Cocaine",
+		client = {
+    	image = "baggie_coke.png",
+		}
+	},
+
+	["baggie_1oz"] = {
+		label = "Empty 1Oz Baggie",
+		weight = 2,
+		stack = true,
+		close = false,
+		description = "Empty 1oz Drug Baggie",
+		client = {
+			image = "baggie_1oz.png",
+		}
+	},
+
+	["brick_coke"] = {
+		label = "Oz Brick of Cocaine",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "1oz brick of Cocaine",
+		client = {
+    	image = "baggie_coke.png",
+		}
+	},
+
+	["weed_processing_table"] = {
 		label = "Weed Processing Table",
 		weight = 1000,
 		stack = false,
 		close = true,
-	  consume = 0,
 		description = "Process some weed",
-		client = {
-			image = "weed_processing_table.png",
-		},
 		server = {
 			export = "it-drugs.placeProcessingTable"
+		},
+		client = {
+			image = "weed_processing_table.png",
 		}
-	  },
+	},
 
-	  ["cocaine_processing_table"] = {
+	["cocaine_processing_table"] = {
 		label = "Cocaine Processing Table",
 		weight = 1000,
 		stack = false,
 		close = true,
 		description = "Process some cocaine",
-	  consume = 0,
-		client = {
-			image = "cocaine_processing_table.png",
-		},
 		server = {
 			export = "it-drugs.placeProcessingTable"
-		}
-	  },
-
-	  ["cocaine"] = {
-		label = "Cocaine",
-		weight = 20,
-		stack = true,
-		close = true,
-		description = "A little bag of cocaine",
-		consume = 0,
-		server = {
-			export = "it-drugs.takeDrug"
 		},
 		client = {
-			image = "cocaine.png",
-		},
-	  },
-
-	  ["joint"] = {
-		label = "Joint",
-		weight = 10,
-		stack = true,
-		close = true,
-		description = "Joint",
-		consume = 0,
-		server = {
-			export = "it-drugs.takeDrug"
-		},
-		client = {
-			image = "joint.png",
+			image = "cocaine_processing_table.png",
 		}
-	  },
-
--- KUZ LOOTAREAS SCRIPT
------------------------
-		["plant_cutters"] = {
-			label = "Plant Cutters",
-			weight = 100,
-			stack = false,
-			close = true,
-			description = "Used to cut Plants",
-			client = {
-			image = "plant_cutters.png",
-			}
-		},
-
-
-
-
+	},
 
