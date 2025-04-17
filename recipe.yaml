@@ -336,12 +336,10 @@ tasks:
     dest: ./resources/[standalone]
     src: ./tmp/Renewed-Banking.zip
 
-  - action: download_file
-    path: ./tmp/it-drugs.zip
-    url:  https://github.com/it-scripts/it-drugs/releases/download/v1.4.3/it-drugs.zip
-  - action: unzip
+  - action: download_github
+    src: https://github.com/DonStylz74/it-drugs
+    ref: main
     dest: ./resources/[esx_extras]/[illegal]/it-drugs
-    src: ./tmp/it-drugs.zip
 
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
@@ -567,33 +565,8 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/itdrugs/fxmanifest.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/fxmanifest.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/itdrugs/cl_usableitems.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/client/cl_usableitems.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/itdrugs/sv_usableitems.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/server/sv_usableitems.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
-    overwrite: true
-
-  - action: copy_path
     src: ./recipe/replace/itdrugs/itbridge-config.lua # -- IT Drugs v1.4.3 - IT Bridge
     dest: ./resources/[dependants]/it_bridge/config.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/itdrugs/config.lua # -- IT Drugs v1.4.3
-    dest: ./resources/[esx_extras]/[illegal]/it-drugs/shared/config.lua
     overwrite: true
 
   - action: copy_path
