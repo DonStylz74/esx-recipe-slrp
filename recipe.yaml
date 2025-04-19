@@ -341,7 +341,7 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/it-drugs
 
   - action: download_github
-    src: https://github.com/DonStylz74/
+    src: https://github.com/DonStylz74/tropic-cityguide
     ref: main
     dest: ./resources/[standalone]/tropic-cityguide
 
