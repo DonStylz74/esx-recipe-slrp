@@ -559,7 +559,7 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/multichar-fxmanifest.lua # -- ZRX Blackmarket
+    src: ./recipe/replace/multichar-fxmanifest.lua # -- ESX-Multicharacter
     dest: ./resources/[core]/esx_multicharacter/fxmanifest.lua
     overwrite: true
 
