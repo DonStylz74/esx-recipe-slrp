@@ -212,21 +212,20 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 2
 
-
   - action: download_github
-    src: https://github.com/wasabirobby/fivem-appearance
+    src: https://github.com/DonStylz74/illenium-appearance
     ref: main
-    dest: ./resources/[core]/fivem-appearance
+    dest: ./resources/[esx_addons]/illenium-appearance
+
+  ##- action: download_github
+  #  src: https://github.com/wasabirobby/fivem-appearance
+  #  ref: main
+  #  dest: ./resources/[core]/fivem-appearance
 
   - action: download_github
     src: https://github.com/DonStylz74/LGF_PauseMenu
     ref: main
     dest: ./resources/[esx_addons]/LGF_PauseMenu
-
-  - action: download_github
-    src: https://github.com/zRxnx/zrx_personalmenu
-    ref: main
-    dest: ./resources/[esx_addons]/zrx_personalmenu
 
   - action: download_github
     src: https://github.com/DonStylz74/randol_paycheck

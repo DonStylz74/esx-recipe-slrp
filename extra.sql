@@ -25,6 +25,27 @@ DELETE FROM job_grades WHERE job_name = 'banker';
 DELETE FROM job_grades WHERE job_name = 'reporter';
 
 
+-- Install - illenium-appearance tables
+CREATE TABLE IF NOT EXISTS `player_outfits` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `citizenid` varchar(50) DEFAULT NULL,
+  `outfitname` varchar(50) NOT NULL DEFAULT '0',
+  `model` varchar(50) DEFAULT NULL,
+  `props` varchar(1000) DEFAULT NULL,
+  `components` varchar(1500) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `citizenid_outfitname_model` (`citizenid`,`outfitname`,`model`),
+  KEY `citizenid` (`citizenid`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `player_outfit_codes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `outfitid` int(11) NOT NULL,
+  `code` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `FK_player_outfit_codes_player_outfits` (`outfitid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- Install - Renewed Banking table
 CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
@@ -51,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `player_transactions` (
   PRIMARY KEY (`id`)
 );
 
+
 -- Install TCD Starterpacks table
 CREATE TABLE `tcd_starterpack` (
   `id` int(11) NOT NULL,
@@ -60,13 +82,13 @@ CREATE TABLE `tcd_starterpack` (
   `date_received` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
 ALTER TABLE `tcd_starterpack`
   ADD PRIMARY KEY (`id`);
 
 ALTER TABLE `tcd_starterpack`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
+
 
 -- Install - OX Doorlocks table
 CREATE TABLE IF NOT EXISTS `ox_doorlock` (
@@ -75,6 +97,7 @@ CREATE TABLE IF NOT EXISTS `ox_doorlock` (
   `data` longtext NOT NULL,
   PRIMARY KEY (`id`)
 );
+
 
 -- Install Vehicle categorys table -- includes customs
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -98,6 +121,7 @@ INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('suvs', 'SUVs'),
 	('vans', 'Vans');
 
+
 -- Install Player Licenses table
 CREATE TABLE IF NOT EXISTS `licenses` (
   `type` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -115,6 +139,7 @@ INSERT INTO `licenses` (`type`, `label`) VALUES
 	('waterdmv', 'Boating Permit'),
 	('weapon', 'Firearms License'),
 	('weed_processing', 'Weed Processing License');
+
 
 -- Install Driving test progress table
 CREATE TABLE IF NOT EXISTS `driving_school_progress` (
