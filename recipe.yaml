@@ -575,6 +575,11 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/ooxinv-weapons.lua # --OX Inventory weapons  changes
+    dest: ./resources/[ox]/ox_inventory/data/weapons.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/replace/multichar-fxmanifest.lua # -- ESX-Multicharacter
     dest: ./resources/[core]/esx_multicharacter/fxmanifest.lua
     overwrite: true
