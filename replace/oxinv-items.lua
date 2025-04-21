@@ -613,6 +613,7 @@ return {
 			}
 		},
 
+--[[
 -- IT-DRUGS SCRIPT
 ------------------
 	["plant_pot"] = {
@@ -1101,7 +1102,7 @@ return {
 			image = "cocaine_processing_table.png",
 		}
 	},
-
+]]--
 
 	["alive_chicken"] = {
 		label = "Living chicken",
