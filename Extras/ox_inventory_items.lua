@@ -426,6 +426,7 @@
 			}
 		},
 
+--[[
 -- IT-DRUGS SCRIPT
 ------------------
 	["plant_pot"] = {
@@ -914,4 +915,4 @@
 			image = "cocaine_processing_table.png",
 		}
 	},
-
+]]--
