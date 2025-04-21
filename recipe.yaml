@@ -40,7 +40,7 @@ tasks:
 
 
   - action: waste_time # prevent github throttling
-    seconds: 10
+    seconds: 15
 
   - action: download_github
     src: https://github.com/esx-framework/esx-core
@@ -553,13 +553,24 @@ tasks:
 
 
   ## UPDATING SCRIPT FILES PROCESS
+
   - action: copy_path
-    src: ./recipe/replace/paycheck.lua  # -- Randol Paycheck changes
+    src: ./recipe/replace/es_ext-adjustments.lua # -- es_extended config changes
+    dest: ./resources/[core]/es_extended/shared/config/adjustments.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/es_ext-main.lua # -- es_extended config changes
+    dest: ./resources/[core]/es_extended/shared/config//main.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/es_ext-paycheck.lua  # -- Randol Paycheck changes
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/oxinv-items.lua # -- ZRX Blackmarket
+    src: ./recipe/replace/oxinv-items.lua # --OX Inventory Items  changes
     dest: ./resources/[ox]/ox_inventory/data/items.lua
     overwrite: true
 
@@ -569,12 +580,17 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/multichar-database.lua # -- ESX-Multicharacter Db update
+    dest: ./resources/[core]/esx_multicharacter/server/modules/database.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/replace/bl-idcard_config.lua # -- bl idcard v1.5.1
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/itdrugs/itbridge-config.lua # -- IT Drugs v1.4.3 - IT Bridge
+    src: ./recipe/replace/itbridge-config.lua # -- IT Bridge v1.0.5
     dest: ./resources/[dependants]/it_bridge/config.lua
     overwrite: true
 
@@ -583,6 +599,10 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/SN-StoreRobbery/config.lua
     overwrite: true
 
+  - action: copy_path
+    src: ./recipe/replace/5m-Elevator.lua # -- 5m Elevator
+    dest: ./resources/[standalone]/5m-Elevator/shared/elevators.lua
+    overwrite: true
 
   - action: copy_path
     src: ./recipe/replace/emsjob-fxmanifest.lua # -- esx ambulancejob
@@ -599,6 +619,7 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/zrx_blackmarket/fxmanifest.lua
     overwrite: true
 
+  ## Insatll OX Item Images
   - action: copy_path
     src: ./recipe/Extras/images/  # -- OX Inventory Item Images
     dest: ./resources/[ox]/ox_inventory/web/images
