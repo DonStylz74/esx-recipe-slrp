@@ -565,7 +565,7 @@ tasks:
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/es_ext-main.lua # -- es_extended config changes
+    src: ./recipe/replace/es_ext-cfg-main.lua # -- es_extended config changes
     dest: ./resources/[core]/es_extended/shared/config//main.lua
     overwrite: true
 
@@ -575,13 +575,23 @@ tasks:
     overwrite: true
 
   - action: copy_path
+    src: ./recipe/replace/oxinv-mod-itm-server.lua # --OX Inventory usable items - ammo boxs
+    dest: ./resources/[ox]/ox_inventory/modules/items/server.lua
+    overwrite: true
+
+  - action: copy_path
     src: ./recipe/replace/oxinv-items.lua # --OX Inventory Items  changes
     dest: ./resources/[ox]/ox_inventory/data/items.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/ooxinv-weapons.lua # --OX Inventory weapons  changes
+    src: ./recipe/replace/oxinv-weapons.lua # --OX Inventory weapons  changes
     dest: ./resources/[ox]/ox_inventory/data/weapons.lua
+    overwrite: true
+
+  - action: copy_path
+    src: ./recipe/replace/oxinv-shops.lua # --OX Inventory shop  changes
+    dest: ./resources/[ox]/ox_inventory/data/shops.lua
     overwrite: true
 
   - action: copy_path
