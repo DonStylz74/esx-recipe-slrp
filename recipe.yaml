@@ -346,6 +346,11 @@ tasks:
     dest: ./resources/[standalone]/tropic-cityguide
 
   - action: download_github
+    src: https://github.com/DonStylz74/Camou_CraftingToGo
+    ref: main
+    dest: ./resources/[standalone]/CraftingToGo
+
+  - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
     dest: ./resources/[standalone]/pma-voice
