@@ -10,8 +10,8 @@ function StartPayCheck()
         if salary > 0 then
           if job == 'unemployed' then -- unemployed
             exports['randol_paycheck']:AddToPaycheck(xPlayer.identifier, salary)
-            TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_help', salary),
-              'CHAR_BANK_MAZE', 9)
+            --TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_help', salary),
+              --'CHAR_BANK_MAZE', 9)
           elseif Config.EnableSocietyPayouts then -- possibly a society
             TriggerEvent('esx_society:getSociety', xPlayer.job.name, function(society)
               if society ~= nil then -- verified society
@@ -20,22 +20,22 @@ function StartPayCheck()
                     exports['randol_paycheck']:AddToPaycheck(xPlayer.identifier, salary)
                     account.removeMoney(salary)
 
-                    TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'),
-                      TranslateCap('received_salary', salary), 'CHAR_BANK_MAZE', 9)
+                    --TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'),
+                      --TranslateCap('received_salary', salary), 'CHAR_BANK_MAZE', 9)
                   else
                     TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), '', TranslateCap('company_nomoney'), 'CHAR_BANK_MAZE', 1)
                   end
                 end)
               else -- not a society
                 exports['randol_paycheck']:AddToPaycheck(xPlayer.identifier, salary)
-                TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_salary', salary),
-                  'CHAR_BANK_MAZE', 9)
+                --TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_salary', salary),
+                  --'CHAR_BANK_MAZE', 9)
               end
             end)
           else -- generic job
             exports['randol_paycheck']:AddToPaycheck(xPlayer.identifier, salary)
-            TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_salary', salary),
-              'CHAR_BANK_MAZE', 9)
+            --TriggerClientEvent('esx:showAdvancedNotification', player, TranslateCap('bank'), TranslateCap('received_paycheck'), TranslateCap('received_salary', salary),
+              --'CHAR_BANK_MAZE', 9)
           end
         end
       end
