@@ -396,6 +396,42 @@
 		}
 	},
 
+-- SOLOS JOINTROLLING SCRIPT
+----------------------------
+	['rollpapers'] = {
+		label = 'Rolling Papers',
+		stack = true,
+		weight = 5,
+    	close = false,
+    	description = "Pack of 6 rolling papers used for making joints.",
+    	client = {
+       	image = "rollpapers.png",
+    	}
+	},
+
+	["rollpaper"] = {
+		label = "Rolling Paper",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Paper used for making joints.",
+		client = {
+			image = "rollpaper.png",
+		}
+	},
+
+
+	["joint_roller"] = {
+		label = "Joint Roller",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Use the joint rolling machine to roll joints",
+		client = {
+			image = "joint_roller.png",
+		}
+	},
+
 -- KUZ LOOTAREAS SCRIPT
 -----------------------
 		["plant_cutters"] = {
@@ -611,39 +647,6 @@
 		description = "Skunk Weed",
 		client = {
 			image = "weed_white_widow.png",
-		}
-	},
-
-	['rollpapers'] = {
-		label = 'Rolling Papers',
-		stack = true,
-		weight = 5,
-    	close = false,
-    	description = "Pack of 6 rolling papers used for making joints.",
-    	client = {
-       	image = "rollpapers.png",
-    	}
-	},
-
-	["rollpaper"] = {
-		label = "Rolling Paper",
-		weight = 1,
-		stack = true,
-		close = false,
-		description = "Paper used for making joints.",
-		client = {
-			image = "rollpaper.png",
-		}
-	},
-
-	["joint_roller"] = {
-		label = "Joint Roller",
-		weight = 1,
-		stack = true,
-		close = false,
-		description = "Use the joint rolling machine to roll joints",
-		client = {
-			image = "joint_roller.png",
 		}
 	},
 
