@@ -74,24 +74,24 @@ return {
 
 	['burger'] = {
 		label = 'Burger',
-		weight = 220,
+		weight = 250,
 		client = {
-			status = { hunger = 200000 },
+			status = { hunger = 250000 },
 			anim = 'eating',
 			prop = 'burger',
-			usetime = 2500,
+			usetime = 3000,
 			notification = 'You ate a delicious burger'
 		},
 	},
 
 	['water'] = {
 		label = 'Water',
-		weight = 500,
+		weight = 200,
 		client = {
-			status = { thirst = 200000 },
+			status = { thirst = 100000 },
 			anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
 			prop = { model = `prop_ld_flow_bottle`, pos = vec3(0.03, 0.03, 0.02), rot = vec3(0.0, 0.0, -1.5) },
-			usetime = 2500,
+			usetime = 3000,
 			cancel = true,
 			notification = 'You drank some refreshing water'
 		}
@@ -99,12 +99,12 @@ return {
 
 	['sprunk'] = {
 		label = 'Sprunk',
-		weight = 350,
+		weight = 250,
 		client = {
 			status = { thirst = 200000 },
 			anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
 			prop = { model = `prop_ld_can_01`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-			usetime = 2500,
+			usetime = 3000,
 			notification = 'You quenched your thirst with a sprunk'
 		}
 	},
@@ -600,6 +600,41 @@ return {
 		}
 	},
 
+-- SOLOS JOINT ROLLING SCRIPT
+-----------------------------
+	['rollpapers'] = {
+		label = 'Rolling Papers',
+		stack = true,
+		weight = 5,
+    	close = false,
+    	description = "Pack of 6 rolling papers used for making joints.",
+    	client = {
+       	image = "rollpapers.png",
+    	}
+	},
+
+	["rollpaper"] = {
+		label = "Rolling Paper",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Paper used for making joints.",
+		client = {
+			image = "rollpaper.png",
+		}
+	},
+
+	["joint_roller"] = {
+		label = "Joint Roller",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Use the joint rolling machine to roll joints",
+		client = {
+			image = "joint_roller.png",
+		}
+	},
+
 -- KUZ LOOTAREAS SCRIPT
 -----------------------
 		["plant_cutters"] = {
@@ -613,217 +648,209 @@ return {
 			}
 		},
 
---[[
 -- IT-DRUGS SCRIPT
 ------------------
-	["plant_pot"] = {
-		label = "Plant Pot",
-		weight = 100,
-		stack = true,
-		close = false,
-		description = "Used to Plant Seeds",
-		client = {
-			image = "plant_pot.png",
-		}
-	},
-
-	["potting_mix"] = {
-		label = "Potting Mix",
-		weight = 150,
-		stack = true,
-		close = false,
-		description = "Use with Plant Pot to Plant Seeds",
-		client = {
-			image = "potting_mix.png",
-		}
-	},
-
-	["water_refill"] = {
-		label = "Plant Water Refill",
-		weight = 350,
-		stack = true,
-		close = false,
-		description = "Specialize plant water refill",
-		client = {
-			image = "water_refill.png",
-		}
-	},
-
-	["wateringcan_empty"] = {
-		label = "Empty Watering Can",
-		weight = 150,
-		stack = true,
-		close = false,
-		description = "Empty watering can",
-		client = {
-			image = "wateringcan_empty.png",
-		}
-	},
-
-	["watering_can"] = {
-		label = "Watering can",
-		weight = 500,
-		stack = true,
-		close = false,
-		description = "Simple watering can",
-		client = {
-			image = "watering_can.png",
-		}
-	},
-
-	["fertilizer"] = {
-		label = "Fertilizer",
-		weight = 500,
-		stack = true,
-		close = false,
-		description = "Fertilizer",
-		client = {
-			image = "fertilizer.png",
-		}
-	},
-
-	["advanced_fertilizer"] = {
-		label = "Advanced fertilizer",
-		weight = 500,
-		stack = true,
-		close = false,
-		description = "Fertilizer with the litte extra",
-		client = {
-			image = "advanced_fertilizer.png",
-		}
-	},
-
-	["liquid_fertilizer"] = {
-		label = "Liquid Fertilizer",
-		weight = 200,
-		stack = true,
-		close = false,
-		description = "Basicly Water with nutrations",
-		client = {
-			image = "liquid_fertilizer.png",
-		}
-	},
-
-	["garden_shovel"] = {
-		label = "Gardening Shovel",
-		weight = 100,
-		stack = false,
-		close = true,
-		description = "Used to dig hole in the dirt",
-		client = {
-		image = "garden_shovel.png",
-		}
-	},
-
-	["weed_ak47_seed"] = {
-		label = "Weed AK47 Seed",
-		weight = 4,
-		stack = true,
-		close = true,
-		description = "Weed AK47 Seed",
-		server = {
-			export = "it-drugs.useSeed"
+		["garden_shovel"] = {
+			label = "Gardening Shovel",
+			weight = 100,
+			stack = false,
+			close = true,
+			description = "Used to dig holes in the dirt for planting",
+			client = {
+			image = "garden_shovel.png",
+			}
 		},
+
+		  ["plant_pot"] = {
+			label = "Plant Pot",
+			weight = 100,
+			stack = true,
+			close = false,
+			description = "Used to Plant Seeds",
+			client = {
+				image = "plant_pot.png",
+			}
+		  },
+
+		["potting_mix"] = {
+			label = "Potting Mix",
+			weight = 150,
+			stack = true,
+			close = false,
+			description = "Use with Plant Pot to Plant Seeds",
+			client = {
+				image = "potting_mix.png",
+			}
+		},
+
+		  ["wateringcan_empty"] = {
+			label = "Empty Watering Can",
+			weight = 250,
+			stack = true,
+			close = false,
+			description = "Empty watering can",
+			client = {
+				image = "wateringcan_empty.png",
+			}
+		  },
+
+		["water_refill"] = {
+			label = "Water Refill",
+			weight = 250,
+			stack = true,
+			close = false,
+			description = "Specialized plant watering can refill.",
+			client = {
+				image = "water_refill.png",
+			}
+		},
+
+		["watering_can"] = {
+			label = "Watering Can",
+			weight = 500,
+			stack = true,
+			close = false,
+			description = "Use this Watering Can to water plants.",
+			client = {
+				image = "watering_can.png",
+			}
+		},
+
+		["fertilizer"] = {
+			label = "Fertilizer",
+			weight = 250,
+			stack = true,
+			close = false,
+			description = "Fertilizer",
+			client = {
+				image = "fertilizer.png",
+			}
+		},
+
+		["advanced_fertilizer"] = {
+			label = "Advanced fertilizer",
+			weight = 500,
+			stack = true,
+			close = false,
+			description = "Fertilizer with the litte extra",
+			client = {
+				image = "advanced_fertilizer.png",
+			}
+		},
+
+		["liquid_fertilizer"] = {
+			label = "Liquid Fertilizer",
+			weight = 250,
+			stack = true,
+			close = false,
+			description = "Basicly Water with nutrations",
+			client = {
+				image = "liquid_fertilizer.png",
+			}
+		},
+
+	["weed_lemonhaze_seed"] = {
+		label = "AK47 Weed Seed",
+		weight = 2,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Plant Seed to grow a AK47 Weed Plant",
 		client = {
 			image = "weed_ak47_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
 		}
 	},
 
-	["weed_ak47"] = {
+	["weed_lemonhaze"] = {
 		label = "Weed AK47",
 		weight = 1,
 		stack = true,
 		close = false,
-		description = "Weed AK47",
+		description = "AK47 Weed",
 		client = {
 			image = "weed_ak47.png",
+		},
+	},
+
+	["weed_og_seed"] = {
+		label = "OGKush Weed Seed",
+		weight = 2,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Plant Seed to grow a OGKush Weed Plant",
+		client = {
+			image = "weed_og_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
 		}
 	},
 
-	['weed_ogkush_seed'] = {
-		label = 'OG Kush Seed',
-		weight = 6,
-		stack = true,
-    	close = true,
-    	description = "Weed OG Kush Seed",
-		server = {
-			export = "it-drugs.useSeed"
-		},
-    	client = {
-       	image = "weed_ogkush_seed.png",
-    	}
-	},
-
-	['weed_ogkush'] = {
-		label = 'OG Kush Bud',
+	["weed_og"] = {
+		label = "Weed OGKush",
 		weight = 1,
 		stack = true,
-    	close = false,
-    	description = "Weed OG Kush",
-    	client = {
-       	image = "weed_ogkush.png",
-    	}
-	},
-
-	['weed_purplehaze_seed'] = {
-		label = 'Purple Haze Seed',
-		stack = true,
-		weight = 6,
-    	close = true,
-    	description = "Weed Purple Haze Seed",
-		server = {
-			export = "it-drugs.useSeed"
+		close = false,
+		description = "OGkush Weed",
+		client = {
+			image = "weed_og.png",
 		},
-    	client = {
-       	image = "weed_purplehaze_seed.png",
-    	}
 	},
 
-	['weed_purplehaze'] = {
-		label = 'Purple Haze Bud',
-		stack = true,
-		weight = 1,
-    	close = false,
-    	description = "Weed Purple Haze",
-    	client = {
-       	image = "weed_purplehaze.png",
-    	}
-	},
-
-	['weed_skunk_seed'] = {
-		label = 'Skunk Seed',
-		stack = true,
-		weight = 6,
-    	close = true,
-    	description = "Weed Skunk Seed",
-		server = {
-			export = "it-drugs.useSeed"
-		},
-    	client = {
-       	image = "weed_skunk_seed.png",
-    	}
-	},
-
-	['weed_skunk'] = {
-		label = 'Skunk Bud',
-		stack = true,
-		weight = 1,
-    	close = false,
-    	description = "Weed Skunk",
-    	client = {
-       	image = "weed_skunk.png",
-    	}
-	},
-
-	['rollpapers'] = {
-		label = 'Rolling Papers',
-		stack = true,
+	["weed_purple_haze_seed"] = {
+		label = "Purple Haze Weed Seed",
 		weight = 2,
-    	close = false,
-    	description = "Papers to roll Joints",
-    	client = {
-       	image = "paper.png",
-    	}
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Plant Seed to grow a Purple Haze Weed Plant",
+		client = {
+			image = "weed_purple_haze_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	},
+
+	["weed_purple_haze"] = {
+		label = "Weed Purple Haze",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Purple Haze Weed",
+		client = {
+			image = "weed_purple_haze.png",
+		},
+	},
+
+	["weed_white_widow_seed"] = {
+		label = "Skunk Weed Seed",
+		weight = 2,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Plant Seed to grow a Skunk Weed Plant",
+		client = {
+			image = "weed_white_widow_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	},
+
+	["weed_white_widow"] = {
+		label = "Weed Skunk",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Skunk Weed",
+		client = {
+			image = "weed_white_widow.png",
+		}
 	},
 
 	["joint_ak"] = {
@@ -881,6 +908,92 @@ return {
         image = "joint_sk.png",
 		}
 	},
+
+	  ["coca_seed"] = {
+		label = "Coca Seed",
+		weight = 1,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Coca Seed",
+		client = {
+			image = "coca_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	},
+
+	["coca"] = {
+		label = "Coca",
+		weight = 2,
+		stack = true,
+		close = false,
+		description = "Coca",
+		client = {
+			image = "coca.png",
+		}
+	},
+
+	  ["nitrous"] = {
+		label = "Nitrous",
+		weight = 500,
+		stack = false,
+		close = false,
+		description = "Nitrous",
+		client = {
+			image = "nitrous.png",
+		}
+	  },
+
+	  ["cocaine"] = {
+		label = "Cocaine",
+		weight = 20,
+		stack = true,
+		close = true,
+		description = "A little bag of cocaine",
+		consume = 0,
+		server = {
+			export = "it-drugs.takeDrug"
+		},
+		client = {
+			image = "cocaine.png",
+		},
+	  },
+
+  ["weed_processing_table"] = {
+  	label = "Weed Processing Table",
+  	weight = 1000,
+  	stack = false,
+  	close = true,
+  consume = 0,
+  	description = "Process some weed",
+  	client = {
+  		image = "weed_processing_table.png",
+  	},
+  	server = {
+  		export = "it-drugs.placeProcessingTable"
+  	}
+  },
+  
+  ["cocaine_processing_table"] = {
+  	label = "Cocaine Processing Table",
+  	weight = 1000,
+  	stack = false,
+  	close = true,
+  	description = "Process some cocaine",
+  consume = 0,
+  	client = {
+  		image = "cocaine_processing_table.png",
+  	},
+  	server = {
+  		export = "it-drugs.placeProcessingTable"
+  	}
+  },
+
+
+
+--[[
 
 	["baggie"] = {
 		label = "Empty Baggie",
@@ -1007,40 +1120,7 @@ return {
 		}
 	},
 
-	["coca"] = {
-		label = "Coca",
-		stack = true,
-		close = false,
-		description = "Coca",
-		client = {
-    	image = "coca.png",
-		}
-	},
 
-	["nitrous"] = {
-		label = "Nitrous",
-		weight = 25,
-		stack = true,
-		close = false,
-		description = "Nitrous",
-		client = {
-    	image = "nitrous.png",
-		}
-	},
-
-	["cocaine"] = {
-		label = "Cocaine",
-		weight = 1,
-		stack = true,
-		close = true,
-		description = "Cocaine",
-		server = {
-			export = "it-drugs.takeDrug"
-		},
-		client = {
-		image = "cocaine.png",
-		}
-	},
 
 	["baggie_coke"] = {
 		label = "Baggie Cocaine",
@@ -1074,35 +1154,144 @@ return {
     	image = "baggie_coke.png",
 		}
 	},
-
-	["weed_processing_table"] = {
-		label = "Weed Processing Table",
-		weight = 1000,
-		stack = false,
-		close = true,
-		description = "Process some weed",
-		server = {
-			export = "it-drugs.placeProcessingTable"
-		},
-		client = {
-			image = "weed_processing_table.png",
-		}
-	},
-
-	["cocaine_processing_table"] = {
-		label = "Cocaine Processing Table",
-		weight = 1000,
-		stack = false,
-		close = true,
-		description = "Process some cocaine",
-		server = {
-			export = "it-drugs.placeProcessingTable"
-		},
-		client = {
-			image = "cocaine_processing_table.png",
-		}
-	},
 ]]--
+
+	['box_ammo_9'] = {
+        label = 'Ammo Case: 9x9mm (x120)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_44'] = {
+        label = 'Ammo Case: .44mm (x120)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_45'] = {
+        label = 'Ammo Case: .45 ACP (x120)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_50'] = {
+        label = 'Ammo Case: .50 AE (x120)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_rifle'] = {
+        label = 'Ammo Case: 5.56 (x60)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_rifle2'] = {
+        label = 'Ammo Case: 7.62 (x60)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_shotgun'] = {
+        label = 'Ammo Case: !2 Guage (x10)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
+	['box_ammo_sniper'] = {
+        label = 'Ammo Case: 7.62 NATO (x10)',
+        weight = 5,
+        --consume = 0,
+        description = "A case of stuff to make problems go away",
+        client = {
+            anim = { dict = 'anim@amb@clubhouse@tutorial@bkr_tut_ig3@', 
+            clip = 'machinic_loop_mechandplayer', flag = 3 },
+            prop = { model = 'prop_box_ammo02a', -- need badge props repo
+            pos = vec3(0.0, 0.7, -0.40), 
+            rot = vec3(0.00, 0.00, 90.00), 
+            bone = 56604  },
+            disable = { move = false, car = false, combat = false },
+            usetime = 7500,
+        }
+    },
+
 
 	["alive_chicken"] = {
 		label = "Living chicken",

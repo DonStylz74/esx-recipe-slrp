@@ -351,6 +351,12 @@ Item('box_ammo_9', function(event, item, inventory, data, slot)
     end
 end)
 
+Item('box_ammo_44', function(event, item, inventory, data, slot)
+    if event == 'usedItem' then
+        Inventory.AddItem(inventory, 'ammo-44', 120)
+    end
+end)
+
 Item('box_ammo_45', function(event, item, inventory, data, slot)
     if event == 'usedItem' then
         Inventory.AddItem(inventory, 'ammo-45', 120)
