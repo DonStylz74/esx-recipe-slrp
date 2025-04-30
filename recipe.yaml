@@ -217,15 +217,15 @@ tasks:
     ref: main
     dest: ./resources/[esx_addons]/illenium-appearance
 
-  ##- action: download_github
-  #  src: https://github.com/wasabirobby/fivem-appearance
-  #  ref: main
-  #  dest: ./resources/[core]/fivem-appearance
-
   - action: download_github
     src: https://github.com/DonStylz74/LGF_PauseMenu
     ref: main
     dest: ./resources/[esx_addons]/LGF_PauseMenu
+
+  - action: download_github
+    src: https://github.com/DonStylz74/LGF_ChatV4
+    ref: main
+    dest: ./resources/[esx_addons]/LGF_ChatV4
 
   - action: download_github
     src: https://github.com/DonStylz74/randol_paycheck
@@ -461,12 +461,27 @@ tasks:
 
 
   ## SERVER BASE CLEANUP PROCESS
-  
+
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat-theme-gtao
+
+  - action: remove_path
+    path: ./resources/[core]/esx_chat_theme
+
   - action: remove_path
     path: ./resources/[core]/esx_skin
 
   - action: remove_path
     path: ./resources/[core]/skinchanger
+
+  - action: remove_path
+    path: ./resources/[core]/esx_identity
+
+  - action: remove_path
+    path: ./resources/[core]/esx_multicharacter
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_accessories
@@ -487,6 +502,11 @@ tasks:
   - action: move_path
     src: ./tmp/zrx_utility-2.5.0
     dest: ./resources/[dependants]/zrx_utility
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/ENT510_Multicharacter
+    dest: ./resources/[esx_addons]/ENT510_Multicharacter
     overwrite: true
 
   - action: move_path
@@ -527,6 +547,11 @@ tasks:
   - action: move_path
     src: ./recipe/Extras/flatbed3
     dest: ./resources/[vehicles]/flatbed3
+    overwrite: true
+
+  - action: move_path
+    src: ./recipe/Extras/solos-jointroll
+    dest: ./resources/[esx_extras]/[illegal]/solos-jointroll
     overwrite: true
 
   - action: move_path
@@ -592,16 +617,6 @@ tasks:
   - action: copy_path
     src: ./recipe/replace/oxinv-shops.lua # --OX Inventory shop  changes
     dest: ./resources/[ox]/ox_inventory/data/shops.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/multichar-fxmanifest.lua # -- ESX-Multicharacter
-    dest: ./resources/[core]/esx_multicharacter/fxmanifest.lua
-    overwrite: true
-
-  - action: copy_path
-    src: ./recipe/replace/multichar-database.lua # -- ESX-Multicharacter Db update
-    dest: ./resources/[core]/esx_multicharacter/server/modules/database.lua
     overwrite: true
 
   - action: copy_path
