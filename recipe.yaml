@@ -260,10 +260,17 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 5
 
+## -  Hash bellow to not install atlas postal maps - remove hashs on oulsen to install sat maps
   - action: download_github
-    src: https://github.com/DonStylz74/oulsen_satmap
+    src: https://github.com/DonStylz74/postal-map
     ref: main
-    dest: ./tmp/oulsen_satmap
+    dest: ./resources/[esx_addons]/postal-map
+
+## - REMOVE HASH BELLOW TO INSTALL SATMAP
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/oulsen_satmap
+  #  ref: main
+  #  dest: ./tmp/oulsen_satmap
 
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
@@ -524,15 +531,17 @@ tasks:
     dest: ./resources/[esx_addons]/jg-scoreboard
     overwrite: true
 
-  - action: move_path
-    src: ./tmp/oulsen_satmap/oulsen_satmap
-    dest: ./resources/[esx_addons]/oulsen_satmap
-    overwrite: true
+## - REMOVE HASH BELLOW TO INSTALL SATMAP
 
-  - action: move_path
-    src: ./recipe/Extras/cayo-satmap
-    dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
-    overwrite: true
+  ##- action: move_path
+  #  src: ./tmp/oulsen_satmap/oulsen_satmap
+  #  dest: ./resources/[esx_addons]/oulsen_satmap
+  # overwrite: true
+
+  ##- action: move_path
+  #  src: ./recipe/Extras/cayo-satmap
+  #  dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
+  #  overwrite: true
 
   - action: move_path
     src: ./recipe/Extras/0r-hud-v3
