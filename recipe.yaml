@@ -342,9 +342,9 @@ tasks:
     dest: ./resources/[standalone]/tropic-cityguide
 
   - action: download_github
-    src: https://github.com/DonStylz74/Camou_CraftingToGo
+    src: https://github.com/DonStylz74/dss_quikcrafting
     ref: main
-    dest: ./resources/[standalone]/CraftingToGo
+    dest: ./resources/[standalone]/dss_quikcrafting
 
   - action: download_github
     src: https://github.com/Hexora-Studios/esx_billing-redesign
