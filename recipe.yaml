@@ -48,104 +48,16 @@ tasks:
     dest: ./tmp/core
 
   - action: download_github
-    src: https://github.com/esx-framework/esx_addonaccount
+    src: https://github.com/esx-framework/ESX-Legacy-Addons/
     ref: main
-    dest: ./tmp/addons/esx_addonaccount
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_datastore
-    ref: main
-    dest: ./tmp/addons/esx_datastore
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_service
-    ref: main
-    dest: ./tmp/addons/esx_service
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_basicneeds
-    ref: main
-    dest: ./tmp/addons/esx_basicneeds
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_optionalneeds
-    ref: main
-    dest: ./tmp/addons/esx_optionalneeds
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_society
-    ref: main
-    dest: ./tmp/addons/esx_society
-
-  - action: download_github
-    src: https://github.com/Hexora-Studios/esx_billing-redesign
-    ref: main
-    dest: ./tmp/addons/esx_billing
-
-  # - action: download_github
-  #  src: https://github.com/esx-framework/esx_billing
-  #  ref: main
-  #  dest: ./tmp/addons/esx_billing
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_status
-    ref: main
-    dest: ./tmp/addons/esx_status
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_license
-    ref: main
-    dest: ./tmp/addons/esx_license
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-  ##- action: download_file
-  #  path: ./tmp/files/esx_hud.zip
-  #  url: https://github.com/esx-framework/esx_hud/releases/latest/download/esx_hud.zip
-  # - action: unzip
-  #  dest: ./tmp/addons
-  #  src: ./tmp/files/esx_hud.zip
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_lscustom
-    ref: main
-    dest: ./tmp/addons/esx_lscustom
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_policejob
-    ref: main
-    dest: ./tmp/addons/esx_policejob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_ambulancejob
-    ref: main
-    dest: ./tmp/addons/esx_ambulancejob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_mechanicjob
-    ref: main
-    dest: ./tmp/addons/esx_mechanicjob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_taxijob
-    ref: main
-    dest: ./tmp/addons/esx_taxijob
-
-  - action: download_github
-    src: https://github.com/esx-framework/esx_jobs
-    ref: main
-    dest: ./tmp/addons/esx_jobs
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
+    dest: ./tmp/addons
 
   - action: move_path
     src: ./tmp/core/[core]
     dest: ./resources/[core]
 
   - action: move_path
-    src: ./tmp/addons/
+    src: ./tmp/addons/[esx_addons]
     dest: ./resources/[esx_addons]
 
   - action: waste_time # prevent github throttling
@@ -358,6 +270,11 @@ tasks:
     dest: ./resources/[standalone]/CraftingToGo
 
   - action: download_github
+    src: https://github.com/Hexora-Studios/esx_billing-redesign
+    ref: main
+    dest: ./tmp/addons/esx_billing
+
+  - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
     dest: ./resources/[standalone]/pma-voice
@@ -505,6 +422,11 @@ tasks:
 
 
   #- EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc. 
+
+  - action: move_path
+    src: ./tmp/addons/esx_billing
+    dest: ./resources/[addons]/esx_billing
+    overwrite: true
 
   - action: move_path
     src: ./tmp/zrx_utility-2.5.0
