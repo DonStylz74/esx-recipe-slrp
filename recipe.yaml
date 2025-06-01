@@ -61,7 +61,85 @@ tasks:
     dest: ./resources/[esx_addons]
 
   - action: waste_time # prevent github throttling
-    seconds: 5
+    seconds: 10
+
+  ## SERVER BASE CLEANUP PROCESS
+
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat-theme-gtao
+
+  - action: remove_path
+    path: ./resources/[core]/esx_chat_theme
+
+  - action: remove_path
+    path: ./resources/[core]/esx_skin
+
+  - action: remove_path
+    path: ./resources/[core]/skinchanger
+
+  - action: remove_path
+    path: ./resources/[core]/esx_identity
+
+  - action: remove_path
+    path: ./resources/[core]/esx_multicharacter
+
+      ## - Comment out bellow action, to install default esx loading screen
+  - action: remove_path
+    path: ./resources/[core]/esx_loadingscreen
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_addoninventory
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_billing
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_barbershop
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_accessories
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_vehicleshop
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_boat
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_clotheshop
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_dmvschool
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_drugs
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_garage
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_hud
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_joblisting
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_property
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_rpchat
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_shops
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_hud
+
+  - action: waste_time # prevent github throttling
+    seconds: 10
     
   ###########################################
   ## CUSTOM SCRIPT INJECTION & INSTALATION ##
@@ -122,7 +200,7 @@ tasks:
     dest: ./resources/[dependants]/SN-Hacking
 
   - action: waste_time # prevent github throttling
-    seconds: 2
+    seconds: 5
 
   - action: download_github
     src: https://github.com/DonStylz74/illenium-appearance
@@ -173,16 +251,16 @@ tasks:
     seconds: 5
 
 ## -  Hash bellow to not install atlas postal maps - remove hashs on oulsen to install sat maps
-  - action: download_github
-    src: https://github.com/DonStylz74/postal-map
-    ref: main
-    dest: ./resources/[esx_addons]/postal-map
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/postal-map
+  #  ref: main
+  #  dest: ./resources/[esx_addons]/postal-map
 
 ## - REMOVE HASH BELLOW TO INSTALL SATMAP
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/oulsen_satmap
-  #  ref: main
-  #  dest: ./tmp/oulsen_satmap
+  - action: download_github
+    src: https://github.com/DonStylz74/oulsen_satmap
+    ref: main
+    dest: ./tmp/oulsen_satmap
 
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
@@ -217,8 +295,7 @@ tasks:
     src: ./tmp/bl_idcard.zip
 
   - action: waste_time # prevent github throttling
-    seconds: 3
-
+    seconds: 8
 
   - action: download_github
     src: https://github.com/DonStylz74/ed_scuba
@@ -288,7 +365,7 @@ tasks:
     file: ./tmp/core/[SQL]/legacy.sql
 
   - action: waste_time # prevent github throttling
-    seconds: 3
+    seconds: 5
 
   ## OX INSTALATION
   - action: download_file
@@ -383,42 +460,6 @@ tasks:
   - action: waste_time # prevent github throttling
     seconds: 3
 
-
-  ## SERVER BASE CLEANUP PROCESS
-
-  - action: remove_path
-    path: ./resources/[cfx-default]/[gameplay]/chat
-
-  - action: remove_path
-    path: ./resources/[cfx-default]/[gameplay]/chat-theme-gtao
-
-  - action: remove_path
-    path: ./resources/[core]/esx_chat_theme
-
-  - action: remove_path
-    path: ./resources/[core]/esx_skin
-
-  - action: remove_path
-    path: ./resources/[core]/skinchanger
-
-  - action: remove_path
-    path: ./resources/[core]/esx_identity
-
-  - action: remove_path
-    path: ./resources/[core]/esx_multicharacter
-
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_accessories
-
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_cardealer
-
-  - action: remove_path
-    path: ./resources/[esx_addons]/esx_banker
-
-  ## - Comment out bellow action, to install default esx loading screen
-  - action: remove_path
-    path: ./resources/[core]/esx_loadingscreen
 
 
   #- EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc. 
