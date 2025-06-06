@@ -223,7 +223,7 @@ return {
 	----------------------
 	["id_card"] = {
 		label = "ID Card",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "A card containing all your information to identify yourself",
@@ -231,7 +231,7 @@ return {
 
     ["drive"] = {
 		label = "Drivers License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can operate Motor Vehicles",
@@ -239,7 +239,7 @@ return {
 
     ["drive_bike"] = {
 		label = "Motorcycle License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can operate Motorcycles",
@@ -247,7 +247,7 @@ return {
 
     ["drive_truck"] = {
 		label = "Truck License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can operate Commercial Trucks",
@@ -255,7 +255,7 @@ return {
 
     ["drive_boat"] = {
 		label = "Watercraft License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can operate Water Vehicles",
@@ -263,7 +263,7 @@ return {
 
     ["plane_license"] = {
 		label = "Aircraft License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can operate Aircrafts",
@@ -271,7 +271,7 @@ return {
 
     ["weaponlicense"] = {
 		label = "Firearms License",
-		weight = 0,
+		weight = 2,
 		stack = false,
 		close = true,
 		description = "Permit to show you can own Firearms",
@@ -306,11 +306,12 @@ return {
 		stack = true,
 		close = true,
 		description = "A microfiber cloth with some soap will let your car sparkle again!",
+		allowArmed = false,
+		client = {
+			image = "cleaningkit.png",
+		},
 		server = {
 			export = "vehiclehandler.cleaningkit"
-		},
-		client = {
-			image = "cleaningkit.png"
 		}
 	},
 
@@ -319,12 +320,13 @@ return {
 		weight = 750,
 		stack = true,
 		close = true,
-		description = "A toolbox with stuff to repair your tire!",
+		description = "A toolkit with stuff to repair your tire!",
+		allowArmed = false,
+		client = {
+			image = "tirekit.png",
+		},
 		server = {
 			export = "vehiclehandler.tirekit"
-		},
-		client = {
-			image = "tirekit.png"
 		}
 	},
 
@@ -334,25 +336,26 @@ return {
 		stack = true,
 		close = true,
 		description = "A toolbox with stuff to repair your vehicle!",
+		allowArmed = false,
+		client = {
+			image = "repairkit.png",
+		},
 		server = {
 			export = "vehiclehandler.repairkit"
-		},
-		client = {
-			image = "repairkit.png"
 		}
 	},
 
 	["advancedrepairkit"] = {
 		label = "Adv Vehicle Repairkit",
-		weight = 2500,
-		stack = true,
+		weight = 25000,
 		close = true,
 		description = "Advanced toolbox with stuff to repair your vehicle!",
+		allowArmed = false,
+		client = {
+			image = "advancedrepairkit.png",
+		},
 		server = {
 			export = "vehiclehandler.advancedrepairkit"
-		},
-		client = {
-			image = "advancedkit.png"
 		}
 	},
 
@@ -602,15 +605,20 @@ return {
 
 -- SOLOS JOINT ROLLING SCRIPT
 -----------------------------
+
+
 	['rollpapers'] = {
 		label = 'Rolling Papers',
 		stack = true,
 		weight = 5,
-    	close = false,
-    	description = "Pack of 6 rolling papers used for making joints.",
-    	client = {
-       	image = "rollpapers.png",
-    	}
+		close = false,
+		description = "Pack of 6 rolling papers.",
+		server = {
+			event = 'crafting:startCraftingFromItem',
+		},
+		client = {
+			image = "rollpapers.png"
+		}
 	},
 
 	["rollpaper"] = {
@@ -694,16 +702,19 @@ return {
 			}
 		  },
 
-		["water_refill"] = {
-			label = "Water Refill",
-			weight = 250,
-			stack = true,
-			close = false,
-			description = "Specialized plant watering can refill.",
-			client = {
-				image = "water_refill.png",
-			}
+	['water_refill'] = {
+		label = 'Water Refill',
+		weight = 100,
+		stack = true,
+		close = true,
+		description = 'Water refill item',
+		server = {
+			event = 'crafting:startCraftingFromItem',
 		},
+		client = {
+			image = "water_refill.png"
+		}
+	},
 
 		["watering_can"] = {
 			label = "Watering Can",
@@ -749,34 +760,8 @@ return {
 			}
 		},
 
-	["weed_lemonhaze_seed"] = {
-		label = "AK47 Weed Seed",
-		weight = 2,
-		stack = true,
-		close = true,
-	  consume = 0,
-		description = "Plant Seed to grow a AK47 Weed Plant",
-		client = {
-			image = "weed_ak47_seed.png",
-		},
-		server = {
-			export = "it-drugs.useSeed"
-		}
-	},
-
-	["weed_lemonhaze"] = {
-		label = "Weed AK47",
-		weight = 1,
-		stack = true,
-		close = false,
-		description = "AK47 Weed",
-		client = {
-			image = "weed_ak47.png",
-		},
-	},
-
 	["weed_og_seed"] = {
-		label = "OGKush Weed Seed",
+		label = "OGKush Seed",
 		weight = 2,
 		stack = true,
 		close = true,
@@ -801,8 +786,34 @@ return {
 		},
 	},
 
+	["weed_lemonhaze_seed"] = {
+		label = "Skunk Seed",
+		weight = 2,
+		stack = true,
+		close = true,
+	  consume = 0,
+		description = "Plant Seed to grow a Skunk Weed Plant",
+		client = {
+			image = "weed_lemonhaze_seed.png",
+		},
+		server = {
+			export = "it-drugs.useSeed"
+		}
+	},
+
+	["weed_lemonhaze"] = {
+		label = "Weed Skunk",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Skunk Weed",
+		client = {
+			image = "weed_lemonhaze.png",
+		},
+	},
+
 	["weed_purple_haze_seed"] = {
-		label = "Purple Haze Weed Seed",
+		label = "Purple Haze Seed",
 		weight = 2,
 		stack = true,
 		close = true,
@@ -828,12 +839,12 @@ return {
 	},
 
 	["weed_white_widow_seed"] = {
-		label = "Skunk Weed Seed",
+		label = "White Widow Seed",
 		weight = 2,
 		stack = true,
 		close = true,
 	  consume = 0,
-		description = "Plant Seed to grow a Skunk Weed Plant",
+		description = "Plant Seed to grow a White Widow Weed Plant",
 		client = {
 			image = "weed_white_widow_seed.png",
 		},
@@ -843,69 +854,13 @@ return {
 	},
 
 	["weed_white_widow"] = {
-		label = "Weed Skunk",
+		label = "Weed White Widow",
 		weight = 1,
 		stack = true,
 		close = false,
-		description = "Skunk Weed",
+		description = "White Widow Weed",
 		client = {
 			image = "weed_white_widow.png",
-		}
-	},
-
-	["joint_ak"] = {
-		label = "Joint AK47",
-		weight = 3,
-		stack = true,
-		close = true,
-		description = "Joint AK47",
-		server = {
-          export = "it-drugs.takeDrug"
-		},
-		client = {
-        image = "joint_ak.png",
-		}
-	},
-
-	["joint_ogk"] = {
-		label = "Joint OGKush",
-		weight = 3,
-		stack = true,
-		close = true,
-		description = "Joint OGKush",
-		server = {
-          export = "it-drugs.takeDrug"
-		},
-		client = {
-        image = "joint_ogk.png",
-		}
-	},
-
-	["joint_ph"] = {
-		label = "Joint Purple haze",
-		weight = 3,
-		stack = true,
-		close = true,
-		description = "Joint Purple haze",
-		server = {
-          export = "it-drugs.takeDrug"
-		},
-		client = {
-        image = "joint_ph.png",
-		}
-	},
-
-	["joint_sk"] = {
-		label = "Joint Skunk",
-		weight = 3,
-		stack = true,
-		close = true,
-		description = "Joint Skunk",
-		server = {
-          export = "it-drugs.takeDrug"
-		},
-		client = {
-        image = "joint_sk.png",
 		}
 	},
 
@@ -960,6 +915,198 @@ return {
 			image = "cocaine.png",
 		},
 	  },
+---------DRUGS PROCESSING ITEMS---------
+----------------------------------------
+	["baggie"] = {
+		label = "Empty Baggie",
+		weight = 1,
+		stack = true,
+		close = false,
+		description = "Empty Drug Baggie",
+		client = {
+			image = "baggie.png",
+		}
+	},
+
+	["drug_scales_low"] = {
+		label = "Drug Scales",
+		weight = 125,
+		stack = false,
+		close = true,
+		description = "Low quality drug scales",
+		client = {
+			image = "drug_scales_low.png",
+		}
+	},
+
+	["drug_scales_high"] = {
+		label = "Drug Scales",
+		weight = 250,
+		stack = false,
+		close = true,
+		description = "High quality drug scales",
+		client = {
+			image = "drug_scales_high.png",
+		}
+	},
+
+	["empty_jar"] = {
+		label = "Empty Oz Jar",
+		weight = 3,
+		stack = true,
+		close = false,
+		description = "Empty Weed Oz Jar",
+		client = {
+			image = "empty_jar.png",
+		}
+	},
+
+-----------DRUGS WEED JOINTS------------
+----------------------------------------
+	["joint_ogk"] = {
+		label = "Joint OGKush",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint OGKush",
+		server = {
+          export = "it-drugs.takeDrug"
+		},
+		client = {
+        image = "joint_ogk.png",
+		}
+	},
+
+	["joint_sk"] = {
+		label = "Joint Skunk",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint Skunk",
+		server = {
+          export = "it-drugs.takeDrug"
+		},
+		client = {
+        image = "joint_sk.png",
+		}
+	},
+
+	["joint_ph"] = {
+		label = "Joint Purple haze",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint Purple haze",
+		server = {
+          export = "it-drugs.takeDrug"
+		},
+		client = {
+        image = "joint_ph.png",
+		}
+	},
+
+	["joint_ww"] = {
+		label = "Joint White Widow",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Joint White Widow",
+		server = {
+          export = "it-drugs.takeDrug"
+		},
+		client = {
+        image = "joint_ww.png",
+		}
+	},
+-----------DRUGS WEED BAGGIES------------
+-----------------------------------------
+	["baggie_ogk"] = {
+		label = "Baggie OGKush",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Weed Baggie of OGKush",
+		client = {
+			image = "baggie_ogk.png",
+		}
+	},
+	["baggie_sk"] = {
+		label = "Baggie Skunk",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Weed Baggie of Skunk",
+		client = {
+			image = "baggie_sk.png",
+		}
+	},
+
+	["baggie_ph"] = {
+		label = "Baggie Purple Haze",
+		weight = 2,
+		stack = true,
+		close = true,
+		description = "Weed Baggie of Purple Haze",
+		client = {
+			image = "baggie_ph.png",
+		}
+	},
+
+	["baggie_ww"] = {
+		label = "Baggie White Widow",
+		weight = 3,
+		stack = true,
+		close = true,
+		description = "Weed Baggie of White Widow",
+		client = {
+			image = "baggie_ww.png",
+		}
+	},
+-----------DRUGS WEED Oz Jars------------
+-----------------------------------------
+	["ozjar_ogk"] = {
+		label = "Oz Jar OGKush",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of OGKush Weed",
+		client = {
+			image = "ozjar_ogk.png",
+		}
+	},
+
+	["ozjar_sk"] = {
+		label = "Oz Jar Skunk",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of Skunk Weed",
+		client = {
+			image = "ozjar_sk.png",
+		}
+	},
+
+	["ozjar_ph"] = {
+		label = "Oz Jar PurpleHaze",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of PurpleHaze Weed",
+		client = {
+			image = "ozjar_ph.png",
+		}
+	},
+
+	["ozjar_ww"] = {
+		label = "Oz Jar White Widow",
+		weight = 30,
+		stack = true,
+		close = true,
+		description = "Oz Jar of White Widow Weed",
+		client = {
+			image = "ozjar_ww.png",
+		}
+	},
 
   ["weed_processing_table"] = {
   	label = "Weed Processing Table",
@@ -975,6 +1122,7 @@ return {
   		export = "it-drugs.placeProcessingTable"
   	}
   },
+
   
   ["cocaine_processing_table"] = {
   	label = "Cocaine Processing Table",
@@ -993,135 +1141,8 @@ return {
 
 
 
+
 --[[
-
-	["baggie"] = {
-		label = "Empty Baggie",
-		weight = 1,
-		stack = true,
-		close = false,
-		description = "Empty Drug Baggie",
-		client = {
-			image = "baggie.png",
-		}
-	},
-
-	["baggie_ak"] = {
-		label = "Baggie AK74",
-		weight = 2,
-		stack = true,
-		close = true,
-		description = "Weed Baggie AK74",
-		client = {
-			image = "baggie_ak.png",
-		}
-	},
-
-	["baggie_ogk"] = {
-		label = "Baggie OGKush",
-		weight = 2,
-		stack = true,
-		close = true,
-		description = "Weed Baggie OGKush",
-		client = {
-			image = "baggie_ogk.png",
-		}
-	},
-
-	["baggie_ph"] = {
-		label = "Baggie Purple Haze",
-		weight = 2,
-		stack = true,
-		close = true,
-		description = "Weed Baggie Purple Haze",
-		client = {
-			image = "baggie_ph.png",
-		}
-	},
-
-	["baggie_sk"] = {
-		label = "Baggie Skunk",
-		weight = 2,
-		stack = true,
-		close = true,
-		description = "Weed Baggie Skunk",
-		client = {
-			image = "baggie_sk.png",
-		}
-	},
-
-
-	["empty_jar"] = {
-		label = "Empty Oz Jar",
-		weight = 3,
-		stack = true,
-		close = false,
-		description = "Empty Weed Oz Jar",
-		client = {
-			image = "empty_jar.png",
-		}
-	},
-
-	["ozjar_ak"] = {
-		label = "Oz Jar of AK47",
-		weight = 30,
-		stack = true,
-		close = true,
-		description = "Oz Jar of AK74 Weed",
-		client = {
-			image = "ozjar_ak.png",
-		}
-	},
-
-	["ozjar_ogk"] = {
-		label = "Oz Jar of OGKush",
-		weight = 30,
-		stack = true,
-		close = true,
-		description = "Oz Jar of OGKush Weed",
-		client = {
-			image = "ozjar_ogk.png",
-		}
-	},
-
-	["ozjar_ph"] = {
-		label = "Oz Jar of PurpleHaze",
-		weight = 30,
-		stack = true,
-		close = true,
-		description = "Oz Jar of PurpleHaze Weed",
-		client = {
-			image = "ozjar_ph.png",
-		}
-	},
-
-	["ozjar_sk"] = {
-		label = "Oz Jar of Skunk",
-		weight = 30,
-		stack = true,
-		close = true,
-		description = "Oz Jar of Skunk Weed",
-		client = {
-			image = "ozjar_sk.png",
-		}
-	},
-
-	["coca_seed"] = {
-		label = "Coca Seed",
-		weight = 8,
-		stack = true,
-		close = true,
-		description = "Coca Seed",
-		server = {
-			export = "it-drugs.useSeed"
-		},
-		client = {
-    	image = "coca_seed.png",
-		}
-	},
-
-
-
 	["baggie_coke"] = {
 		label = "Baggie Cocaine",
 		weight = 2,
@@ -1156,6 +1177,8 @@ return {
 	},
 ]]--
 
+-----------Usable Ammo Boxs------------
+-----------------------------------------
 	['box_ammo_9'] = {
         label = 'Ammo Case: 9x9mm (x120)',
         weight = 5,
@@ -1291,6 +1314,92 @@ return {
             usetime = 7500,
         }
     },
+
+
+
+---------  Stylz Skripts - Repairkits  ----
+-------------------------------------------
+	["wallet"] = {
+		label = "Wallet",
+		weight = 50,
+		stack = false,
+		close = false,
+		description = "Leather wallet for holding you cash and cards!",
+		client = {
+			image = "wallet.png",
+		},
+	},
+
+	["business_license"] = {
+		label = "Business License",
+		weight = 2,
+		stack = false,
+		close = false,
+		description = "used for buying Business's",
+		client = {
+			image = "business_license.png",
+		},
+	},
+
+--[[		["repair_kit"] = {
+			label = "Repair Kit",
+			weight = 500,
+			stack = true,
+			close = true,
+			consume = 0,
+			description = "Vehicle Repair Kit",
+			client = {
+				image = "repair_kit.png"
+			}
+		},
+
+		["tire_kit"] = {
+			label = "Tire Repair Kit",
+			weight = 250,
+			stack = true,
+			close = true,
+			consume = 0,
+			description = "Tire Repair Kit",
+			client = {
+				image = "tire_kit.png"
+			}
+		},
+
+		["body_kit"] = {
+			label = "Body Repair Kit",
+			weight = 350,
+			stack = true,
+			close = true,
+			consume = 0,
+			description = "Body Repair Kit",
+			client = {
+				image = "body_kit.png"
+			}
+		},
+
+		["cleaning_kit"] = {
+			label = "Cleaning Kit",
+			weight = 100,
+			stack = true,
+			close = true,
+			consume = 0,
+			description = "Vehicle Cleaning Kit",
+			client = {
+				image = "cleaning_kit.png"
+			}
+		},
+
+		["electric_kit"] = {
+			label = "Electric Repair Kit",
+			weight = 400,
+			stack = true,
+			close = true,
+			consume = 0,
+			description = "Electric Vehicle Repair Kit",
+			client = {
+				image = "electric_kit.png"
+			}
+		},  ]]--
 
 
 	["alive_chicken"] = {

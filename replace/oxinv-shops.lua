@@ -6,7 +6,7 @@ return {
 		}, inventory = {
 			{ name = 'burger', price = 25 },
 			{ name = 'water', price = 10 },
-			{ name = 'water', price = 20 },
+			{ name = 'sprunk', price = 20 },
 			{ name = 'rollpapers', price = 10 },
 			{ name = 'cleaningkit', price = 150 },
 			{ name = 'bandage', price = 750 },
@@ -30,26 +30,24 @@ return {
 			vec3(-710.29, -910.02, 19.22),  -- little seoul
 			vec3(-1825.46, 794.05, 138.18),  --  richman glen
 			vec3(1160.09, -319.92, 69.20),  -- mirror park
-			vec3(432.74, 5410.57, 671.58),  -- chiliad village
 		}, targets = {
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(24.51, -1347.75, 28.49), length = 0.7, width = 0.5, heading = 283.37, minZ = 28.4, maxZ = 28.9, distance = 2.0 },  -- strawberry
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(-3039.09, 584.54, 6.90), length = 0.6, width = 0.5, heading = 19.85, minZ = 6.90, maxZ = 7.20, distance = 2.0 },  -- banham canyon
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-3241.93, 999.86, 11.83), length = 0.6, width = 0.6, heading = 1.90, minZ = 11.83, maxZ = 12.23, distance = 2.0 },  -- chumush
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(1727.75, 6414.98, 34.03), length = 0.6, width = 0.6, heading = 248.42, minZ = 34.04, maxZ = 34.44, distance = 2.0 },  -- mount chiliad
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(1703.28, 4924.29, 41.06), length = 0.5, width = 0.5, heading = 49.71, minZ = 41.06, maxZ = 41.46, distance = 2.0 },  -- grapeseed
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(1960.27, 3739.65, 31.34), length = 0.6, width = 0.5, heading = 318.03, minZ = 31.34, maxZ = 31.74, distance = 2.0 },  -- sandyshores
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(549.04, 2671.55, 41.15), length = 0.6, width = 0.5, heading = 102.70, minZ = 41.16, maxZ = 41.56, distance = 2.0 },  -- harmony
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(2678.24, 3279.34, 54.24), length = 0.6, width = 0.5, heading = 333.52, minZ = 54.24, maxZ = 54.64, distance = 2.0 },  -- grand senora dessert
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(2557.27, 380.79, 107.62), length = 0.6, width = 0.5, heading = 350.04, minZ = 107.62, maxZ = 108.02, distance = 2.0 },-- tataviam mountions
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(372.55, 326.18, 102.56), length = 0.6, width = 0.5, heading = 259.54, minZ = 102.57, maxZ = 102.97, distance = 2.0 },-- downtown vinewood
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(-1030.84, -2759.34, 21.34), length = 0.7, width = 0.5, heading = 148.78, minZ = 21.34, maxZ = 21.97, distance = 2.0 },  --  lsia store
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(256.53, 2594.30, 43.80), length = 0.7, width = 0.5, heading = 114.13, minZ = 43.80, maxZ = 44.40, distance = 2.0 },  --  route68 harmony
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(1727.75, 6414.98, 34.03), length = 0.6, width = 0.6, heading = 248.42, minZ = 34.04, maxZ = 34.44, distance = 2.0 },  -- mount chiliad
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(1703.28, 4924.29, 41.06), length = 0.5, width = 0.5, heading = 49.71, minZ = 41.06, maxZ = 41.46, distance = 2.0 },  -- grapeseed
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(1960.27, 3739.65, 31.34), length = 0.6, width = 0.5, heading = 318.03, minZ = 31.34, maxZ = 31.74, distance = 2.0 },  -- sandyshores
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(549.04, 2671.55, 41.15), length = 0.6, width = 0.5, heading = 102.70, minZ = 41.16, maxZ = 41.56, distance = 2.0 },  -- harmony
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(2678.24, 3279.34, 54.24), length = 0.6, width = 0.5, heading = 333.52, minZ = 54.24, maxZ = 54.64, distance = 2.0 },  -- grand senora dessert
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(2557.27, 380.79, 107.62), length = 0.6, width = 0.5, heading = 350.04, minZ = 107.62, maxZ = 108.02, distance = 2.0 },-- tataviam mountions
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(372.55, 326.18, 102.56), length = 0.6, width = 0.5, heading = 259.54, minZ = 102.57, maxZ = 102.97, distance = 2.0 },-- downtown vinewood
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-1030.84, -2759.34, 20.34), length = 0.7, width = 0.5, heading = 148.78, minZ = 21.34, maxZ = 21.97, distance = 2.0 },  --  lsia store
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(256.53, 2594.30, 43.80), length = 0.7, width = 0.5, heading = 114.13, minZ = 43.80, maxZ = 44.40, distance = 2.0 },  --  route68 harmony
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(159.95, 6641.21, 30.69), length = 0.7, width = 0.5, heading = 213.85, minZ = 30.65, maxZ = 31.25, distance = 2.0 },  --  paletobay
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(-47.60, -1752.49, 28.42), length = 0.7, width = 0.5, heading = 131.51, minZ = 28.40, maxZ = 29.00, distance = 2.0 },  --  davis
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-710.29, -910.02, 18.22), length = 0.7, width = 0.5, heading = 178.00, minZ = 18.20, maxZ = 18.80, distance = 2.0 },  -- little seoul
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(-1825.46, 794.05, 137.18), length = 0.7, width = 0.5, heading = 221.77, minZ = 137.18, maxZ = 137.78, distance = 2.0 },  --  richman glen
+			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-1825.46, 794.05, 137.18), length = 0.7, width = 0.5, heading = 221.77, minZ = 137.18, maxZ = 137.78, distance = 2.0 },  --  richman glen
 			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(1160.09, -319.92, 68.20), length = 0.7, width = 0.5, heading = 182.74, minZ = 68.20, maxZ = 28.80, distance = 2.0 },  -- mirror park
-			{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(432.7446, 5410.5786, 671.5861), length = 0.7, width = 0.5, heading = 273.49, minZ = 671.55, maxZ = 671.85, distance = 2.0 },  -- chiliad village
 		}
 	},
 
@@ -84,6 +82,7 @@ return {
 		blip = {
 			id = 402, colour = 69, scale = 0.5
 		}, inventory = {
+			{ name = 'WEAPON_CROWBAR', price = 65 },
 			{ name = 'plant_cutters', price = 75 },
 			{ name = 'garden_shovel', price = 95 },
 			{ name = 'plant_pot', price = 10 },
@@ -93,12 +92,17 @@ return {
 			{ name = 'fertilizer', price = 10 },
 			{ name = 'advanced_fertilizer', price = 15 },
 			{ name = 'liquid_fertilizer', price = 5 },
-			{ name = 'backpack', price = 1400 },
+			{ name = 'backpack', price = 1150 },
 		}, locations = {
-			vec3(2748.0, 3473.0, 55.67),
-			vec3(342.99, -1298.26, 32.51)
+			vec3(343.16, -1297.83, 31.50),
+			vec3(-3153.96, 1053.54, 19.88),
+			vec3(2747.51, 3473.49, 54.67),
+			vec3(-10.89, 6499.17, 30.50),
 		}, targets = {
-			{ loc = vec3(2746.8, 3473.13, 55.67), length = 0.6, width = 3.0, heading = 65.0, minZ = 55.0, maxZ = 56.8, distance = 3.0 }
+			{ ped = `S_M_M_Warehouse_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(343.16, -1297.83, 31.50), length = 0.6, width = 3.0, heading = 160.37, minZ = 31.30, maxZ = 31.70, distance = 2.0 },  --  Strawberry
+			{ ped = `S_M_M_Warehouse_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-3153.96, 1053.54, 19.88), length = 0.6, width = 3.0, heading = 338.47, minZ = 19.60, maxZ = 20.10, distance = 2.0 },  --  Chumash
+			{ ped = `S_M_M_Warehouse_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(2747.51, 3473.49, 54.67), length = 0.6, width = 3.0, heading = 243.64, minZ = 54.45, maxZ = 54.90, distance = 2.0 },  --  Sandy Shores
+			{ ped = `S_M_M_Warehouse_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-10.89, 6499.17, 30.50), length = 0.6, width = 3.0, heading = 43.40, minZ = 30.30, maxZ = 30.70, distance = 2.0 },  --  Paleto Bay
 		}
 	},
 
@@ -157,27 +161,25 @@ return {
           -------------- sniper rifle --------------
           -------------- attachments --------------
 		}, locations = {
-			vec3(-662.180, -934.961, 21.829),
-			vec3(810.25, -2157.60, 29.62),
-			vec3(1693.44, 3760.16, 34.71),
-			vec3(-330.24, 6083.88, 31.45),
-			vec3(252.63, -50.00, 69.94),
-			vec3(22.56, -1109.89, 29.80),
-			vec3(2567.69, 294.38, 108.73),
-			vec3(-1117.58, 2698.61, 18.55),
-			vec3(842.44, -1033.42, 28.19),
-			--vec3(842.44, -1033.42, 28.19)  -- chiliad village
+			vec3(-660.70, -936.84, 21.846),  -- little seoul
+			vec3(826.81, -2152.97, 28.93),  --  cypress flats
+			vec3(1695.4052, 3760.1689, 34.7225),  --  sandy shores - blocked office
+			vec3(-328.2047, 6083.8232, 31.4719),  --  paleto bay
+			vec3(250.63, -50.99, 69.95),  --  Hawick
+			vec3(4.74, -1106.16, 29.10),  --  Pillbox Hill
+			vec3(2566.38, 295.54, 108.75),  --  Tataviam Hills
+			vec3(-1115.82, 2698.58, 18.57),  --  Great Chapperal
+			vec3(840.88, -1032.23, 28.21),  --  La Mesa
 		}, targets = {
-			{ loc = vec3(-660.92, -934.10, 21.94), length = 0.6, width = 0.5, heading = 180.0, minZ = 21.8, maxZ = 22.2, distance = 2.0 },
-			{ loc = vec3(808.86, -2158.50, 29.73), length = 0.6, width = 0.5, heading = 360.0, minZ = 29.6, maxZ = 30.0, distance = 2.0 },
-			{ loc = vec3(1693.57, 3761.60, 34.82), length = 0.6, width = 0.5, heading = 227.39, minZ = 34.7, maxZ = 35.1, distance = 2.0 },
-			{ loc = vec3(-330.29, 6085.54, 31.57), length = 0.6, width = 0.5, heading = 225.0, minZ = 31.4, maxZ = 31.8, distance = 2.0 },
-			{ loc = vec3(252.85, -51.62, 70.0), length = 0.6, width = 0.5, heading = 70.0, minZ = 69.9, maxZ = 70.3, distance = 2.0 },
-			{ loc = vec3(23.68, -1106.46, 29.91), length = 0.6, width = 0.5, heading = 160.0, minZ = 29.8, maxZ = 30.2, distance = 2.0 },
-			{ loc = vec3(2566.59, 293.13, 108.85), length = 0.6, width = 0.5, heading = 360.0, minZ = 108.7, maxZ = 109.1, distance = 2.0 },
-			{ loc = vec3(-1117.61, 2700.26, 18.67), length = 0.6, width = 0.5, heading = 221.82, minZ = 18.5, maxZ = 18.9, distance = 2.0 },
-			{ loc = vec3(841.05, -1034.76, 28.31), length = 0.6, width = 0.5, heading = 360.0, minZ = 28.2, maxZ = 28.6, distance = 2.0 },
-			--{ ped = `mp_m_shopkeep_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(432.7446, 5410.5786, 671.5861), length = 0.7, width = 0.5, heading = 273.49, minZ = 671.55, maxZ = 671.85, distance = 2.0 },  -- chiliad village
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(-660.70, -936.84, 20.846), length = 0.6, width = 0.5, heading = 101.17, minZ = 20.845, maxZ = 21.445, distance = 2.0 },  -- little seoul
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(826.81, -2152.97, 27.93), length = 0.6, width = 0.5, heading = 90.75, minZ = 27.90, maxZ = 28.50, distance = 2.0 },  --  cypress flats
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(1695.40, 3760.16, 33.72), length = 0.6, width = 0.5, heading = 171.9635, minZ = 33.70, maxZ = 34.30, distance = 2.0 },  --  sandy shores
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-328.20, 6083.82, 30.47), length = 0.6, width = 0.5, heading = 129.0774, minZ = 30.45, maxZ = 31.05, distance = 2.0 },  --  paleto bay
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(250.63, -50.99, 69.95), length = 0.6, width = 0.5, heading = 0.06, minZ = 69.85, maxZ = 70.35, distance = 2.0 },  --  Hawick
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_AA_COFFEE', loc = vec3(4.74, -1106.16, 29.10), length = 0.6, width = 0.5, heading = 263.62, minZ = 29.0, maxZ = 29.50, distance = 2.0 },  --  Pillbox Hill
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_STAND_MOBILE', loc = vec3(2566.38, 295.54, 108.75), length = 0.6, width = 0.5, heading = 283.68, minZ = 108.65, maxZ = 109.15, distance = 2.0 },  --  Tataviam Hills
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(-1115.82, 2698.58, 18.57), length = 0.6, width = 0.5, heading = 140.05, minZ = 18.40, maxZ = 18.9, distance = 2.0 },  --  Great Chapperal
+			{ ped = `S_M_Y_AmmuCity_01`, scenario = 'WORLD_HUMAN_COP_IDLES', loc = vec3(840.88, -1032.23, 28.21), length = 0.6, width = 0.5, heading = 279.41, minZ = 28.10, maxZ = 28.60, distance = 2.0 },  --  La Mesa
 		}
 	},
 
@@ -339,22 +341,19 @@ return {
 
 	LDOrganics = {
 		name = 'LD Organics',
+		blip = {
+			id = 496, colour = 25, scale = 0.5
+		},
 		inventory = {
-			{ name = 'rollpapers', price = 3 },
+			{ name = 'baggies', price = 2 },
+			{ name = 'rollpapers', price = 5 },
+			{ name = 'empty_jar', price = 10 },
 			{ name = 'joint_roller', price = 55 },
-			{ name = 'plant_cutters', price = 65 },
-			{ name = 'garden_shovel', price = 85 },
-			{ name = 'plant_pot', price = 8 },
-			{ name = 'potting_mix', price = 4 },
-			{ name = 'water_refill', price = 4 },
-			{ name = 'watering_can', price = 18 },
-			{ name = 'fertilizer', price = 8 },
-			{ name = 'advanced_fertilizer', price = 12 },
-			{ name = 'liquid_fertilizer', price = 6 },
-			{ name = 'joint_ak', price = 60 },
-			{ name = 'joint_ogk', price = 65 },
+			{ name = 'joint_ogk', price = 60 },
+			{ name = 'joint_sk', price = 65 },
 			{ name = 'joint_ph', price = 75 },
-			{ name = 'joint_sk', price = 85 },
+			{ name = 'joint_ww', price = 85 },
+			{ name = 'drug_scales_low', price = 200 },
 			{ name = 'backpack', price = 1400 },
 		}, locations = {
 			vec3(-1168.27, -1568.03, 4.67),  -- vesspuci beach
