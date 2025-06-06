@@ -261,7 +261,7 @@ tasks:
   - action: download_github
     src: https://github.com/Hexora-Studios/esx_billing-redesign
     ref: main
-    dest: ./tmp/addons/esx_billing
+    dest: ./tmp/esx_billing-redesign
 
   - action: download_github
     src: https://github.com/DonStylz74/tcd-starterpack
@@ -383,8 +383,8 @@ tasks:
   - action: waste_time
     seconds: 5
 
-  - action: move_path
-    src: ./tmp/addons/esx_billing
+  - action: copy_path
+    src: ./tmp/esx_billing-redesign
     dest: ./resources/[addons]/esx_billing
     overwrite: true
 
