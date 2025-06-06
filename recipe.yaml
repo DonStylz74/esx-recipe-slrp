@@ -263,11 +263,6 @@ tasks:
     ref: main
     dest: ./tmp/addons/esx_billing
 
-  - action: move_path
-    src: ./tmp/addons/esx_billing
-    dest: ./resources/[addons]/esx_billing
-    overwrite: true
-
   - action: download_github
     src: https://github.com/DonStylz74/tcd-starterpack
     ref: main
@@ -385,6 +380,19 @@ tasks:
     ref: main
     dest: ./resources/[standalone]/pma-voice
 
+  - action: waste_time
+    seconds: 5
+
+  - action: move_path
+    src: ./tmp/addons/esx_billing
+    dest: ./resources/[addons]/esx_billing
+    overwrite: true
+
+  - action: move_path
+    src: ./tmp/ixhal-carwash/ixhal-carwash
+    dest: ./resources/[standalone]/ixhal-carwash
+    overwrite: true
+
 
 ## --- '#######################' --- ##
 ## --- '###  OX INSTALATION ###' --- ##
@@ -483,11 +491,6 @@ tasks:
   - action: move_path
     src: ./recipe/Extras/rm_chopshop
     dest: ./resources/[esx_extras]/[illegal]/rm_chopshop
-    overwrite: true
-
-  - action: move_path
-    src: ./tmp/ixhal-carwash/ixhal-carwash
-    dest: ./resources/[standalone]/ixhal-carwash
     overwrite: true
 
   - action: waste_time
