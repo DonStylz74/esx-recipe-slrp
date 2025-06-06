@@ -1,0 +1,15 @@
+minimaps - CHECK main and cayo
+
+map edit - CHECK map ajust with 0R-Hud
+
+it drugs - UPDATE config and items & item images
+
+stevo chopshops - REDO locations
+
+test kuz lootareas - UPDATE ITEMS to match it drugs script
+
+rm chopshops - UPDATE ITEMS to match stevos chopshop
+
+SN Store Roberies - ADD ITEMS
+
+ZXR PERSONAL MENU & BLACK MARKET - UPDATE CONFIG

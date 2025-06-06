@@ -1,6 +1,16 @@
+﻿# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
+# --- Imported YAML ---
 $engine: 3
 $onesync: on
-name: StreetLife RP | [ESX Legacy] -Recipe TestBuild
+name: Server name goes HERE
 author: DonStylz74
 description: FiveM RP framework, ESX Legacy, Contains Jobs, Housing, Garages & more!
 
@@ -12,12 +22,10 @@ tasks:
     subpath: resources
     dest: ./resources/[cfx-default]
 
-
-  
   ## Download and prepare server.cfg / loadingscreen / database
   - action: download_github
-    src: https://github.com/DonStylz74/esx-recipe-slrp
-    ref: legacy
+    src: https://github.com/recepiy-url-here
+    ref: main
     dest: ./recipe
 
   - action: move_path
@@ -29,18 +37,16 @@ tasks:
     dest: ./ox.cfg
 
   - action: move_path
-    src: ./recipe/esxLogo.png
-    dest: ./esxLogo.png
-
-
+    src: ./recipe/logo.png
+    dest: ./logo.png
 
   ## Download basic resources and ESX dependencies
-  
+
   - action: connect_database
 
-
   - action: waste_time # prevent github throttling
-    seconds: 15
+    seconds: 10
+
 
   - action: download_github
     src: https://github.com/esx-framework/esx-core
@@ -55,15 +61,19 @@ tasks:
   - action: move_path
     src: ./tmp/core/[core]
     dest: ./resources/[core]
+    overwrite: true
 
   - action: move_path
     src: ./tmp/addons/[esx_addons]
     dest: ./resources/[esx_addons]
+    overwrite: true
 
-  - action: waste_time # prevent github throttling
+  - action: waste_time
     seconds: 10
 
-  ## SERVER BASE CLEANUP PROCESS
+## --- '###################################' --- ##
+## --- '### SERVER BASE CLEANUP PROCESS ###' --- ##
+## --- '###################################' --- ##
 
   - action: remove_path
     path: ./resources/[cfx-default]/[gameplay]/chat
@@ -86,12 +96,17 @@ tasks:
   - action: remove_path
     path: ./resources/[core]/esx_multicharacter
 
-      ## - Comment out bellow action, to install default esx loading screen
   - action: remove_path
     path: ./resources/[core]/esx_loadingscreen
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_addoninventory
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_animations
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_banking
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_billing
@@ -101,6 +116,9 @@ tasks:
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_accessories
+
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_cruisecontrol
 
   - action: remove_path
     path: ./resources/[esx_addons]/esx_vehicleshop
@@ -136,25 +154,18 @@ tasks:
     path: ./resources/[esx_addons]/esx_shops
 
   - action: remove_path
-    path: ./resources/[esx_addons]/esx_hud
+    path: ./resources/[esx_addons]/esx_weaponshop
 
-  - action: waste_time # prevent github throttling
+  - action: waste_time
     seconds: 10
-    
-  ###########################################
-  ## CUSTOM SCRIPT INJECTION & INSTALATION ##
-  ###########################################
 
-  - action: download_github
-    src: https://github.com/DonStylz74/bob74_ipl
-    ref: master
-    dest: ./resources/[mapping]/bob74_ipl
+  - action: query_database
+    file: ./tmp/core/[SQL]/legacy.sql
 
-## - UnComment bellow action, to install donz loading screen
-  - action: download_github
-    src: https://github.com/DonStylz74/loading_screen
-    ref: main
-    dest: ./resources/[core]/loading_screen
+
+## --- '####################' --- ##
+## --- '### DEPENDANCIES ###' --- ##
+## --- '####################' --- ##
 
   - action: download_github
     src: https://github.com/Byte-Labs-Studio/bl_bridge
@@ -166,19 +177,11 @@ tasks:
     ref: master
     dest: ./resources/[dependants]/xsound
 
-  - action: download_file
-    path: ./tmp/2.5.0.zip
-    url:  https://github.com/zRxnx/zrx_utility/archive/refs/tags/2.5.0.zip
-  - action: unzip
-    dest: ./tmp/
-    src: ./tmp/2.5.0.zip
-
   - action: download_github
     src: https://github.com/DonStylz74/screenshot-basic
     ref: master
     dest: ./resources/[dependants]/screenshot-basic
 
-## - Advanced Vehicle Damage TRUE - JG Advanced Garage
   - action: download_github
     src: https://github.com/DonStylz74/VehicleDeformation
     ref: main
@@ -199,8 +202,24 @@ tasks:
     ref: main
     dest: ./resources/[dependants]/SN-Hacking
 
-  - action: waste_time # prevent github throttling
+  - action: waste_time
     seconds: 5
+
+
+## --- '###########################################' --- ##
+## --- '## CUSTOM SCRIPT INJECTION & INSTALATION ##' --- ##
+## --- '###########################################' --- ##
+
+  - action: download_github
+    src: https://github.com/DonStylz74/bob74_ipl
+    ref: master
+    dest: ./resources/[mapping]/bob74_ipl
+
+  - action: download_github
+    src: https://github.com/DonStylz74/loading_screen
+    ref: main
+    dest: ./resources/[core]/loading_screen
+
 
   - action: download_github
     src: https://github.com/DonStylz74/illenium-appearance
@@ -233,34 +252,64 @@ tasks:
     dest: ./resources/[esx_addons]/CayoTwoIslands
 
   - action: download_github
-    src: https://github.com/DonStylz74/lation_pawnshop
+    src: https://github.com/DonStylz74/oulsen_satmap
     ref: main
-    dest: ./resources/[esx_extras]/lation_pawnshop
+    dest: ./tmp/oulsen_satmap
+
+## -  Hash bellow to not install atlas postal maps - remove hashs on to install postal maps 
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/postal-map
+  #  ref: main
+  #  dest: ./resources/[esx_addons]/postal-map
+
+## -  Hash bellow to not install atlas sat maps - remove hashs on to install sat maps 
+  - action: copy_path
+    src: ./tmp/oulsen_satmap/oulsen_satmap
+    dest: ./resources/[esx_addons]/oulsen_satmap
+    overwrite: true
 
   - action: download_github
-    src: https://github.com/DonStylz74/wasabi_backpack
+    src: https://github.com/Hexora-Studios/esx_billing-redesign
     ref: main
-    dest: ./resources/[esx_addons]/wasabi_backpack
+    dest: ./tmp/addons/esx_billing
+
+  - action: move_path
+    src: ./tmp/addons/esx_billing
+    dest: ./resources/[addons]/esx_billing
+    overwrite: true
 
   - action: download_github
     src: https://github.com/DonStylz74/tcd-starterpack
     ref: main
     dest: ./resources/[esx_addons]/tcd-starterpack
 
-  - action: waste_time # prevent github throttling
+  - action: download_github
+    src: https://github.com/DonStylz74/wasabi_backpack
+    ref: main
+    dest: ./resources/[esx_addons]/wasabi_backpack
+
+  - action: waste_time
     seconds: 5
 
-## -  Hash bellow to not install atlas postal maps - remove hashs on oulsen to install sat maps
-  ##- action: download_github
-  #  src: https://github.com/DonStylz74/postal-map
-  #  ref: main
-  #  dest: ./resources/[esx_addons]/postal-map
-
-## - REMOVE HASH BELLOW TO INSTALL SATMAP
   - action: download_github
-    src: https://github.com/DonStylz74/oulsen_satmap
+    src: https://github.com/DonStylz74/lation_pawnshop
     ref: main
-    dest: ./tmp/oulsen_satmap
+    dest: ./resources/[esx_extras]/lation_pawnshop
+
+  - action: download_github
+    src: https://github.com/DonStylz74/vehiclehandler
+    ref: main
+    dest: ./resources/[standalone]/vehiclehandler
+
+  - action: download_github
+    src: https://github.com/DonStylz74/ed_scuba
+    ref: main
+    dest: ./resources/[standalone]/ed_scuba
+
+  - action: download_github
+    src: https://github.com/DonStylz74/nv_sit_on_every_chair
+    ref: v1.1
+    dest: ./resources/[standalone]/nv_sit_on_every_chair
 
   - action: download_github
     src: https://github.com/DonStylz74/wn_atmrobbery
@@ -283,53 +332,9 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/stevo_portablemoneywash
 
   - action: download_github
-    src: https://github.com/DonStylz74/zrx_blackmarket
-    ref: main
-    dest: ./resources/[esx_extras]/[illegal]/zrx_blackmarket
-
-  - action: download_file
-    path: ./tmp/bl_idcard.zip
-    url:  https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.5.1/bl_idcard.zip
-  - action: unzip
-    dest: ./resources/[esx_addons]
-    src: ./tmp/bl_idcard.zip
-
-  - action: waste_time # prevent github throttling
-    seconds: 8
-
-  - action: download_github
-    src: https://github.com/DonStylz74/ed_scuba
-    ref: main
-    dest: ./resources/[standalone]/ed_scuba
-
-  - action: download_github
-    src: https://github.com/DonStylz74/vehiclehandler
-    ref: main
-    dest: ./resources/[standalone]/vehiclehandler
-
-  - action: download_github
-    src: https://github.com/DonStylz74/nv_sit_on_every_chair
-    ref: v1.1
-    dest: ./resources/[standalone]/nv_sit_on_every_chair
-
-  - action: download_file
-    path: ./tmp/5m-Elevator.zip
-    url:  https://github.com/Maximus7474/5m-Elevator/releases/download/v1.2.4/5m-Elevator.zip
-  - action: unzip
-    dest: ./resources/[standalone]/5m-Elevator
-    src: ./tmp/5m-Elevator.zip
-
-  - action: download_github
     src: https://github.com/DonStylz74/OT_pushvehicle
     ref: main
     dest: ./resources/[standalone]/OT_pushvehicle
-
-  - action: download_file
-    path: ./tmp/Renewed-Banking.zip
-    url:  https://github.com/Renewed-Scripts/Renewed-Banking/releases/download/v2.1.3/Renewed-Banking.zip
-  - action: unzip
-    dest: ./resources/[standalone]
-    src: ./tmp/Renewed-Banking.zip
 
   - action: download_github
     src: https://github.com/DonStylz74/it-drugs
@@ -337,9 +342,9 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/it-drugs
 
   - action: download_github
-    src: https://github.com/DonStylz74/tropic-cityguide
+    src: https://github.com/DonStylz74/dss-cityguide
     ref: main
-    dest: ./resources/[standalone]/tropic-cityguide
+    dest: ./resources/[standalone]/dss-cityguide
 
   - action: download_github
     src: https://github.com/DonStylz74/dss_quikcrafting
@@ -347,132 +352,98 @@ tasks:
     dest: ./resources/[standalone]/dss_quikcrafting
 
   - action: download_github
-    src: https://github.com/Hexora-Studios/esx_billing-redesign
+    src: https://github.com/DonStylz74/citra-taxi
     ref: main
-    dest: ./tmp/addons/esx_billing
+    dest: ./resources/[standalone]/citra-taxi
+
+  - action: download_github
+    src: https://github.com/DonStylz74/fivem-aerial-tramway
+    ref: main
+    dest: ./resources/[standalone]/aerial-tramway-trains
+
+  - action: download_github
+    src: https://github.com/DonStylz74/ixhal-carwash
+    ref: main
+    dest: ./tmp/ixhal-carwash
+
+  - action: waste_time
+    seconds: 5
+
+  - action: download_file
+    url: https://github.com/Byte-Labs-Studio/bl_idcard/releases/download/v1.5.1/bl_idcard.zip
+    path: ./tmp/bl_idcard.zip
+  - action: unzip
+    src: ./tmp/bl_idcard.zip
+    dest: ./resources/[esx_addons]
+
+  - action: download_file
+    url: https://github.com/Maximus7474/5m-Elevator/releases/download/v1.2.4/5m-Elevator.zip
+    path: ./tmp/5m-Elevator.zip
+  - action: unzip
+    src: ./tmp/5m-Elevator.zip
+    dest: ./resources/[standalone]/5m-Elevator
+
+  - action: download_file
+    url: https://github.com/Renewed-Scripts/Renewed-Banking/releases/tag/v2.1.4
+    path: ./tmp/Renewed-Banking.zip
+  - action: unzip
+    src: ./tmp/Renewed-Banking.zip
+    dest: ./resources/[standalone]
 
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
     dest: ./resources/[standalone]/pma-voice
 
-  - action: waste_time # prevent github throttling
-    seconds: 3
 
+## --- '#######################' --- ##
+## --- '###  OX INSTALATION ###' --- ##
+## --- '#######################' --- ##
 
-  ## SERVER BASE SQL INSTALATION
-  - action: query_database
-    file: ./tmp/core/[SQL]/legacy.sql
-
-  - action: waste_time # prevent github throttling
-    seconds: 5
-
-  ## OX INSTALATION
   - action: download_file
-    path: ./tmp/ox_lib.zip
     url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
+    path: ./tmp/ox_lib.zip
   - action: unzip
-    dest: ./resources/[ox]
     src: ./tmp/ox_lib.zip
+    dest: ./resources/[ox]
 
   - action: download_github
-    dest: ./resources/[ox]/ox_target
-    ref: main
     src: https://github.com/overextended/ox_target
+    ref: main
+    dest: ./resources/[ox]/ox_target
 
   - action: download_file
-    path: ./tmp/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
+    path: ./tmp/oxmysql.zip
   - action: unzip
-    dest: ./resources/[ox]
     src: ./tmp/oxmysql.zip
+    dest: ./resources/[ox]
 
   - action: download_file
-    path: ./tmp/ox_doorlock.zip
     url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
+    path: ./tmp/ox_doorlock.zip
   - action: unzip
-    dest: ./resources/[ox]
     src: ./tmp/ox_doorlock.zip
-
-  - action: download_file
-    path: ./tmp/ox_inventory.zip
-    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
-  - action: unzip
     dest: ./resources/[ox]
+
+  - action: download_file
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+    path: ./tmp/ox_inventory.zip
+  - action: unzip
     src: ./tmp/ox_inventory.zip
+    dest: ./resources/[ox]
 
   - action: download_github
-    dest: ./resources/[ox]/ox_fuel
-    ref: main
     src: https://github.com/overextended/ox_fuel
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-
-  ## SERVER MAPPING INSTALATION
-  
-  - action: download_file
-    path: ./tmp/gc-dmv-1.2.zip
-    url: https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
-  - action: unzip
-    dest: ./tmp/dmv
-    src: ./tmp/gc-dmv-1.2.zip
-
-  - action: download_github
-    src: https://github.com/PatocheMapping/paleto_gas_station/tree/main/patoche_gas_station
     ref: main
-    dest: ./tmp/paleto_gas_station
+    dest: ./resources/[ox]/ox_fuel
 
-  - action: download_file
-    path: ./tmp/fa9ab2-patoche_free_cardealer.zip
-    url: https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
-  - action: unzip
-    dest: ./tmp/cardealer
-    src: ./tmp/fa9ab2-patoche_free_cardealer.zip
+  - action: waste_time
+    seconds: 10
 
-  - action: download_file
-    path: ./tmp/Patoche_weapon_dealer.zip
-    url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
-  - action: unzip
-    dest: ./tmp/weapondealer
-    src: ./tmp/Patoche_weapon_dealer.zip
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-  - action: move_path
-    src: ./tmp/dmv/mlo-dmv-main
-    dest: ./resources/[mapping]/[services]/driving-school
-
-  - action: move_path
-    src: ./tmp/paleto_gas_station/patoche_gas_station
-    dest: ./resources/[mapping]/[shops]/paleto_gas_station
-
-  - action: move_path
-    src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
-    dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
-
-  - action: move_path
-    src: ./tmp/weapondealer/[FIVEM]/patoche_dealer_weapon
-    dest: ./resources/[mapping]/[illegal]/weapon-dealer
-
-  - action: waste_time # prevent github throttling
-    seconds: 3
-
-
-
-  #- EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc. 
-
-  - action: move_path
-    src: ./tmp/addons/esx_billing
-    dest: ./resources/[addons]/esx_billing
-    overwrite: true
-
-  - action: move_path
-    src: ./tmp/zrx_utility-2.5.0
-    dest: ./resources/[dependants]/zrx_utility
-    overwrite: true
+## --- '###############################################################' --- ##
+## --- '### EXTRA SCRIPTS INSTALATION PROCESS - Tebex Purchases Etc ###' --- ##
+## --- '###############################################################' --- ##
 
   - action: move_path
     src: ./recipe/Extras/ENT510_Multicharacter
@@ -493,18 +464,6 @@ tasks:
     src: ./recipe/Extras/jg-scoreboard
     dest: ./resources/[esx_addons]/jg-scoreboard
     overwrite: true
-
-## - REMOVE HASH BELLOW TO INSTALL SATMAP
-
-  ##- action: move_path
-  #  src: ./tmp/oulsen_satmap/oulsen_satmap
-  #  dest: ./resources/[esx_addons]/oulsen_satmap
-  # overwrite: true
-
-  ##- action: move_path
-  #  src: ./recipe/Extras/cayo-satmap
-  #  dest: ./resources/[esx_addons]/[minimaps]/cayo-satmap
-  #  overwrite: true
 
   - action: move_path
     src: ./recipe/Extras/0r-hud-v3
@@ -536,104 +495,168 @@ tasks:
     dest: ./resources/[esx_extras]/[illegal]/rm_chopshop
     overwrite: true
 
-  - action: waste_time # prevent github throttling
-    seconds: 5
+  - action: move_path
+    src: ./tmp/ixhal-carwash/ixhal-carwash
+    dest: ./resources/[standalone]/ixhal-carwash
+    overwrite: true
+
+  - action: waste_time
+    seconds: 10
 
 
-  ## --- DATABASE  EXTRAS SQL INSTALATION
-  - action: query_database
-    file: ./recipe/extra.sql
+## --- '###################################' --- ##
+## --- '### SERVER MAPPING INSTALLATION ###' --- ##
+## --- '###################################' --- ##
 
-  - action: waste_time # prevent github throttling
-    seconds: 2
-  
-  - action: query_database
-    file: ./recipe/vehicles-472-total.sql
+  - action: download_file
+    url: https://github.com/GreenBerg21/mlo-dmv/releases/download/release-1.2/gc-dmv-1.2.zip
+    path: ./tmp/gc-dmv-1.2.zip
+  - action: unzip
+    src: ./tmp/gc-dmv-1.2.zip
+    dest: ./tmp/dmv
 
-  - action: waste_time # prevent SQL throttling
+  - action: download_github
+    src: https://github.com/PatocheMapping/paleto_gas_station/tree/main/patoche_gas_station
+    ref: main
+    dest: ./tmp/paleto_gas_station
+
+  - action: download_file
+    url: https://files.gta5-mods.com/uploads/car-dealer-fivem-sp-ready/fa9ab2-patoche_free_cardealer.zip
+    path: ./tmp/fa9ab2-patoche_free_cardealer.zip
+  - action: unzip
+    src: ./tmp/fa9ab2-patoche_free_cardealer.zip
+    dest: ./tmp/cardealer
+
+  - action: download_file
+    url: https://files.gta5-mods.com/uploads/mlo-secret-weapon-dealer-fivem-altv-sp-ready/e2c3b3-Patoche_weapon_dealer_fivem_altv_sp.zip
+    path: ./tmp/Patoche_weapon_dealer.zip
+  - action: unzip
+    src: ./tmp/Patoche_weapon_dealer.zip
+    dest: ./tmp/weapondealer
+
+  - action: waste_time
+    seconds: 3
+
+  - action: move_path
+    src: ./tmp/dmv/mlo-dmv-main
+    dest: ./resources/[mapping]/[services]/driving-school
+    overwrite: true
+
+  - action: move_path
+    src: ./tmp/paleto_gas_station/patoche_gas_station
+    dest: ./resources/[mapping]/[shops]/paleto_gas_station
+    overwrite: true
+
+  - action: move_path
+    src: ./tmp/cardealer/[FIVEM]/[MAP]/patoche_free_cardealer
+    dest: ./resources/[mapping]/[auto-dealers]/pdm-cardealer-rockford
+    overwrite: true
+
+  - action: move_path
+    src: ./tmp/weapondealer/[FIVEM]/patoche_dealer_weapon
+    dest: ./resources/[mapping]/[illegal]/weapon-dealer
+    overwrite: true
+
+  - action: waste_time
     seconds: 3
 
 
-  ## UPDATING SCRIPT FILES PROCESS
+## --- '########################################' --- ##
+## --- '### DATABASE  EXTRAS SQL INSTALATION ###' --- ##
+## --- '########################################' --- ##
+
+  - action: query_database
+    file: ./recipe/extra.sql
+
+  - action: waste_time
+    seconds: 2
+
+  - action: query_database
+    file: ./recipe/vehicles-472-total.sql
+
+  - action: waste_time
+    seconds: 2
+
+
+## --- '####################################' --- ##
+## --- '### UPDATING SCRIPT FILES UPDATE ###' --- ##
+## --- '####################################' --- ##
 
   - action: copy_path
-    src: ./recipe/replace/es_ext-adjustments.lua # -- es_extended config changes
+    src: ./recipe/replace/es_ext-adjustments.lua
     dest: ./resources/[core]/es_extended/shared/config/adjustments.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/es_ext-cfg-main.lua # -- es_extended config changes
+    src: ./recipe/replace/es_ext-cfg-main.lua
     dest: ./resources/[core]/es_extended/shared/config//main.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/es_ext-paycheck.lua  # -- Randol Paycheck changes
+    src: ./recipe/replace/es_ext-paycheck.lua
     dest: ./resources/[core]/es_extended/server/modules/paycheck.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/oxinv-mod-itm-server.lua # --OX Inventory usable items - ammo boxs
+    src: ./recipe/replace/oxinv-mod-itm-server.lua
     dest: ./resources/[ox]/ox_inventory/modules/items/server.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/oxinv-items.lua # --OX Inventory Items  changes
+    src: ./recipe/replace/oxinv-items.lua
     dest: ./resources/[ox]/ox_inventory/data/items.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/oxinv-weapons.lua # --OX Inventory weapons  changes
+    src: ./recipe/replace/oxinv-weapons.lua
     dest: ./resources/[ox]/ox_inventory/data/weapons.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/oxinv-shops.lua # --OX Inventory shop  changes
+    src: ./recipe/replace/oxinv-shops.lua
     dest: ./resources/[ox]/ox_inventory/data/shops.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/bl-idcard_config.lua # -- bl idcard v1.5.1
+    src: ./recipe/replace/bl-idcard_config.lua
     dest: ./resources/[esx_addons]/bl_idcard/config.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/itbridge-config.lua # -- IT Bridge v1.0.5
+    src: ./recipe/replace/itbridge-config.lua
     dest: ./resources/[dependants]/it_bridge/config.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/snstorerob-config.lua # -- SN Store Robberys v1.0
+    src: ./recipe/replace/snstorerob-config.lua
     dest: ./resources/[esx_extras]/[illegal]/SN-StoreRobbery/config.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/5m-Elevator.lua # -- 5m Elevator
+    src: ./recipe/replace/5m-Elevator.lua
     dest: ./resources/[standalone]/5m-Elevator/shared/elevators.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/emsjob-fxmanifest.lua # -- esx ambulancejob
+    src: ./recipe/replace/emsjob-fxmanifest.lua
     dest: ./resources/[esx_addons]/esx_ambulancejob/fxmanifest.lua
     overwrite: true
 
   - action: copy_path
-    src: ./recipe/replace/poljob-fxmanifest.lua # -- esx policejob
+    src: ./recipe/replace/poljob-fxmanifest.lua
     dest: ./resources/[esx_addons]/esx_policejob/fxmanifest.lua
     overwrite: true
 
-  - action: copy_path
-    src: ./recipe/replace/zxrbmkt-fxmanifest.lua # -- ZRX Blackmarket
-    dest: ./resources/[esx_extras]/[illegal]/zrx_blackmarket/fxmanifest.lua
-    overwrite: true
+## --- '## INSTALL OX ITEM IMAGES TO INVENTORY ###' --- ##
 
-  ## Insatll OX Item Images
   - action: copy_path
-    src: ./recipe/Extras/images/  # -- OX Inventory Item Images
+    src: ./recipe/Extras/images/
     dest: ./resources/[ox]/ox_inventory/web/images
     overwrite: true
 
-  - action: waste_time # prevent github throttling
+  - action: waste_time
     seconds: 5
+
 
   ## FINAL BUILD CLEANUP
   ## - UnComment bellow to remove installer TEMP folder
@@ -679,4 +702,8 @@ tasks:
 
   #- action: waste_time # prevent github throttling
   #  seconds: 3
-  
+
+
+
+
+
