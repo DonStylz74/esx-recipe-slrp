@@ -1,14 +1,4 @@
-﻿# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-# --- Imported YAML ---
-$engine: 3
+﻿$engine: 3
 $onesync: on
 name: Server name goes HERE
 author: DonStylz74
