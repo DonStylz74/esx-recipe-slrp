@@ -374,7 +374,7 @@ tasks:
     dest: ./resources/[standalone]/5m-Elevator
 
   - action: download_file
-    url: https://github.com/Renewed-Scripts/Renewed-Banking/releases/tag/v2.1.4
+    url: https://github.com/Renewed-Scripts/Renewed-Banking/releases/tag/v2.1.4/Renewed-Banking.zip
     path: ./tmp/Renewed-Banking.zip
   - action: unzip
     src: ./tmp/Renewed-Banking.zip
