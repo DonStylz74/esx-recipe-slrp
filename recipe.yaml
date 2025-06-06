@@ -348,7 +348,7 @@ tasks:
 
   - action: download_github
     src: https://github.com/DonStylz74/fivem-aerial-tramway
-    ref: main
+    ref: master
     dest: ./resources/[standalone]/aerial-tramway-trains
 
   - action: download_github
