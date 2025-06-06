@@ -385,7 +385,7 @@ tasks:
 
   - action: copy_path
     src: ./tmp/esx_billing-redesign
-    dest: ./resources/[addons]/esx_billing
+    dest: ./resources/[esx_addons]/esx_billing
     overwrite: true
 
   - action: move_path
