@@ -27,8 +27,8 @@ tasks:
     dest: ./ox.cfg
 
   - action: move_path
-    src: ./recipe/logo.png
-    dest: ./logo.png
+    src: ./recipe/esxLogo.png
+    dest: ./esxLogo.png
 
   ## Download basic resources and ESX dependencies
 
