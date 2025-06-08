@@ -118,4 +118,22 @@ Config.Elevators = {
             }
         }
     },
+    ["KartCentre"] = {
+        restricted = false, --[[ { ["police"] = 0 } or {"police", "ambulance"} or false to disable ]]
+        vehicle = false,
+        floors = {
+            {
+                floor = "KC",
+                label = "Karting Centre",
+                panel = vector4(-155.85, -2152.97, 17.02, 20.70),
+                position = vector4(-156.07, -2152.48, 16.70, 24.88),
+            },
+            {
+                floor = "Lvl LS",
+                label = "Lower Stands",
+                panel = vector4(-130.12, -2104.23, 16.99, 110.78),
+                position = vector4(-130.94, -2104.40, 16.44, 110.78),
+            }
+        }
+    },
 }
