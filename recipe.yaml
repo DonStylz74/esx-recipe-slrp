@@ -246,17 +246,17 @@ tasks:
     ref: main
     dest: ./tmp/oulsen_satmap
 
- -  Hash bellow to not install atlas postal maps - remove hashs on to install postal maps 
-  - action: download_github
-    src: https://github.com/DonStylz74/postal-map
-    ref: main
-    dest: ./resources/[esx_addons]/postal-map
+## -  Hash bellow to not install atlas postal maps - remove hashs on to install postal maps 
+  ##- action: download_github
+  #  src: https://github.com/DonStylz74/postal-map
+  #  ref: main
+  #  dest: ./resources/[esx_addons]/postal-map
 
 ## -  Hash bellow to not install atlas sat maps - remove hashs on to install sat maps 
-##  - action: copy_path
- #   src: ./tmp/oulsen_satmap/oulsen_satmap
- #   dest: ./resources/[esx_addons]/oulsen_satmap
- #   overwrite: true
+  - action: copy_path
+    src: ./tmp/oulsen_satmap/oulsen_satmap
+    dest: ./resources/[esx_addons]/oulsen_satmap
+    overwrite: true
 
   - action: download_github
     src: https://github.com/Hexora-Studios/esx_billing-redesign
@@ -350,6 +350,11 @@ tasks:
     src: https://github.com/DonStylz74/ixhal-carwash
     ref: main
     dest: ./tmp/ixhal-carwash
+
+  - action: download_github
+    src: https://github.com/DonStylz74/tropic-business-esx
+    ref: main
+    dest: ./resources/[esx_extras]/[illegal]/dss-business
 
   - action: waste_time
     seconds: 5
