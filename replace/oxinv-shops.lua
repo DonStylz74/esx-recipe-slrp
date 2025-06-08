@@ -8,6 +8,7 @@ return {
 			{ name = 'water', price = 10 },
 			{ name = 'sprunk', price = 20 },
 			{ name = 'rollpapers', price = 10 },
+			{ name = 'wallet', price = 100 },
 			{ name = 'cleaningkit', price = 150 },
 			{ name = 'bandage', price = 750 },
 			{ name = 'parachute', price = 1250 },

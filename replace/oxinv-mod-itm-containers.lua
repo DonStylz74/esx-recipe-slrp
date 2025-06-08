@@ -54,7 +54,8 @@ end
 setContainerProperties('wallet', {
 	slots = 10,
 	maxWeight = 25,
-	blacklist = { 'testburger', 'rollpapers' }
+	whitelist = { 'money', 'black_money', 'id_card', 'drive', 'drive_bike', 'drive_truck', 'drive_boat', 'plane_license', 'weaponlicense', 'business_license'}
+})
 })
 
 setContainerProperties('paperbag', {

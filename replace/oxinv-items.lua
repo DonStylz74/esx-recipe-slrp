@@ -277,6 +277,30 @@ return {
 		description = "Permit to show you can own Firearms",
 	},
 
+	["business_license"] = {
+		label = "Business License",
+		weight = 2,
+		stack = false,
+		close = false,
+		description = "License to own & run a business",
+		client = {
+			image = "business_license.png",
+		},
+	},
+
+	-- Container Items --
+	---------------------
+	["wallet"] = {
+		label = "Wallet",
+		weight = 50,
+		stack = false,
+		close = false,
+		description = "Leather wallet for holding you cash and cards!",
+		client = {
+			image = "wallet.png",
+		},
+	},
+
 	-- ED_SCUBA & Asset SCRIPT
 	---------------------
 		['scuba_set'] = {
@@ -1316,30 +1340,6 @@ return {
     },
 
 
-
----------  Stylz Skripts - Repairkits  ----
--------------------------------------------
-	["wallet"] = {
-		label = "Wallet",
-		weight = 50,
-		stack = false,
-		close = false,
-		description = "Leather wallet for holding you cash and cards!",
-		client = {
-			image = "wallet.png",
-		},
-	},
-
-	["business_license"] = {
-		label = "Business License",
-		weight = 2,
-		stack = false,
-		close = false,
-		description = "used for buying Business's",
-		client = {
-			image = "business_license.png",
-		},
-	},
 
 --[[		["repair_kit"] = {
 			label = "Repair Kit",
