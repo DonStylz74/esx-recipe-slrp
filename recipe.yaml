@@ -144,6 +144,9 @@ tasks:
     path: ./resources/[esx_addons]/esx_shops
 
   - action: remove_path
+    path: ./resources/[esx_addons]/esx_taxijob
+
+  - action: remove_path
     path: ./resources/[esx_addons]/esx_weaponshop
 
   - action: waste_time

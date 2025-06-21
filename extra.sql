@@ -13,21 +13,32 @@ DROP TABLE `cardealer_vehicles`;
 DROP TABLE `vehicle_sold`;
 DROP TABLE `rented_vehicles`;
 
+-- Dropping esx_banking tables
+DROP TABLE `banking`;
 
--- Dropping Data from Datastore table --  Removing esx_accessories data entrys
+-- Dropping esx_banker, reporter, taxi from Database
+DELETE FROM addon_account WHERE name = 'society_cardealer';
+DELETE FROM addon_account WHERE name = 'society_taxi';
+DELETE FROM addon_account WHERE name = 'society_banker';
+
+DELETE FROM addon_account_data WHERE name = 'society_cardealer';
+DELETE FROM addon_account_data WHERE name = 'society_taxi';
+
+DELETE FROM addon_inventory WHERE name = 'society_cardealer';
+DELETE FROM addon_inventory WHERE name = 'society_taxi';
+
 DELETE FROM datastore WHERE name = 'user_ears';
 DELETE FROM datastore WHERE name = 'user_glasses';
 DELETE FROM datastore WHERE name = 'user_helmet';
 DELETE FROM datastore WHERE name = 'user_mask';
+DELETE FROM datastore WHERE name = 'society_taxi';
 
--- Dropping esx_banker & esx_reporter from Database --  Removing esx_banker & esx_reporter data entrys
-DELETE FROM addon_account WHERE name = 'society_banker';
 DELETE FROM jobs WHERE name = 'banker';
 DELETE FROM jobs WHERE name = 'reporter';
+DELETE FROM jobs WHERE name = 'cardealer';
+DELETE FROM jobs WHERE name = 'taxi';
 
- -- DELETE FROM job_grades WHERE job_name = 'banker';
 
--- DELETE FROM job_grades WHERE job_name = 'reporter';
 
 
 -- Install - illenium-appearance tables
@@ -50,32 +61,6 @@ CREATE TABLE IF NOT EXISTS `player_outfit_codes` (
   PRIMARY KEY (`id`),
   KEY `FK_player_outfit_codes_player_outfits` (`outfitid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
--- Install - Renewed Banking table
-CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
-  `id` varchar(50) NOT NULL,
-  `amount` int(11) DEFAULT 0,
-  `transactions` longtext DEFAULT '[]',
-  `auth` longtext DEFAULT '[]',
-  `isFrozen` int(11) DEFAULT 0,
-  `creator` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-);
-
-INSERT INTO `bank_accounts_new` (`id`, `amount`, `transactions`, `auth`, `isFrozen`, `creator`) VALUES
-	('ambulance', 0, '[]', '[]', 0, NULL),
-	('cardealer', 0, '[]', '[]', 0, NULL),
-	('mechanic', 0, '[]', '[]', 0, NULL),
-	('police', 0, '[]', '[]', 0, NULL),
-	('taxi', 0, '[]', '[]', 0, NULL);
-
-CREATE TABLE IF NOT EXISTS `player_transactions` (
-   `id` varchar(50) NOT NULL,
-   `isFrozen` int(11) DEFAULT 0,
-   `transactions` longtext DEFAULT '[]',
-  PRIMARY KEY (`id`)
-);
 
 
 -- Install TCD Starterpacks table
@@ -178,8 +163,6 @@ CREATE TABLE IF NOT EXISTS drug_processing (
     type VARCHAR(100) NOT NULL
 );
 
-
-
 -- Install job_grades tables & Items
 CREATE TABLE IF NOT EXISTS `job_grades` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -219,9 +202,29 @@ INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, 
 	(40, 'cardealer', 0, 'recruit', 'Recruit', 90, '{}', '{}'),
 	(41, 'cardealer', 1, 'novice', 'Novice', 115, '{}', '{}'),
 	(42, 'cardealer', 2, 'experienced', 'Experienced', 135, '{}', '{}'),
-	(43, 'cardealer', 3, 'boss', 'Boss', 160, '{}', '{}'),
-	(60, 'taxi', 0, 'recrue', 'Recruit', 90, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(61, 'taxi', 1, 'novice', 'Cabby', 110, '{"hair_2":0,"hair_color_2":0,"torso_1":32,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":0,"age_2":0,"glasses_2":0,"ears_2":0,"arms":27,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(62, 'taxi', 2, 'experimente', 'Experienced', 130, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(63, 'taxi', 3, 'uber', 'Uber Cabby', 150, '{"hair_2":0,"hair_color_2":0,"torso_1":26,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":57,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":11,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}'),
-	(64, 'taxi', 4, 'boss', 'Lead Cabby', 175, '{"hair_2":0,"hair_color_2":0,"torso_1":29,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":31,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":4,"age_2":0,"glasses_2":0,"ears_2":0,"arms":1,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":0,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":0,"bproof_1":0,"mask_1":0,"decals_1":0,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":4,"eyebrows_1":0,"face":0,"shoes_1":10,"pants_1":24}', '{"hair_2":0,"hair_color_2":0,"torso_1":57,"bags_1":0,"helmet_2":0,"chain_2":0,"eyebrows_3":0,"makeup_3":0,"makeup_2":0,"tshirt_1":38,"makeup_1":0,"bags_2":0,"makeup_4":0,"eyebrows_4":0,"chain_1":0,"lipstick_4":0,"bproof_2":0,"hair_color_1":0,"decals_2":0,"pants_2":1,"age_2":0,"glasses_2":0,"ears_2":0,"arms":21,"lipstick_1":0,"ears_1":-1,"mask_2":0,"sex":1,"lipstick_3":0,"helmet_1":-1,"shoes_2":0,"beard_2":0,"beard_1":0,"lipstick_2":0,"beard_4":0,"glasses_1":5,"bproof_1":0,"mask_1":0,"decals_1":1,"hair_1":0,"eyebrows_2":0,"beard_3":0,"age_1":0,"tshirt_2":0,"skin":0,"torso_2":0,"eyebrows_1":0,"face":0,"shoes_1":49,"pants_1":11}');
+	(43, 'cardealer', 3, 'boss', 'Boss', 160, '{}', '{}');
+
+-- Install - Renewed Banking table
+CREATE TABLE IF NOT EXISTS `bank_accounts_new` (
+  `id` varchar(50) NOT NULL,
+  `amount` int(11) DEFAULT 0,
+  `transactions` longtext DEFAULT '[]',
+  `auth` longtext DEFAULT '[]',
+  `isFrozen` int(11) DEFAULT 0,
+  `creator` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `bank_accounts_new` (`id`, `amount`, `transactions`, `auth`, `isFrozen`, `creator`) VALUES
+	('ambulance', 0, '[]', '[]', 0, NULL),
+	('cardealer', 0, '[]', '[]', 0, NULL),
+	('mechanic', 0, '[]', '[]', 0, NULL),
+	('police', 0, '[]', '[]', 0, NULL),
+	('taxi', 0, '[]', '[]', 0, NULL);
+
+CREATE TABLE IF NOT EXISTS `player_transactions` (
+   `id` varchar(50) NOT NULL,
+   `isFrozen` int(11) DEFAULT 0,
+   `transactions` longtext DEFAULT '[]',
+  PRIMARY KEY (`id`)
+);
