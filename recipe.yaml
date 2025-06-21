@@ -573,6 +573,12 @@ tasks:
     seconds: 2
 
   - action: query_database
+    file: ./recipe/qs-jobcreator.sql
+
+  - action: waste_time
+    seconds: 2
+
+  - action: query_database
     file: ./recipe/vehicles-472-total.sql
 
   - action: waste_time
