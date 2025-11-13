@@ -14,30 +14,30 @@ DROP TABLE `vehicle_sold`;
 DROP TABLE `rented_vehicles`;
 
 -- Dropping esx_banking tables
---DROP TABLE `banking`;
+-- DROP TABLE `banking`;
 
 -- Dropping esx_banker, reporter, taxi from Database
---DELETE FROM addon_account WHERE name = 'society_cardealer';
---DELETE FROM addon_account WHERE name = 'society_taxi';
---DELETE FROM addon_account WHERE name = 'society_banker';
+-- DELETE FROM addon_account WHERE name = 'society_cardealer';
+-- DELETE FROM addon_account WHERE name = 'society_taxi';
+-- DELETE FROM addon_account WHERE name = 'society_banker';
 
---DELETE FROM addon_account_data WHERE name = 'society_cardealer';
---DELETE FROM addon_account_data WHERE name = 'society_taxi';
+-- DELETE FROM addon_account_data WHERE name = 'society_cardealer';
+-- DELETE FROM addon_account_data WHERE name = 'society_taxi';
 
---DELETE FROM addon_inventory WHERE name = 'society_cardealer';
---DELETE FROM addon_inventory WHERE name = 'society_taxi';
+-- DELETE FROM addon_inventory WHERE name = 'society_cardealer';
+-- DELETE FROM addon_inventory WHERE name = 'society_taxi';
 
---DELETE FROM datastore WHERE name = 'user_ears';
---DELETE FROM datastore WHERE name = 'user_glasses';
---DELETE FROM datastore WHERE name = 'user_helmet';
---DELETE FROM datastore WHERE name = 'user_mask';
---DELETE FROM datastore WHERE name = 'society_taxi';
+DELETE FROM datastore WHERE name = 'user_ears';
+DELETE FROM datastore WHERE name = 'user_glasses';
+DELETE FROM datastore WHERE name = 'user_helmet';
+DELETE FROM datastore WHERE name = 'user_mask';
+-- DELETE FROM datastore WHERE name = 'society_taxi';
 
---DELETE FROM jobs WHERE name = 'banker';
---DELETE FROM jobs WHERE name = 'reporter';
---DELETE FROM jobs WHERE name = 'cardealer';
---ELETE FROM jobs WHERE name = 'taxi';
---ELETE FROM jobs WHERE name = 'taxi';
+-- DELETE FROM jobs WHERE name = 'banker';
+-- DELETE FROM jobs WHERE name = 'reporter';
+-- DELETE FROM jobs WHERE name = 'cardealer';
+-- DELETE FROM jobs WHERE name = 'taxi';
+-- DELETE FROM jobs WHERE name = 'taxi';
 
 
 
