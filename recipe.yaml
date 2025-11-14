@@ -554,10 +554,10 @@ tasks:
     seconds: 2
   
   - action: query_database
-    file: ./recipe/vehicles-472-total.sql
+    file: ./recipe/vehicles-482-total.sql
 
   - action: waste_time # prevent SQL throttling
-    seconds: 3
+    seconds: 5
 
 
   ## UPDATING SCRIPT FILES PROCESS
