@@ -258,8 +258,18 @@ tasks:
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/rose-blackcontact
 
+      - action: download_github
+    src: https://github.com/DonStylz74/jim-djbooth
+    ref: main
+    dest: ./resources/[esx_extras]/jim-djbooth
+
+  - action: download_github
+    src: https://github.com/DonStylz74/jim-trains
+    ref: main
+    dest: ./resources/[esx_extras]/jim-trains
+
   - action: waste_time # prevent github throttling
-    seconds: 3
+    seconds: 5
 
   - action: download_github
     src: https://github.com/DonStylz74/ed_scuba
@@ -544,7 +554,7 @@ tasks:
     seconds: 2
   
   - action: query_database
-    file: ./recipe/vehicles-482-total.sql
+    file: ./recipe/vehicles-472-total.sql
 
   - action: waste_time # prevent SQL throttling
     seconds: 3
