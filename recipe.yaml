@@ -258,7 +258,7 @@ tasks:
     ref: main
     dest: ./resources/[esx_extras]/[illegal]/rose-blackcontact
 
-      - action: download_github
+  - action: download_github
     src: https://github.com/DonStylz74/jim-djbooth
     ref: main
     dest: ./resources/[esx_extras]/jim-djbooth
